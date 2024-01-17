@@ -6,24 +6,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 8px;
     color: rgb(49, 48, 48);
-    font-size: 14px;
+    font-size: 30px;
+    margin: 15px;
   }
 
   .caption {
     font-size: 12px;
-    color: black;
-    margin-bottom: 16px;
   }
 
   .text-block {
-    text-align: center;
     font-size: 14px;
     margin-top: 20px;
-  }
-
-
-  .d-flex {
-    justify-content: center;
+    font: bold;
   }
