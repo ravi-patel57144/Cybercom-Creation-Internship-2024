@@ -1,0 +1,40 @@
+.main-section {
+    padding: 30% 0 5% 0;
+    background-color: #f8f8f8;
+  }
+
+  .heading {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 32px;
+  }
+
+  .testimonial {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(14, 13, 13, 0.1);
+    transition: box-shadow 0.3s;
+  }
+
+  .testimonial p {
+    font-size: 14px;
+    color: #333;
+  }
+
+  .testimonial-author {
+    color: #ad3030;
+  }
+  
+  .testimonial-post {
+    color: #777;
+  }
+
+  .testimonial img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
