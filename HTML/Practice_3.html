@@ -4,8 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Practice 1</title>
+    <title>HTML Practice 3</title>
     <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #table-container {
+            text-align: center;
+        }
+
         td,
         tr,
         th {
@@ -16,36 +28,38 @@
 </head>
 
 <body>
-    <table border="2" style="border-collapse: collapse">
-        <caption>
-            Example : Nested
-        </caption>
-        <tr>
-            <th rowspan="2" colspan="2">CI</th>
-            <th rowspan="2">All Genders</th>
-            <th>By Genders</th>
-        </tr>
-        <tr>
-            <td style="padding: 5px">
-                <table border="1">
-                    <thead>
-                        <th>Males</th>
-                        <th>Females</th>
-        </tr>
-        <tr>
-            <td>9215604</td>
-            <td>4512358</td>
-        </tr>
-    </table>
-    </td>
-    </tr>
-    <tr>
-        <th>Rural</th>
-        <td>6521458</td>
-        <td>4215389</td>
-        <td>4152348</td>
-    </tr>
-    </table>
+    <div id="table-container">
+        <table border="1" style="border-collapse: collapse">
+            <caption>
+                Example: Nested
+            </caption>
+            <tr>
+                <th rowspan="2" colspan="2">CI</th>
+                <th rowspan="2">All Genders</th>
+                <th>By Genders</th>
+            </tr>
+            <tr>
+                <td style="padding: 5px">
+                    <table border="1">
+                        <thead>
+                            <th>Males</th>
+                            <th>Females</th>
+                        </thead>
+                        <tr>
+                            <td>9215604</td>
+                            <td>4512358</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th>Rural</th>
+                <td>6521458</td>
+                <td>4215389</td>
+                <td>4152348</td>
+            </tr>
+        </table>
+    </div>
 </body>
 
 </html>
