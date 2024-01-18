@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <title>HTML Practice 6</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="success.html">
+            <fieldset>
+                <legend>Your address</legend>
+
+                <div class="form-row">
+                    <label for="fname">First name</label>
+                    <input type="text" id="fname" name="fname">
+                </div>
+
+                <div class="form-row">
+                    <label for="lname">Last name</label>
+                    <input type="text" id="lname" name="lname">
+                </div>
+
+                <div class="form-row">
+                    <label for="street">Street</label>
+                    <input type="text" id="street" name="street">
+                </div>
+
+                <div class="form-row">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Additional details</legend>
+
+                <div class="form-row">
+                    <label for="bio">Biography</label>
+                    <textarea id="bio" name="bio"></textarea>
+                </div>
+
+                <div class="form-row">
+                    <label for="image">Image</label>
+                    <input type="file" id="image" name="image">
+                </div>
+
+                <div class="form-row">
+                    <label for="ageg">Age Group</label>
+                    <select name="ageg" id="ageg">
+                        <option value="0 to 9 Years">0 to 9 Years</option>
+                        <option value="10 to 19 Years">10 to 19 Years</option>
+                        <option value="20 to 29 Years">20 to 29 Years</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Interests</legend>
+
+                <div class="form-row">
+                    <label for="hobby">Hobbies</label>
+                    <select name="hobby" multiple size="4" id="hobby">
+                        <option value="Playing soccer">Playing soccer</option>
+                        <option value="Dancing">Dancing</option>
+                        <option value="Gardening">Gardening</option>
+                        <option value="Watching movies">Watching movies</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="car">Favourite car?</label>
+                    <select name="car" id="car">
+                        <option value="Volvo">Volvo</option>
+                        <option value="Tata">Tata</option>
+                        <option value="Benz">Benz</option>
+                        <option value="BMW">BMW</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="transport">Favourite public transport?</label>
+                    <select class="transport" multiple size="5">
+                        <optgroup label="Ground">
+                            <option>Train</option>
+                            <option>Bus</option>
+                        </optgroup>
+                        <optgroup label="Water">
+                            <option>Ship</option>
+                            <option>Airboat</option>
+                            <option>Hovecraft</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </fieldset>
+
+            <div class="button-container">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
