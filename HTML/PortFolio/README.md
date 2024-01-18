@@ -6,4 +6,4 @@ Instrucions:
 - Can use externam CSS, Bootstrap
 
 
-### Output - [Click to visit Project](https://ravi-patel57144.github.io/Cybercom/PortFolio)
+### Output - [Click to visit Project](https://ravi-patel57144.github.io/Cybercom/HTML/PortFolio)
