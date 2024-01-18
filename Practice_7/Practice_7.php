@@ -52,7 +52,7 @@ function validateForm() {
         </div>
 
         <div class="for-row">
-            <label for="dobDay">Date of Birth:</label>
+            <label for="dob">Date of Birth:</label>
             <select name="month" id="month">
                 <option value="">Month</option>
                 <option value="1">January</option>
@@ -86,10 +86,6 @@ function validateForm() {
                 }
                 ?>
             </select>
-            
-            <input type="text" id="dobDay" name="dobDay" placeholder="dd" pattern="\d{2}" required>
-            <input type="text" id="dobMonth" name="dobMonth" placeholder="mm" pattern="\d{2}" required>
-            <input type="text" id="dobYear" name="dobYear" placeholder="yyyy" pattern="\d{4}" required>
         </div>
 
         <div class="for-row">
