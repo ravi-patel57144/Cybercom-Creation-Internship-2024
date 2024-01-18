@@ -45,7 +45,7 @@
         $address = htmlspecialchars($_POST['address']);
         $city = htmlspecialchars($_POST['city']);
         $state = htmlspecialchars($_POST['state']);
-        $zipCode = htmlspecialchars($_POST['zipCode']);
+        $zipCode = htmlspecialchars($_POST['zipcode']);
         $phone = htmlspecialchars($_POST['phone']);
 
         $month = isset($_POST['month']) ? $_POST['month'] : '';

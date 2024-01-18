@@ -1,20 +1,63 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+* {
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
-}
-
-.container {
-    max-width: 400px;
-    margin: auto;
-    background-color: #f4f4f4;
-    border: 1px solid #ccc;
-}
+  }
+  .container {
+    margin-left: 35%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 500px;
+    border: 1px solid black;
+  }
+  form {
+    padding: 10px;
+    background-color: #eeeeee;
+  }
+  fieldset {
+    border: none;
+    padding: 10px 0;
+  }
+  legend {
+    font-weight: bold;
+  }
+  input,
+  select {
+    width: 100%;
+  }
+  td {
+    text-align: end;
+    padding: 10px;
+  }
+  td:nth-child(1) {
+    width: 140px;
+  }
+  td:nth-child(2) {
+    text-align: start;
+    width: 300px;
+  }
+  
+  button[type=reset],
+  button[type=submit] {
+      padding: 10px 20px;
+      border: none;
+      background-color: #5cb85c;
+      color: white;
+      cursor: pointer;
+      margin: 15px
+  }
+  
+  button[type=reset] {
+      background-color: #f0ad4e;
+  }
+  
+  button[type=submit]:hover,
+  button[type=reset]:hover {
+      opacity: 0.9;
+  }
+  .flex {
+    display: flex;
+  }
 
 .help-icon {
     font-size: 14px;
@@ -30,67 +73,4 @@ body {
     padding: 5px;
     display: none;
     z-index: 1;
-}
-
-h3 {
-    width: 100%;
-    margin-left: 10px;
-}
-
-form {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
-.form-row {
-    display: flex;
-    margin-bottom: 10px;
-    align-items: center;
-}
-
-.dob-margin, .phone-margin {
-    margin-right: 10px;
-}
-
-.help-block {
-    font-size: 12px;
-    color: #888;
-    margin-left: 70px;
-
-}
-
-
-label {
-    margin-left: 30px;
-    width: 40%;
-    box-sizing: border-box;
-}
-
-input,
-textarea,
-select {
-    box-sizing: border-box;
-}
-
-.button-container {
-}
-
-button[type=reset],
-button[type=submit] {
-    padding: 10px 20px;
-    border: none;
-    background-color: #5cb85c;
-    color: white;
-    cursor: pointer;
-    margin: 15px
-}
-
-button[type=reset] {
-    background-color: #f0ad4e;
-}
-
-button[type=submit]:hover,
-button[type=reset]:hover {
-    opacity: 0.9;
 }

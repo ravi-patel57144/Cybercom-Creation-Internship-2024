@@ -8,182 +8,169 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <title>HTML Practice 7</title>
-    <script>
-        function validateForm() {
-            var firstName = document.forms["registrationForm"]["firstName"].value;
-            var lastName = document.forms["registrationForm"]["lastName"].value;
-            var email = document.forms["registrationForm"]["email"].value;
-            var emailConfirm = document.forms["registrationForm"]["emailConfirm"].value;
-            var password = document.forms["registrationForm"]["password"].value;
-            var passwordConfirm = document.forms["registrationForm"]["passwordConfirm"].value;
-            var phone = document.forms["registrationForm"]["phone"].value;
-            var day = document.forms["registrationForm"]["day"].value;
-            var month = document.forms["registrationForm"]["month"].value;
-            var year = document.forms["registrationForm"]["year"].value;
-
-            if (firstName === "" || day === "" || month === "" || year === "" || email === "" || password === "" || phone === "") {
-                alert("Please fill out all required fields.");
-                return false;
-            }
-
-            if (email !== emailConfirm) {
-                alert("Emails do not match.");
-                return false;
-            }
-
-            if (password !== passwordConfirm) {
-                alert("Passwords do not match.");
-                return false;
-            }
-
-            return true;
-        }
-
-    </script>
 
 </head>
 
 <body>
+
     <div class="container">
-        <form name="registrationForm" action="information.php" onsubmit="return validateForm()" method="post">
-            <h3>Personal Information</h3>
+        <form action="information.php" method="post" onsubmit="return validateForm()">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <table>
+                    <tr>
+                        <td><label for="firstName">First Name :</label></td>
+                        <td>
+                            <input type="text" name="firstName" id="firstName" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="lastName">Last Name :</label></td>
+                        <td><input type="text" name="lastName" id="lastName"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="month">Date of Birth</label></td>
+                        <td class="flex">
+                            <select name="month" id="month" class="dob-margin" required>
+                                <option value="">Month</option>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
 
-            <div class="form-row">
-                <label for="firstName">First name:</label>
-                <input type="text" id="fname" name="firstName">
-            </div>
+                            <select name="day" id="day" class="dob-margin" required>
+                                <option value="">Day</option>
+                            </select>
 
-            <div class="form-row">
-                <label for="lastName">Last name:</label>
-                <input type="text" id="lname" name="lastName">
-            </div>
+                            <select name="year" id="year" class="dob-margin" required>
+                                <option value="">Year</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="gender">Gender:</label></td>
+                        <td>
+                            <select name="gender">
+                                <option value="">Choose a gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <span class="help-icon" onmouseover="showTooltip('Choose a gender')"
+                                onmouseout="hideTooltip()">?</span>
+                            <div id="tooltip" class="tooltip"></div>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
 
-            <div class="form-row">
-                <label for="dob">Date of Birth:</label>
-                <select name="month" id="month" class="dob-margin">
-                    <option value="">Month</option>
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <option value="3">March</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
-                    <option value="6">June</option>
-                    <option value="7">July</option>
-                    <option value="8">August</option>
-                    <option value="9">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                </select>
+            <fieldset>
+                <legend>Account Information</legend>
+                <table>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td>
+                            <input type="email" name="email" id="email" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="emailConfirm">Re-type Email:</label></td>
+                        <td>
+                            <input type="email" name="emailConfirm" id="emailConfirm">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password :</label></td>
+                        <td>
+                            <input type="password" name="password" minlength="8" pattern=".*\d.*"
+                                title="Minimum 8 characters, at least 1 number" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="passwordConfirm">Re-type Password:</label></td>
+                        <td>
+                            <input type="password" name="passwordConfirm">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="securityQuestion">Security Question:</label></td>
+                        <td>
+                            <select name="securityQuestion">
+                                <option value="">Choose a security question</option>
+                                <option value="First pet name">What is your First pet name?</option>
+                                <option value="FIrst Vehicle">WHat was your First vehicle?</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="securityAnswer">Security Answer:</label></td>
+                        <td><input type="text" name="securityAnswer"></td>
+                    </tr>
+                </table>
+            </fieldset>
 
-                <select name="day" id="day" class="dob-margin">
-                    <option value="">Day</option>
-                </select>
-
-                <select name="year" id="year" class="dob-margin">
-                    <option value="">Year</option>
-                </select>
-            </div>
-
-            <div class="form-row">
-                <label for="gender">Gender:</label>
-                <select name="gender">
-                    <option value="">Choose a gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                </select>
-                <span class="help-icon" onmouseover="showTooltip('Your email address will be your username')" onmouseout="hideTooltip()">?</span>
-            </div>
-
-
-            <h3>Account Information</h3>
-
-            <div class="form-row">
-                <label for="email">Email:</label>
-                <input type="email" name="email">
-            </div>
-            <div class="form-row">
-                <span class="help-block">(Your email address will be your username)</span>
-            </div>
-
-            <div class="form-row">
-                <label for="emailConfirm">Re-type Email:</label>
-                <input type="email" name="emailConfirm">
-            </div>
-
-            <div class="form-row">
-                <label for="password">Password:</label>
-                <input type="password" name="password" minlength="8" pattern=".*\d.*"
-                    title="Minimum 8 characters, at least 1 number">
-            </div>
-
-            <div class="form-row">
-                <label for="passwordConfirm">Re-type Password:</label>
-                <input type="password" name="passwordConfirm">
-            </div>
-
-            <div class="form-row">
-                <label for="securityQuestion">Security Question:</label>
-                <select name="securityQuestion">
-                    <option value="">Choose a security question</option>
-                    <option value="First pet name">What is your First pet name?</option>
-                    <option value="FIrst Vehicle">WHat was your First vehicle?</option>
-                </select>
-            </div>
-
-            <div class="form-row">
-                <label for="securityAnswer">Security Answer:</label>
-                <input type="text" name="securityAnswer">
-            </div>
-
-
-            <h3>Contact Information</h3>
-
-            <div class="form-row">
-                <label for="address">Address:</label>
-                <input type="text" name="address">
-            </div>
-
-            <div class="form-row">
-                <label for="city">City:</label>
-                <input type="text" name="city">
-            </div>
-
-            <div class="form-row">
-                <label for="state">State:</label>
-                <select name="state">
-                    <option value="">Choose a state</option>
-                    <option value="Gujarat">Gujarat</option>
-                    <option value="Uttar Pradesh">Uttar Pradesh</option>
-                    <option value="Karnataka">Karnataka</option>
-                    <option value="Maharashtra">Maharashtra</option>
-                </select>
-            </div>
-
-            <div class="form-row">
-                <label for="zipCode">Zip Code:</label>
-                <input type="text" name="zipCode" placeholder="Optional">
-            </div>
-
-            <div class="form-row">
-                <label for="phone">Phone:</label>
-                <input type="tel" name="phone" pattern="[\d]{10}" title="No spaces or dashes" class="phone-margin">
-                <select name="ptype" id="ptype">
-                    <option value="mobile">Mobile</option>
-                    <option value="telephone">Telephone</option>
-                </select>
-            </div>
-
-            <div class="button-container">
-                <button type="submit" value="Submit" onclick="validateForm()">Submit</button>
-                <button type="reset" value="Reset">Reset</button>
-            </div>
+            <fieldset>
+                <legend>Contact information</legend>
+                <table>
+                    <tr>
+                        <td><label for="address">Address:</label></td>
+                        <td>
+                            <input type="text" name="address" id="address">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="city">City:</label></td>
+                        <td>
+                            <input type="text" name="city" id="city">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="state">State:</label></td>
+                        <td>
+                            <select name="state">
+                                <option value="">Choose a state</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="zipcode">Zip Code:</label></td>
+                        <td class="flex">
+                            <input type="text" name="zipcode" id="zipcode">
+                            <input type="" placeholder="Optional" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="phone">Phone:</label></td>
+                        <td class="flex">
+                            <input type="tel" name="phone" pattern="[\d]{10}" title="No spaces or dashes"
+                                class="phone-margin" required>
+                            <select name="ptype" id="ptype">
+                                <option value="mobile">Mobile</option>
+                                <option value="telephone">Telephone</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <button type="submit" value="Submit">Submit</button>
+            <button type="reset" value="Reset">Reset</button>
         </form>
     </div>
 
     <script defer>
-        // select with options from 1 to 31
         var daySelect = document.getElementById("day");
         for (var day = 1; day <= 31; day++) {
             var option = document.createElement("option");
@@ -192,7 +179,6 @@
             daySelect.add(option);
         }
 
-        // Year select with options from 1990 to 2024
         var yearSelect = document.getElementById("year");
         for (var year = 1990; year <= 2024; year++) {
             var option = document.createElement("option");
@@ -202,18 +188,18 @@
         }
     </script>
 
-<script>
-    function showTooltip(text) {
-        var tooltip = document.getElementById("tooltip");
-        tooltip.innerHTML = text;
-        tooltip.style.display = "block";
-    }
+    <script>
+        function showTooltip(text) {
+            var tooltip = document.getElementById("tooltip");
+            tooltip.innerHTML = text;
+            tooltip.style.display = "block";
+        }
 
-    function hideTooltip() {
-        var tooltip = document.getElementById("tooltip");
-        tooltip.style.display = "none";
-    }
-</script>
+        function hideTooltip() {
+            var tooltip = document.getElementById("tooltip");
+            tooltip.style.display = "none";
+        }
+    </script>
 </body>
 
 </html>
