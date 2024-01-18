@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <title>HTML Practice 7</title>
+    <script>
+        function validateForm() {
+            var firstName = document.forms["registrationForm"]["firstName"].value;
+            var lastName = document.forms["registrationForm"]["lastName"].value;
+            var email = document.forms["registrationForm"]["email"].value;
+            var emailConfirm = document.forms["registrationForm"]["emailConfirm"].value;
+            var password = document.forms["registrationForm"]["password"].value;
+            var passwordConfirm = document.forms["registrationForm"]["passwordConfirm"].value;
+            var phone = document.forms["registrationForm"]["phone"].value;
+            var day = document.forms["registrationForm"]["day"].value;
+            var month = document.forms["registrationForm"]["month"].value;
+            var year = document.forms["registrationForm"]["year"].value;
+
+            if (firstName === "" || day === "" || month === "" || year === "" || email === "" || password === "" || phone === "") {
+                alert("Please fill out all required fields.");
+                return false;
+            }
+
+            if (email !== emailConfirm) {
+                alert("Emails do not match.");
+                return false;
+            }
+
+            if (password !== passwordConfirm) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            return true;
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <form name="registrationForm" action="information.php" onsubmit="return validateForm()" method="post">
+            <h3>Personal Information</h3>
+
+            <div class="form-row">
+                <label for="firstName">First name:</label>
+                <input type="text" id="fname" name="firstName">
+            </div>
+
+            <div class="form-row">
+                <label for="lastName">Last name:</label>
+                <input type="text" id="lname" name="lastName">
+            </div>
+
+            <div class="form-row">
+                <label for="dob">Date of Birth:</label>
+                <select name="month" id="month" class="dob-margin">
+                    <option value="">Month</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+
+                <select name="day" id="day" class="dob-margin">
+                    <option value="">Day</option>
+                </select>
+
+                <select name="year" id="year" class="dob-margin">
+                    <option value="">Year</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="gender">Gender:</label>
+                <select name="gender">
+                    <option value="">Choose a gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                <span class="help-icon" onmouseover="showTooltip('Your email address will be your username')" onmouseout="hideTooltip()">?</span>
+            </div>
+
+
+            <h3>Account Information</h3>
+
+            <div class="form-row">
+                <label for="email">Email:</label>
+                <input type="email" name="email">
+            </div>
+            <div class="form-row">
+                <span class="help-block">(Your email address will be your username)</span>
+            </div>
+
+            <div class="form-row">
+                <label for="emailConfirm">Re-type Email:</label>
+                <input type="email" name="emailConfirm">
+            </div>
+
+            <div class="form-row">
+                <label for="password">Password:</label>
+                <input type="password" name="password" minlength="8" pattern=".*\d.*"
+                    title="Minimum 8 characters, at least 1 number">
+            </div>
+
+            <div class="form-row">
+                <label for="passwordConfirm">Re-type Password:</label>
+                <input type="password" name="passwordConfirm">
+            </div>
+
+            <div class="form-row">
+                <label for="securityQuestion">Security Question:</label>
+                <select name="securityQuestion">
+                    <option value="">Choose a security question</option>
+                    <option value="First pet name">What is your First pet name?</option>
+                    <option value="FIrst Vehicle">WHat was your First vehicle?</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="securityAnswer">Security Answer:</label>
+                <input type="text" name="securityAnswer">
+            </div>
+
+
+            <h3>Contact Information</h3>
+
+            <div class="form-row">
+                <label for="address">Address:</label>
+                <input type="text" name="address">
+            </div>
+
+            <div class="form-row">
+                <label for="city">City:</label>
+                <input type="text" name="city">
+            </div>
+
+            <div class="form-row">
+                <label for="state">State:</label>
+                <select name="state">
+                    <option value="">Choose a state</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="zipCode">Zip Code:</label>
+                <input type="text" name="zipCode" placeholder="Optional">
+            </div>
+
+            <div class="form-row">
+                <label for="phone">Phone:</label>
+                <input type="tel" name="phone" pattern="[\d]{10}" title="No spaces or dashes" class="phone-margin">
+                <select name="ptype" id="ptype">
+                    <option value="mobile">Mobile</option>
+                    <option value="telephone">Telephone</option>
+                </select>
+            </div>
+
+            <div class="button-container">
+                <button type="submit" value="Submit" onclick="validateForm()">Submit</button>
+                <button type="reset" value="Reset">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <script defer>
+        // select with options from 1 to 31
+        var daySelect = document.getElementById("day");
+        for (var day = 1; day <= 31; day++) {
+            var option = document.createElement("option");
+            option.value = day;
+            option.text = day;
+            daySelect.add(option);
+        }
+
+        // Year select with options from 1990 to 2024
+        var yearSelect = document.getElementById("year");
+        for (var year = 1990; year <= 2024; year++) {
+            var option = document.createElement("option");
+            option.value = year;
+            option.text = year;
+            yearSelect.add(option);
+        }
+    </script>
+
+<script>
+    function showTooltip(text) {
+        var tooltip = document.getElementById("tooltip");
+        tooltip.innerHTML = text;
+        tooltip.style.display = "block";
+    }
+
+    function hideTooltip() {
+        var tooltip = document.getElementById("tooltip");
+        tooltip.style.display = "none";
+    }
+</script>
+</body>
+
+</html>

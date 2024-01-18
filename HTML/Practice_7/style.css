@@ -1,22 +1,40 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
-    padding: 20px;
+    font-size: 14px;
 }
 
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 400px;
+    margin: auto;
     background-color: #f4f4f4;
+    border: 1px solid #ccc;
 }
 
-h2 {
-    color: #333;
-    border-bottom: 1px solid #eaeaea;
-    padding-bottom: 10px;
+.help-icon {
+    font-size: 14px;
+    color: #888;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    display: none;
+    z-index: 1;
+}
+
+h3 {
     width: 100%;
+    margin-left: 10px;
 }
 
 form {
@@ -28,7 +46,20 @@ form {
 .form-row {
     display: flex;
     margin-bottom: 10px;
+    align-items: center;
 }
+
+.dob-margin, .phone-margin {
+    margin-right: 10px;
+}
+
+.help-block {
+    font-size: 12px;
+    color: #888;
+    margin-left: 70px;
+
+}
+
 
 label {
     margin-left: 30px;
@@ -42,14 +73,17 @@ select {
     box-sizing: border-box;
 }
 
-button[type=reset],[type=submit] {
+.button-container {
+}
+
+button[type=reset],
+button[type=submit] {
     padding: 10px 20px;
     border: none;
-    border-radius: 4px;
     background-color: #5cb85c;
     color: white;
     cursor: pointer;
-    margin-right: 10px;
+    margin: 15px
 }
 
 button[type=reset] {
