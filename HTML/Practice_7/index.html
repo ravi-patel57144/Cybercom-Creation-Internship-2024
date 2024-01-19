@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="style.css">
     <title>HTML Practice 7</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 
 <body>
@@ -31,7 +33,7 @@
                     <tr>
                         <td><label for="month">Date of Birth</label></td>
                         <td class="flex">
-                            <select name="month" id="month" class="dob-margin" required>
+                            <select name="month" id="month" required>
                                 <option value="">Month</option>
                                 <option value="1">January</option>
                                 <option value="2">February</option>
@@ -47,27 +49,30 @@
                                 <option value="12">December</option>
                             </select>
 
-                            <select name="day" id="day" class="dob-margin" required>
+                            <select name="day" id="day" required>
                                 <option value="">Day</option>
                             </select>
 
-                            <select name="year" id="year" class="dob-margin" required>
+                            <select name="year" id="year" required>
                                 <option value="">Year</option>
                             </select>
+                            <div class="tooptip">
+                                <i class="fa-solid fa-question" title="Select Birthdate as Month - Day - Year"></i>
+                            </div>
                         </td>
                     </tr>
                     <tr>
                         <td><label for="gender">Gender:</label></td>
-                        <td>
+                        <td class="flex">
                             <select name="gender">
                                 <option value="">Choose a gender</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                                 <option value="Other">Other</option>
                             </select>
-                            <span class="help-icon" onmouseover="showTooltip('Choose a gender')"
-                                onmouseout="hideTooltip()">?</span>
-                            <div id="tooltip" class="tooltip"></div>
+                            <div class="tooptip">
+                                <i class="fa-solid fa-question" title="Please select Gender"></i>
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -80,6 +85,7 @@
                         <td><label for="email">Email:</label></td>
                         <td>
                             <input type="email" name="email" id="email" required>
+                            <span>(Your email will be your username)</span>
                         </td>
                     </tr>
                     <tr>
@@ -93,6 +99,7 @@
                         <td>
                             <input type="password" name="password" minlength="8" pattern=".*\d.*"
                                 title="Minimum 8 characters, at least 1 number" required>
+                            <span>(Min. 8 characters,1 number,case-sensitive)</span>
                         </td>
                     </tr>
                     <tr>
@@ -103,17 +110,23 @@
                     </tr>
                     <tr>
                         <td><label for="securityQuestion">Security Question:</label></td>
-                        <td>
+                        <td class="flex">
                             <select name="securityQuestion">
                                 <option value="">Choose a security question</option>
                                 <option value="First pet name">What is your First pet name?</option>
                                 <option value="FIrst Vehicle">WHat was your First vehicle?</option>
                             </select>
+                            <div class="tooptip">
+                                <i class="fa-solid fa-question"
+                                    title="Security question helps you to recover your account"></i>
+                            </div>
                         </td>
                     </tr>
                     <tr>
                         <td><label for="securityAnswer">Security Answer:</label></td>
-                        <td><input type="text" name="securityAnswer"></td>
+                        <td><input type="text" name="securityAnswer">
+                            <span>(Not case-sensitive)</span>
+                        </td>
                     </tr>
                 </table>
             </fieldset>
@@ -147,20 +160,27 @@
                     </tr>
                     <tr>
                         <td><label for="zipcode">Zip Code:</label></td>
-                        <td class="flex">
+                        <td class="flex" style="width: 50%">
                             <input type="text" name="zipcode" id="zipcode">
-                            <input type="" placeholder="Optional" disabled>
+                            <input type="" placeholder="Optional" disabled style="margin-left: 10px;">
                         </td>
                     </tr>
                     <tr>
                         <td><label for="phone">Phone:</label></td>
-                        <td class="flex">
-                            <input type="tel" name="phone" pattern="[\d]{10}" title="No spaces or dashes"
-                                class="phone-margin" required>
-                            <select name="ptype" id="ptype">
-                                <option value="mobile">Mobile</option>
-                                <option value="telephone">Telephone</option>
-                            </select>
+                        <td>
+                            <div class="flex">
+                                <input type="tel" name="phone" pattern="[\d]{10}" title="No spaces or dashes"
+                                    class="phone-margin" required>
+                                <div class="tooptip">
+                                    <i class="fa-solid fa-question"
+                                        title="Your Phone number will be used for further communications."></i>
+                                </div>
+                                <select name="ptype" id="ptype">
+                                    <option value="mobile">Mobile</option>
+                                    <option value="telephone">Telephone</option>
+                                </select>
+                            </div>
+                            <span>No space or dashes</span>
                         </td>
                     </tr>
                 </table>

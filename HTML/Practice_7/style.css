@@ -1,37 +1,45 @@
-* {
+body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
   }
+
   .container {
-    margin-left: 35%;
     margin-top: 50px;
-    margin-bottom: 50px;
-    max-width: 500px;
-    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
   form {
     padding: 10px;
     background-color: #eeeeee;
+    border: 1px solid black;
   }
+
   fieldset {
     border: none;
     padding: 10px 0;
   }
+
   legend {
     font-weight: bold;
   }
+
   input,
   select {
     width: 100%;
   }
+
   td {
     text-align: end;
     padding: 10px;
   }
+
   td:nth-child(1) {
     width: 140px;
   }
+
   td:nth-child(2) {
     text-align: start;
     width: 300px;
@@ -39,7 +47,8 @@
   
   button[type=reset],
   button[type=submit] {
-      padding: 10px 20px;
+      padding: 5px 20px;
+      width: max-content;
       border: none;
       background-color: #5cb85c;
       color: white;
@@ -57,20 +66,28 @@
   }
   .flex {
     display: flex;
+    justify-content: space-between;
   }
-
-.help-icon {
+  input[type="tel"] {
+    width: 50%;
+  }
+  .tooptip {
+    border-radius: 100%;
+    background-color: rgb(15, 181, 231);
+    color: white;
+    font-size: 10px;
+    height: 20px;
+    width: 20px;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  span {
     font-size: 14px;
-    color: #888;
-    margin-left: 5px;
-    cursor: pointer;
-}
-
-.tooltip {
-    position: absolute;
-    background-color: #333;
-    color: #fff;
-    padding: 5px;
-    display: none;
-    z-index: 1;
-}
+  }
+  #day,
+  #year {
+    width: 30%;
+    margin-left: 10px;
+  }

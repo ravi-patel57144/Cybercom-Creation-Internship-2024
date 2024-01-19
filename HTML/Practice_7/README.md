@@ -11,6 +11,6 @@ Instrucions:
 
 ### Output - [Click to visit Project](https://ravi-patel57144.github.io/Cybercom/HTML/Practice_7)
 
-![Output1](image-2.png)
+![Output1](image-3.png)
 
 ![Output2](image-1.png)
