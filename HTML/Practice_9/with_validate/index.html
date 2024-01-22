@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking Form validation using jQuery Validate</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="input-container">
+        <form method="post" action="" name="flightBookingValidation" id="flightBookingValidation">
+            <h3>Flight Ticket Booking</h3>
+            <div class="input-row"><input type="text" name="txtFrom" placeholder="From"></div>
+            <div class="input-row"><input type="text" name="txtTo" placeholder="To"></div>
+            <div class="input-row">
+                <input type="text" name="dtDeparture" placeholder="Departure Date" onfocus="(this.type='date')"
+                    onblur="(this.type='text')">
+            </div>
+            <div class="input-row"><input type="text" name="txtFirstName" placeholder="Enter your First Name"></div>
+            <div class="input-row"><input type="text" name="txtLastName" placeholder="Enter your Last Name"></div>
+            <div class="input-row">
+                <select name="sltGender" id="gender">
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="input-row"><input type="text" name="txtMobile" placeholder="Enter your Mobile number"></div>
+            <div class="input-row"><input type="email" name="txtEmail" placeholder="Enter your Email id"></div>
+            <div class="text-center"><input type="submit" value="Submit"></div>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
