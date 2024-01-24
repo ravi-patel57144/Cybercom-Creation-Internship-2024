@@ -26,3 +26,11 @@ Started working - 16.01.2024
 
 
 ### Javascrpit
+
+| Sr No. | Title          | Description                                 | Assigned On | Current Status | Completion Date | Repo Link                                              | Project Link                                                |
+| ------ | -------------- | ------------------------------------------- | ------------ | --------------- | ---------------- | ------------------------------------------------------ | ----------------------------------------------------------- |
+| 1      | Practice1.1      | Change Text on Button Click             | 24.01.2024   | Completed      | 24.01.2024       | [Visit](https://github.com/ravi-patel57144/Cybercom/tree/main/Javascript/Practice_1/Practice_1.1)          | [Visit](https://ravi-patel57144.github.io/Cybercom/Javascript/Practice_1/Practice_1.1)       |
+| 1      | Practice1.2      | Add or Remove Items from List           | 24.01.2024   | Completed      | 24.01.2024       | [Visit](https://github.com/ravi-patel57144/Cybercom/tree/main/Javascript/Practice_1/Practice_1.2)          | [Visit](https://ravi-patel57144.github.io/Cybercom/Javascript/Practice_1/Practice_1.2)       |
+| 1      | Practice1.3      | Change Text of Different Paragraphs     | 24.01.2024   | Completed      | 24.01.2024       | [Visit](https://github.com/ravi-patel57144/Cybercom/tree/main/Javascript/Practice_1/Practice_1.3)          | [Visit](https://ravi-patel57144.github.io/Cybercom/Javascript/Practice_1/Practice_1.3)       |
+| 1      | Practice1.4      | Form Validation          | 24.01.2024   | Completed      | 24.01.2024       | [Visit](https://github.com/ravi-patel57144/Cybercom/tree/main/Javascript/Practice_1/Practice_1.4)          | [Visit](https://ravi-patel57144.github.io/Cybercom/Javascript/Practice_1/Practice_1.4)       |
+| 1      | Practice1.5      | Change Image Source                     | 24.01.2024   | Completed      | 24.01.2024       | [Visit](https://github.com/ravi-patel57144/Cybercom/tree/main/Javascript/Practice_1/Practice_1.5)          | [Visit](https://ravi-patel57144.github.io/Cybercom/Javascript/Practice_1/Practice_1.5)       |
