@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Medical History Form</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <section class="section-container">
+        <form id="patientHistoryForm">
+            <h1>General Patient Information</h1>
+            <hr>
+
+            <div class="main-container">
+                <div class="input-container">
+                    <label for="patientGender">Patient Gender<span>&nbsp;*</span></label>
+                    <select name="selectPatientGender" id="selectPatientGender">
+                        <option value="" disabled selected>Please Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+
+                <div class="input-container">
+                    <label for="patientName">Patient Name<span>&nbsp;*</span></label>
+                    <div class="input-container-data">
+                        <div>
+                            <input type="text" id="txtFirstName" name="txtFirstName">
+                            <br><help-text>First Name</help-text>
+                        </div>
+                        <div>
+                            <input type="text" id="txtLastName" name="txtLastName">
+                            <br><help-text>Last Name</help-text>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <label for="patientBirthDate">Patient Birth Date<span>&nbsp;*</span></label>
+                    <div class="input-container-data">
+
+                        <div>
+                            <select name="patientBirthdayMonth" id="patientBirthdayMonth">
+                                <option value="" disabled selected>
+                                    Please Select a month
+                                </option>
+                            </select>
+
+                            <br><help-text>Month</help-text>
+                        </div>
+                        <div>
+                            <select name="patientBirthdayDay" id="patientBirthdayDay">
+                                <option value="" disabled selected>
+                                    Please Select a day
+                                </option>
+                            </select>
+
+                            <br><help-text>Day</help-text>
+                        </div>
+                        <div>
+                            <select name="patientBirthdayYear" id="patientBirthdayYear">
+                                <option value="" disabled selected>
+                                    Please Select a year
+                                </option>
+                            </select>
+
+                            <br><help-text>Year</help-text>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <label for="patientHeight">Patient Height (cm's)<span>&nbsp;*</span></label>
+                    <input type="number" id="numPatientHeight" name="numPatientHeight" placeholder="ex: 176">
+                </div>
+
+                <div class="input-container">
+                    <label for="patientWeight">Patient Weight (kg's)<span>&nbsp;*</span></label>
+                    <input type="number" id="numPatientWeight" name="numPatientWeight" placeholder="ex: 70">
+                </div>
+
+                <div class="input-container">
+                    <label for="patientEmail">Patient E-Mail<span>&nbsp;*</span></label>
+                    <input type="email" id="emailPatientEmail" name="emailPatientEmail"
+                        placeholder="ex: myname@example.com">
+                    <help-text>example@example.com</help-text>
+                </div>
+
+                <div class="input-container">
+                    <label for="reasonForSeeing">Reason for seeing the doctor:<span>&nbsp;*</span></label>
+                    <input type="text" id="txtreasonForSeeing" name="txtreasonForSeeing">
+                </div>
+
+                <div class="">
+                    <h3>Patient Medical History</h3>
+                    <hr>
+                </div>
+
+                <div class="input-container">
+                    <label for="drugAllergies">Please list any drug allergies</label>
+                    <textarea name="txtDrugAllergies" id="txtDrugAllergies" cols="30" rows="10"></textarea>
+                </div>
+
+                <div>
+                    <label for="haveYouEverHad">Have you ever had (please check all that apply)</label>
+                    <div id="chkbxHaveYouEverHad"></div>
+                </div>
+
+                <div class="input-container">
+                    <label for="illnesses">Other illnesses</label>
+                    <input type="text" id="txtIllnesses" name="txtIllnesses">
+                </div>
+
+                <div class="input-container">
+                    <label for="operations">Please list any Operations and Dates of Each</label>
+                    <textarea name="txtOperations" id="txtOperations" cols="30" rows="10"></textarea>
+                </div>
+
+                <div class="input-container">
+                    <label for="currentMedications">Please list your Current Medications
+                    </label>
+                    <textarea name="txtCurrentMedications" id="txtCurrentMedications" cols="30" rows="10"></textarea>
+                </div>
+
+                <div>
+                    <h3>Healthy & Unhealthy Habits</h3>
+                    <hr>
+                </div>
+
+                <div>
+                    <label for="Exercise">Exercise</label>
+                    <div id="rdExercise"></div>
+                </div>
+
+                <div>
+                    <label for="eatingDiet">Eating following a diet </label>
+                    <div id="rdEatingDiet"></div>
+                </div>
+
+                <div>
+                    <label for="alcoholConsumption">Alcohol Consumption </label>
+                    <div id="rdAlcoholConsumptions"></div>
+                </div>
+
+                <div>
+                    <label for="caffeineConsumption">Caffeine Consumption </label>
+                    <div id="rdCaffeineConsumption"></div>
+                </div>
+
+                <div>
+                    <label for="smoke">Do you smoke?</label>
+                    <div id="rdSmoke"></div>
+                </div>
+
+                <div class="input-container">
+                    <label for="medicalHistory">Include other comments regarding your Medical History</label>
+                    <textarea name="txtMedicalHistory" id="txtMedicalHistory" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+
+            <hr>
+            <div class="submitButton">
+                <button type="submit" id="submit" name="submit">Submit</button>
+            </div>
+        </form>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="assets/js/app.js"></script>
+
+    <script>
+        // Generate Birthdate 
+        const patientBirthdayMonthSelect = document.getElementById("patientBirthdayMonth");
+        patientBirthdayMonthSelect.innerHTML = `<option value="" disabled selected>Please Select a month</option>`;
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        for (let i = 1; i <= 12; i++) {
+            patientBirthdayMonthSelect.innerHTML += `<option value="${i.toString().padStart(2, '0')}">${monthNames[i - 1]}</option>`;
+        }
+    
+        const patientBirthdayDaySelect = document.getElementById("patientBirthdayDay");
+        patientBirthdayDaySelect.innerHTML = `<option value="" disabled selected>Please Select a day</option>`;
+        for (let i = 1; i <= 31; i++) {
+            patientBirthdayDaySelect.innerHTML += `<option value="${i}">${i}</option>`;
+        }
+    
+        const patientBirthdayYearSelect = document.getElementById("patientBirthdayYear");
+        patientBirthdayYearSelect.innerHTML = `<option value="" disabled selected>Please Select a year</option>`;
+        for (let i = 2024; i >= 1920; i--) {
+            patientBirthdayYearSelect.innerHTML += `<option value="${i}">${i}</option>`;
+        }
+    </script>
+    
+</body>
+
+</html>

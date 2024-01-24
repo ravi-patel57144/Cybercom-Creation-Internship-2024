@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+  .section-container {
+    background-color: #f3f3fe;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  form {
+    width: 900px;
+    background-color: #ffffff;
+  }
+  
+  h1 {
+    padding: 40px 50px;
+  }
+  
+  hr {
+    border: 1px solid gainsboro;
+    margin-bottom: 30px;
+  }
+  
+  .main-container {
+    padding: 0px 50px;
+  }
+  
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .input-container-data {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+  .input-container-data div {
+    width: 100%;
+  }
+  
+  #txtFirstName,
+  #txtLastName {
+    width: 100%;
+    padding: 10px 0px;
+  }
+  
+  help-text {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 100;
+    color: gray;
+    margin-left: 5px;
+  }
+  
+  label {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  label span {
+    color: red;
+  }
+  
+  h3 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  
+  select, textarea, input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+  textarea {
+    resize: none;
+  }
+  
+
+  #selectPatientGender,
+  #numPatientHeight,
+  #numPatientWeight,
+  #emailPatientEmail,
+  #txtreasonForSeeing,
+  #txtIllnesses {
+      width: 50%;
+  }
+  
+  #chkbxHaveYouEverHad,
+  #rdExercise,
+  #rdEatingDiet,
+  #rdAlcoholConsumptions,
+  #rdCaffeineConsumption,
+  #rdSmoke {
+      margin-top: 10px;
+      margin-bottom: 30px;
+  }
+  
+  #chkbxHaveYouEverHad div,
+  #rdExercise div,
+  #rdEatingDiet div,
+  #rdAlcoholConsumptions div,
+  #rdCaffeineConsumption div,
+  #rdSmoke div {
+      display: flex;
+  }
+  
+  #chkbxHaveYouEverHad div input,
+  #rdExercise div input,
+  #rdEatingDiet div input,
+  #rdAlcoholConsumptions div input,
+  #rdCaffeineConsumption div input,
+  #rdSmoke div input {
+      width: 18px;
+      height: 18px;
+  }
+  
+  #chkbxHaveYouEverHad div label,
+  #rdExercise div label,
+  #rdEatingDiet div label,
+  #rdAlcoholConsumptions div label,
+  #rdCaffeineConsumption div label,
+  #rdSmoke div label {
+      padding-left: 10px;
+  }
+  
+  button {
+    margin: 20px 50px;
+  }
+  button {
+    padding: 10px 60px;
+    color: white;
+    background-color: #18bd5b;
+    border: none;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    padding: 10px 60px;
+    color: white;
+    background-color: #226d40;
+    border: none;
+    border-radius: 5px;
+  }
