@@ -3,6 +3,11 @@
 
 Started working - 16.01.2024
 
+## Table of Contents
+- [HTML](#html)
+- [Javascript](#javascript)
+- [Mini Projects](#mini-projects)
+
 
 
 ## Here you can find a comprehensive overview of my internship work:
@@ -39,3 +44,10 @@ Started working - 16.01.2024
 | 8      | Practice1.2 3      | Objects - Loop array Object                   | 24.01.2024   | Completed      | 25.01.2024       | [View](https://github.com/ravi-patel57144/Cybercom/tree/main/Javascript/Practice_1.2/3_loop_array_info.js)          |       |
 | 9      | Practice1.2 4      | Objects - Extract object Property            | 24.01.2024   | Completed      | 25.01.2024       | [View](https://github.com/ravi-patel57144/Cybercom/tree/main/Javascript/Practice_1.2/4_extract_obj_property.js)          |       |
 | 10      | Practice1.2 5      | Objects - Combine object                     | 24.01.2024   | Completed      | 25.01.2024       | [View](https://github.com/ravi-patel57144/Cybercom/tree/main/Javascript/Practice_1.2/5_combined_obj.js)          |       |
+
+
+### Mini Projects
+
+| Sr No. | Title          | Description                                 | Assigned On | Current Status | Completion Date | Repo Link                                              | Project Link                                                |
+| ------ | -------------- | ------------------------------------------- | ------------ | --------------- | ---------------- | ------------------------------------------------------ | ----------------------------------------------------------- |
+| 1      | BMI Calculator | BMI Calculator by using HTML, CSS, JS | 25.01.2024   | Completed      | 25.01.2024       | [View](https://github.com/ravi-patel57144/Cybercom/tree/main/BMI_Calculator)          | [Visit](https://ravi-patel57144.github.io/Cybercom/BMI_Calculator)       |

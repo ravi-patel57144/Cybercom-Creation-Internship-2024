@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 10% auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+button:not([type="reset"]) {
+    background-color: #4caf50;
+}
+
+button[type="reset"] {
+    background-color: #af844c;
+}
+
+#id_resultContainer {
+    display: none;
+    border-top: 2px solid #ccc;
+    padding-top: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+#bmiResult {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+#bmiCategory {
+    font-weight: bold;
+}
