@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex classList</title>
+</head>
+<body>
+    <div id="id_element" class="originalClass">Element with Class</div>
+    <button onclick="modifyClass()">Modify class</button>
+    <script>
+        function modifyClass() {
+            let element = document.getElementById('id_element');
+            element.classList.add('newClass');
+            element.classList.remove('originalClass');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex createTextNode</title>
+</head>
+
+<body>
+    <div id="id_element">Hellow,</div>
+    <button onclick="createText()">Create Text Node</button>
+    <script>
+        function createText() {
+            var parentElement = document.getElementById('id_element');
+            var textNode = document.createTextNode(' Hii');
+            parentElement.appendChild(textNode);
+        }
+
+    </script>
+</body>
+
+</html>

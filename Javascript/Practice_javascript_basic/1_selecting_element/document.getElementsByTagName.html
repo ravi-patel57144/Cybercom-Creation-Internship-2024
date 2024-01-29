@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex getElementsByTagName()
+    </title>
+
+    <style>
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Hello Ravi!</p>
+    <p>Hello Bunny!</p>
+
+    <button onclick="selectTag()">Get Element</button>
+
+    <script>
+        function selectTag() {
+            let element = document.getElementsByTagName('p');
+            for (let i = 0; i < element.length; i++) {
+                element[i].innerHTML = 'Selected by tag name.';
+            }
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex removeChild</title>
+</head>
+
+<body>
+    <div id="id_parent">
+        Parent Element
+        <p id="id_child">Child Element</p>
+    </div>
+    <button onclick="removeChildElement()">Remove Child Element</button>
+    <script>
+        function removeChildElement() {
+            var parentElement = document.getElementById('id_parent');
+            var childElement = document.getElementById('id_child');
+            parentElement.removeChild(childElement);
+        }
+
+    </script>
+</body>
+
+</html>

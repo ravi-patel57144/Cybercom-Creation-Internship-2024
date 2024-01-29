@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex replaceChild</title>
+</head>
+
+<body>
+    <div id="id_parent">
+        Parent Element
+        <p id="id_old">Old Child</p>
+    </div>
+    <button onclick="replaceChildElement()">Replace Child Element</button>
+    <script>
+        function replaceChildElement() {
+            var parentElement = document.getElementById('id_parent');
+            var oldElement = document.getElementById('id_old');
+            var newElement = document.createElement('p');
+            newElement.textContent = 'New Child';
+            parentElement.replaceChild(newElement, oldElement);
+        }
+
+    </script>
+</body>
+
+</html>

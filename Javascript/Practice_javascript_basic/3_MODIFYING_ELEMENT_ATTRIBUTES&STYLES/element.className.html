@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex className</title>
+</head>
+<body>
+    <div id="id_element" class="originalClass">Element with Class</div>
+    <button onclick="modifyClassName()">Modify Class Name</button>
+    <script>
+        function modifyClassName() {
+            var element = document.getElementById('id_element');
+            element.className = 'newClass';
+        }
+    </script>
+</body>
+</html>

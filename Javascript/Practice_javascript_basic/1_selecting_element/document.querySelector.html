@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex document.querySelector</title>
+
+    <style>
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="class-para">Hello Ravi!</p>
+    <p>Hello Bunny!</p>
+    <p>Hello Cybercom</p>
+
+    <button onclick="selectQuery()">Click</button>
+
+    <script>
+        function selectQuery() {
+
+            let selector = document.querySelector('.class-para');
+
+            selector.innerHTML = 'Selected by querySelector.';
+
+
+        }
+    </script>
+</body>
+
+</html>

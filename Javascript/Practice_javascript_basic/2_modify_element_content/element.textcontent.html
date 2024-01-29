@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textContent Example</title>
+</head>
+
+<body>
+    <div id="Original">Hello Ravi!</div>
+    <button onclick="textCont()">Modify</button>
+
+    <script>
+        function textCont() {
+            let element = document.getElementById('Original');
+            element.textContent = 'Hello Bunny!';
+        }
+
+    </script>
+</body>
+
+</html>

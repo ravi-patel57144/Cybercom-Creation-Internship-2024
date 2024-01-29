@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex element.style</title>
+</head>
+<body>
+    <div id="id_element" style="color: blue;">Hello, How's you doing?</div>
+    <button onclick="modifyStyle()">Modify Style</button>
+    <script>
+        function modifyStyle() {
+            var element = document.getElementById('id_element');
+            element.style.color = 'red';
+            element.style.fontSize = '20px';
+        }
+    </script>
+</body>
+</html>

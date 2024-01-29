@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex getElementsByClassName</title>
+    <style>
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="id_class">How are you?</p>
+    <p class="id_class">Thank you for asking, I'm good.</p>
+
+    <button onclick="applyStyles()">Get Element</button>
+
+    <script>
+        function applyStyles() {
+            const elementsByClass = document.getElementsByClassName('id_class');
+            for (const element of elementsByClass) {
+                console.log(element.textContent);
+            }
+
+        }
+    </script>
+</body>
+
+</html>

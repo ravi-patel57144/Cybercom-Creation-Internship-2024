@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex insertAdjacentHTML</title>
+</head>
+
+<body>
+    <div id="orginal">Hello Ravi!</div>
+    <button onclick="modify()">Modify</button>
+
+    <script>
+        function modify() {
+            var element = document.getElementById('orginal');
+            element.insertAdjacentHTML('afterbegin', 'Hello Bunny!,');
+        }
+    </script>
+</body>
+
+</html>

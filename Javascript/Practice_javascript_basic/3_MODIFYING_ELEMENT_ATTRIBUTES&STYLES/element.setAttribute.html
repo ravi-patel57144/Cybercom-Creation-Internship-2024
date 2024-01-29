@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex setAttribute</title>
+</head>
+<body>
+    <div id="id_element" data-custom="original">Element with Attribute</div>
+    <button onclick="setAttributeValue()">Set Attribute Value</button>
+    <script>
+        function setAttributeValue() {
+            var element = document.getElementById('id_element');
+            var newValue = prompt('Enter new value for the attribute:');
+            element.setAttribute('data-custom', newValue);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex createElement</title>
+</head>
+
+<body>
+    <div id="id_element">Parent Element</div>
+    <button onclick="createNewElement()">Create New Element</button>
+    <Script>
+        function createNewElement() {
+            var parentElement = document.getElementById('id_element');
+            var newElement = document.createElement('p');
+            newElement.textContent = 'New Element created.';
+            alert('New Element created! Check the console for details.');
+            console.log(newElement);
+        }
+
+    </Script>
+</body>
+
+</html>
