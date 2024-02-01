@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="side-nav">
+        <div class="user-name d-flex">
+            <p>Hello, </p>
+            <p id="id_admin_name"></p>
+        </div>
+        <ul>
+            <a href="dashboard.html"><li>Dashboard</li></a>
+            <a href="user.html"><li>Users</li></a>
+            <a href="userSession.html"><li>Login Session</li></a>
+            <a href=""><li>Logout</li></a>
+        </ul>
+    </div>
+    <div class="container mt-3">
+        <h4 class="mb-3">Add User</h4>
+        <form name="userAddForm" id="id_userAddForm" method="post" action="">
+            <div class="d-flex m-3">
+                <input type="text" class="form-control" id="id_name" placeholder="Name" name="txtName">
+                <input type="email" class="form-control" id="id_email" placeholder="Email" name="txtEmail">
+                <input type="password" class="form-control" id="id_password" placeholder="Password" name="txtPassword">
+                <input type="date" class="form-control" id="id_birthDate" name="dtBirthDate">
+            </div>
+            <button type="submit" class="w-30 mb-3 d-flex">Add User</button>
+        </form>
+
+        <div class="user-list">
+            <h4 class="mb-3">Users List</h4>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Password</th>
+                        <th scope="col">Birthdate</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="id_userList">
+                    <tr>
+                        <td colspan="6" class="text-center">No User Found</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="assets/js/app.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var adminData = JSON.parse(localStorage.getItem("admins")) || [];
+            var adminName = adminData[0].name;
+            $("#id_admin_name").text(adminName);
+        });
+    </script>
+</body>
+
+</html>

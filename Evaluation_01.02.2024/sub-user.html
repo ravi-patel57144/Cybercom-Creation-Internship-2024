@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sub Users</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="side-nav">
+        <div class="user-name d-flex">
+            <p>Hello, </p>
+            <p id="id_admin_name"></p>
+        </div>
+        <ul>
+            <a href="dashboard.html"><li>Dashboard</li></a>
+            <a href=""><li>Logout</li></a>
+        </ul>
+    </div>
+
+    <div class="container mt-3">
+            <h4 class="mb-3 text-center">Welcome to Cybercom Creation</h4>
+
+            <h2 class="text-center">Happy Birthday !</h2>
+
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="assets/js/app.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var adminData = JSON.parse(localStorage.getItem("admins")) || [];
+            var adminName = adminData[0].name;
+            $("#id_admin_name").text(adminName);
+        });
+    </script>
+</body>
+
+</html>

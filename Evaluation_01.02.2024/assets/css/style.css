@@ -1,0 +1,99 @@
+body {
+    font-family: arial;
+    font-size: 16px;
+    margin: 0;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    width: 600px;
+    background-color: #fff2cc;
+    padding: 30px;
+    border: 2px solid #000;
+}
+
+.login-container, input[type="email"], input[type="password"]{
+    border: 1px solid #000;
+}
+
+.login-container button {
+    background-color: #ff9900;
+    height: 35px;
+    color: #fff;
+}
+
+.registration-container {
+    width: 300px;
+    padding: 30px;
+    border: 2px solid #000;   
+}
+
+.registration-container, input[type="email"], input[type="password"], input[type="text"] {
+    border: 1px solid #000;
+}
+
+.registration-container select, input[type="email"], input[type="checkbox"]{
+    border: 1px solid #000;
+}
+
+.registration-container button {
+    background-color: #ff9900;
+    height: 35px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #e9b05c;
+    color: #000;
+}
+
+label.error {
+    font-weight: 400;
+    color: #f00;
+    font-size: 14px;
+}
+
+.side-nav {
+    font-family: arial;
+    width: 200px;
+    background-color: #b45f06;
+    padding: 10px;
+    border: 2px solid #000;
+    margin: left;
+    min-height: 100vh;
+    align-items: start;
+    justify-content: left;
+    color: #fff;
+}
+
+.side-nav li {
+    list-style: none;
+    padding: 5px 0;
+}
+
+.cards {
+    display: flex;
+}
+
+.side-nav ul a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.custom-card {
+    background-color: #e4b014;
+}
+
+h2 {
+    color: darkorange;
+}

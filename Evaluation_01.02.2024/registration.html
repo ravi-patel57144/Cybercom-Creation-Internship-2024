@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="main">
+    <form name="registrationForm" id="id_registrationForm" method="post" action="">
+        <div class="registration-container">
+            <h4 class="mb-5 text-center">Registration</h2>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="id_name" placeholder="Name" name="txtName">
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" id="id_email" placeholder="Email" name="txtEmail">
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" id="id_password" placeholder="Password" name="txtPassword">
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" id="id_c_password" placeholder="Confirm Password" name="txtConfirmPass">
+                </div>
+                <div class="mb-3">
+                    <select class="form-select" id="id_city" name="sltCity">
+                        <option value="">Select City</option>
+                        <option value="Ahmedabad">Ahmedabad</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Pune">Pune</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <select class="form-select" id="id_state" name="sltState">
+                        <option value="">Select State</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                    </select>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="id_checkbox" name="chkTerms">
+                    <label class="form-check-label" for="-d_Terms">Terms & Conditions</label>
+                  </div>
+                  <button type="submit" class="w-100">Register</button>
+    </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
