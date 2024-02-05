@@ -6,13 +6,18 @@
     <title>Ex classList</title>
 </head>
 <body>
-    <div id="id_element" class="originalClass">Element with Class</div>
-    <button onclick="modifyClass()">Modify class</button>
+    <div id="id_element">Element with Class</div>
+    <button onclick="addClass()">Add class</button>
+    <button onclick="removeClass()">Remove class</button>
     <script>
-        function modifyClass() {
+        function addClass() {
             let element = document.getElementById('id_element');
             element.classList.add('newClass');
-            element.classList.remove('originalClass');
+        }
+
+        function removeClass() {
+            let element = document.getElementById('id_element');
+            element.classList.remove('newClass');
         }
     </script>
 </body>

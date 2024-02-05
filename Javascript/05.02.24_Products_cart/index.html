@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Products</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="products-list">
+            <h1>Products List</h1>
+            <button class="cart-btn" onclick="goToCart()">Go to Cart</button>
+            <div id="product-container">
+
+            </div>
+        </div>
+
+        <div id="cart-details" class="page">
+            <h1>Cart Details</h1>
+            <div id="cart-container">
+
+            </div>
+            <div id="total-section">
+                <div class="totals-row">
+                    <p>Total Quantity:</p>
+                    <p id="total-qty">0</p>
+                </div>
+                <div class="totals-row">
+                    <p>Total Price:</p>
+                    <p>₹<span id="total-price">0</span></p>
+                </div>
+                <div class="totals-row">
+                    <p>Tax Percentage:</p>
+                    <p id="tax"></p>
+                </div>
+                <div class="totals-row">
+                    <p>Grand Total:</p>
+                    <p>₹<span id="grand-total">0.00</span></p>
+                </div>
+            </div>
+            <button class="back-btn" onclick="goToProducts()">Go back to Products</button>
+        </div>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
