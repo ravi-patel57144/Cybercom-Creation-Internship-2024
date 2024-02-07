@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="todo-app">
+            <h2>To-Do List <img src="assets/img/icon.png" alt="to-do icon"></h2>
+            <div class="row">
+                <input type="text" id="input-box" placeholder="Add the Task">
+                <input type="date" id="due-date-input">
+                <select id="priority-select">
+                    <option value="low">Low Priority</option>
+                    <option value="medium">Medium Priority</option>
+                    <option value="high">High Priority</option>
+                </select>
+                <button id="add-task" onclick="addTask()">Add Task</button>
+                <button id="update-task" onclick="updateTask()" style="display: none;">Update Task</button>
+            </div>
+            <div class="row">
+                <label for="filter-select">Filter:</label>
+                <select id="filter-select">
+                    <option value="all">All</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+            <ul id="task-list">
+                
+            </ul>
+        </div>
+    </div>   
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
