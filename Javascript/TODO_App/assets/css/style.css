@@ -14,7 +14,7 @@
 
 .todo-app {
     width: 100%;
-    max-width: 900px;
+    max-width: 700px;
     background: #fff;
     margin: 100px auto 20px;
     padding: 40px 30px 70px;
@@ -35,10 +35,11 @@
 
 .row {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     background: #edeef0;
-    border-radius: 30px;
+    border-radius: 10px;
     padding-left: 20px;
     margin-bottom: 25px;
 }
@@ -56,6 +57,7 @@ input:focus, select:focus {
 }
 
 input[type="date"] {
+    flex: 1;
     border: none;
     outline: none;
     background: transparent;
@@ -76,6 +78,10 @@ button {
     border-radius: 30px;
     background: #002765;
     color: #fff;
+}
+
+.edit-btn {
+    background: #157762;
 }
 
 .edit-button {
