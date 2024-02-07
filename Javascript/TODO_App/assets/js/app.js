@@ -78,6 +78,10 @@ function updateTask(taskIndex) {
     tasks[taskIndex].dueDate = dueDateInput.value;
     tasks[taskIndex].priority = prioritySelect.value;
     renderTasks();
+    taskInput.value = '';
+    dueDateInput.value = '';
+    updateTaskButton.style.display = 'none';
+    addTaskButton.style.display = 'inline-block';
     saveTaskData();
 }
 
@@ -88,7 +92,7 @@ function editTask(taskId) {
     dueDateInput.value = task.dueDate;
     prioritySelect.value = task.priority;
 
-    document.getElementById('update-task').onclick = function() {
+    updateTaskButton.onclick = function() {
         updateTask(taskIndex);
     };
 
