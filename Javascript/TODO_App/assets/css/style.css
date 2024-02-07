@@ -104,7 +104,7 @@ ul li::before {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background-image: url('/TODO_App/assets/img/unchecked.png');
+    background-image: url('/assets/img/unchecked.png');
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -117,7 +117,7 @@ ul li.checked {
 }
 
 ul li.checked::before {
-    background-image: url('/Javascript/TODO_App/assets/img/checked.png');
+    background-image: url('/assets/img/checked.png');
 }
 
 ul li span {
