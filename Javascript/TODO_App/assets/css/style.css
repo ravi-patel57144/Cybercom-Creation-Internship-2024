@@ -44,7 +44,8 @@
     margin-bottom: 25px;
 }
 
-input:not([type="date"]) {
+.row input:not([type="date"]),
+.row select {
     flex: 1;
     border: none;
     outline: none;
@@ -63,11 +64,57 @@ input[type="date"] {
     background: transparent;
 }
 
-select {
+.category-container {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.span-container input[type="button"]{
+    display: inline-block;
+    margin-right: 10px;
+    background-color: #002765;
+    color: white;
     border: none;
-    outline: none;
-    margin: 10px;
-    background: transparent;
+    cursor: pointer;
+}
+
+#category-input {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#add-category {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.categoryList-container {
+    display: inline-flex;
+}
+
+#todo-category {
+    background-color: #002765;
+    color: white;
+    padding: 10px 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-left: 5px;
+}
+
+.categoryList-container input[type="button"] {
+    background-color: #414750;
+    color: white;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 button {
@@ -88,6 +135,12 @@ button {
     flex: 1;
     background: transparent;
     color: #000;
+}
+
+.edit-button:hover {
+    flex: 1;
+    background: grey;
+    color: #fff;
 }
 
 ul li {

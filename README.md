@@ -6,7 +6,7 @@ Started working - 16.01.2024
 ## Table of Contents
 - [HTML](#html)
 - [Javascript](#javascript)
-- [Mini Projects](#mini-projects)
+- [Mini Apps](#mini-apps)
 
 
 
@@ -30,7 +30,7 @@ Started working - 16.01.2024
 
 
 
-### Javascrpit
+### Javascript
 
 | Sr No. | Title          | Description                                 | Assigned On | Current Status | Completion Date | Repo Link                                              | Project Link                                                |
 | ------ | -------------- | ------------------------------------------- | ------------ | --------------- | ---------------- | ------------------------------------------------------ | ----------------------------------------------------------- |
@@ -46,7 +46,7 @@ Started working - 16.01.2024
 | 10      | Practice1.2 5      | Objects - Combine object                     | 24.01.2024   | Completed      | 25.01.2024       | [View](https://github.com/ravi-patel57144/Cybercom/tree/main/Javascript/Practice_1.2/5_combined_obj.js)          |       |
 
 
-### Mini Projects
+### Mini Apps
 
 | Sr No. | Title          | Description                                 | Assigned On | Current Status | Completion Date | Repo Link                                              | Project Link                                                |
 | ------ | -------------- | ------------------------------------------- | ------------ | --------------- | ---------------- | ------------------------------------------------------ | ----------------------------------------------------------- |

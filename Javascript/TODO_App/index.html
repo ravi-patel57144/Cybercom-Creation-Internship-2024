@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do App</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <div class="container">
         <div class="todo-app">
@@ -29,11 +31,24 @@
                     <option value="completed">Completed</option>
                 </select>
             </div>
+            <div class="category">
+                <div class="category-container">
+                    <input type="text" id="category-input" placeholder="Add Category">
+                    <button id="add-category" onclick="addCategory()">Create Category</button>
+                </div>
+                <div class="categoryList-container">
+                    <span id="todo-category">TODO</span>
+                    <input type="button" onclick="addTaskToCategory('TODO')" value="+">
+                </div>
+            </div>
+            
             <ul id="task-list">
-                
+    
             </ul>
         </div>
-    </div>   
+    </div>
+    
     <script src="assets/js/app.js"></script>
 </body>
+
 </html>

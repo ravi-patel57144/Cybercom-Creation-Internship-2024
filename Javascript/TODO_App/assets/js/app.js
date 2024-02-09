@@ -7,9 +7,67 @@ const addTaskButton = document.getElementById('add-task');
 const updateTaskButton = document.getElementById('update-task');
 let tasks = [];
 
+function addCategory() {
+    const categoryInput = document.getElementById('category-input');
+    const category = categoryInput.value.trim();
+    if (category === '') {
+        alert('Please enter a category!');
+        categoryInput.value = '';
+        return;
+    }
+
+    const existingCategories = JSON.parse(localStorage.getItem('categories')) || [];
+    if (existingCategories.includes(category)) {
+        alert('Category already exists!');
+        categoryInput.value = '';
+        return;
+    }
+
+    const categorySpan = document.createElement('span');
+    categorySpan.textContent = category;
+    categorySpan.id = 'todo-category';
+    document.querySelector('.categoryList-container').appendChild(categorySpan);
+
+    const categoryButton = document.createElement('input');
+    categoryButton.type = 'button';
+    categoryButton.value = '+';
+    categoryButton.onclick = function () { addTaskToCategory(category); };
+    document.querySelector('.categoryList-container').appendChild(categoryButton);
+
+    saveCategoryData(category);
+    categoryInput.value = '';
+}
+
+function saveCategoryData(category) {
+    let categories = JSON.parse(localStorage.getItem('categories')) || [];
+    categories.push(category);
+    localStorage.setItem('categories', JSON.stringify(categories));
+}
+
+function renderCategories() {
+    const categoryContainer = document.querySelector('.categoryList-container');
+    categoryContainer.innerHTML = '';
+
+    const categories = JSON.parse(localStorage.getItem('categories')) || [];
+
+    categories.forEach(category => {
+        const categorySpan = document.createElement('span');
+        categorySpan.textContent = category;
+        categorySpan.id = 'todo-category';
+        categoryContainer.appendChild(categorySpan);
+
+        const categoryButton = document.createElement('input');
+        categoryButton.type = 'button';
+        categoryButton.value = '+';
+        categoryButton.onclick = function () { addTaskToCategory(category); };
+        categoryContainer.appendChild(categoryButton);
+    });
+}
+
 function addTask() {
     if (taskInput.value.trim() === '') {
         alert('You must write something!');
+        taskInput.value = '';
         return;
     }
 
@@ -19,7 +77,8 @@ function addTask() {
         dueDate: dueDateInput.value,
         createdOn: new Date(),
         status: 'pending',
-        priority: prioritySelect.value
+        priority: prioritySelect.value,
+        category: 'TODO'
     };
     tasks.push(task);
     renderTasks();
@@ -28,10 +87,39 @@ function addTask() {
     saveTaskData();
 }
 
+function addTaskToCategory(category) {
+    const taskDescription = taskInput.value.trim();
+    if (taskDescription === '') {
+        alert('Please enter a task description!');
+        return;
+    }
+
+    const taskId = Date.now();
+
+    const task = {
+        id: taskId,
+        task: taskDescription,
+        dueDate: dueDateInput.value,
+        createdOn: new Date(),
+        status: 'pending',
+        priority: prioritySelect.value,
+        category: category
+    };
+    tasks.push(task);
+    renderTasks();
+    taskInput.value = '';
+    dueDateInput.value = '';
+    saveTaskData();
+
+}
+
+
 function renderTasks() {
     listContainer.innerHTML = '';
+    const selectedCategory = filterSelect.value;
     tasks.forEach(task => {
-        if (filterSelect.value === 'all' || task.status === filterSelect.value) {
+        if ((selectedCategory === 'all' || task.category === selectedCategory) &&
+            (task.status === filterSelect.value || filterSelect.value === 'all')) {
             const li = document.createElement('li');
             li.textContent = task.task + " - Due: " + task.dueDate + " - Priority: " + task.priority;
             li.dataset.id = task.id;
@@ -57,6 +145,11 @@ function renderTasks() {
     });
 }
 
+filterSelect.addEventListener('change', function () {
+    renderTasks();
+});
+
+
 function getPriorityColor(priority) {
     switch (priority) {
         case 'low':
@@ -67,7 +160,6 @@ function getPriorityColor(priority) {
             return 'red';
     }
 }
-
 
 function updateTask(taskIndex) {
     if (taskInput.value.trim() === '') {
@@ -92,7 +184,7 @@ function editTask(taskId) {
     dueDateInput.value = task.dueDate;
     prioritySelect.value = task.priority;
 
-    updateTaskButton.onclick = function() {
+    updateTaskButton.onclick = function () {
         updateTask(taskIndex);
     };
 
@@ -136,3 +228,4 @@ function showTaskData() {
 }
 
 showTaskData();
+renderCategories();
