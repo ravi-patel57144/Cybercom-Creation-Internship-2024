@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Doctor</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="side-nav">
+        <ul>
+            <h3>Welcome</h3><p id="welcomeMessage">User</p>
+            <a href="#" id="logoutBtn"><li>Logout</li></a>
+        </ul>
+    </div>
+    <div class="dashboard doctor-dashboard">
+        <div class="appointment-list">
+            <h2>Upcoming Appointments</h2>
+            <ul id="upcomingAppointmentsList">
+                
+            </ul>
+        </div>
+        <div class="availability-management">
+            <h2>Availability Management</h2>
+            <p>Your current availability:</p>
+            <ul id="availabilityManagement">
+                
+            </ul>
+            <button>Edit Availability</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="assets/js/dash_doctor.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

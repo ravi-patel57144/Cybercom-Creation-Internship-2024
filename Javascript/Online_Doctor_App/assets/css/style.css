@@ -1,0 +1,173 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    color: #000;
+    min-height: 100lvh;
+    display: flex;
+    background-color: #f5f5f5;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.appointment-booking {
+    margin-bottom: 50px;
+}
+
+h1 {
+    color: #007bff;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.appointment-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.appointment-list li {
+    margin-bottom: 15px;
+}
+
+.availability-management ul {
+    list-style: none;
+    padding: 0;
+}
+
+.availability-management li {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e63946;
+}
+
+form {
+    margin-top: 30px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input[type="date"],
+form input[type="time"],
+form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+}
+
+.patient-dashboard {
+    border: 2px solid #28a745;
+}
+
+.doctor-dashboard {
+    border: 2px solid #007bff;
+}
+
+.side-nav {
+    font-family: Arial, sans-serif;
+    width: 250px;
+    background-color: #007bff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    margin-right: 30px;
+    min-height: 100vh;
+    color: #fff;
+}
+
+.side-nav li {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.side-nav ul a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.custom-card {
+    background-color: #e4b014;
+}
+
+label.error {
+    font-weight: 400;
+    color: #f00;
+    font-size: 14px;
+}
+
+
+.login-container,
+.registration-container {
+    width: 400px;
+    background-color: #fff;
+    padding: 30px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+.login-container h2,
+.registration-container h2 {
+    color: #333;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"],
+.registration-container input[type="email"],
+.registration-container input[type="password"],
+.registration-container input[type="text"],
+.registration-container select,
+.registration-container input[type="checkbox"] {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-container button,
+.registration-container button {
+    background-color: #007bff;
+    height: 40px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.login-container button:hover,
+.registration-container button:hover {
+    background-color: #0056b3;
+}
+
+.form-check-label {
+    font-size: 14px;
+}
