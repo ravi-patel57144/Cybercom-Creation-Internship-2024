@@ -171,3 +171,15 @@ label.error {
 .form-check-label {
     font-size: 14px;
 }
+
+.availability-management {
+    margin: 20px;
+  }
+  
+  .availability-management ul {
+    list-style-type: none;
+  }
+  
+  .slot {
+    margin-bottom: 5px;
+  }

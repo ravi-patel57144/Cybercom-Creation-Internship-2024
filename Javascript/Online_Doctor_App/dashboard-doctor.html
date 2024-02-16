@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,33 +8,103 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="side-nav">
         <ul>
-            <h3>Welcome</h3><p id="welcomeMessage">User</p>
-            <a href="#" id="logoutBtn"><li>Logout</li></a>
+            <h3>Welcome</h3>
+            <p id="welcomeMessage">User</p>
+            <a href="#" id="logoutBtn">
+                <li>Logout</li>
+            </a>
         </ul>
     </div>
     <div class="dashboard doctor-dashboard">
         <div class="appointment-list">
             <h2>Upcoming Appointments</h2>
             <ul id="upcomingAppointmentsList">
-                
+
             </ul>
         </div>
         <div class="availability-management">
             <h2>Availability Management</h2>
-            <p>Your current availability:</p>
+            <p>Your specific availability:</p>
             <ul id="availabilityManagement">
-                
+
             </ul>
-            <button>Edit Availability</button>
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#availabilityModal">Edit
+                Availability</button>
         </div>
+
+        <!-- Availability Modal -->
+        <div class="modal fade" id="availabilityModal" tabindex="-1" role="dialog"
+            aria-labelledby="availabilityModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="availabilityModalLabel">Set Availability</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="availabilityForm">
+                            <div class="form-group">
+                                <label for="specificDate">Select Date:</label>
+                                <input type="date" id="specificDate" class="form-control">
+                                <label for="specificStart" class="mt-2">Start Time</label>
+                                <input type="time" class="form-control mt-2" id="specificStart" value="09:00">
+                                <label for="specificEnd" class="mt-2">End Time</label>
+                                <input type="time" class="form-control mt-2" id="specificEnd" value="18:00">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" id="saveAvailabilityBtn" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="rescheduleModal" tabindex="-1" role="dialog" aria-labelledby="rescheduleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="rescheduleModalLabel">Reschedule Appointment</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="rescheduleDate">Select Date:</label>
+                            <input type="date" id="rescheduleDate" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="newSlotSelect">Select a new slot for the appointment:</label>
+                            <select id="newSlotSelect" class="form-control">
+                                <!-- Slots will be dynamically populated based on the selected date -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="confirmRescheduleBtn" type="button" class="btn btn-primary">Confirm Reschedule</button>
+                    </div>
+                </div>
+            </div>
+        </div>        
+
+
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
     <script src="assets/js/dash_doctor.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
+
 </html>
