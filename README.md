@@ -1,14 +1,15 @@
-# Cybercom Creations internship work
+# 🚀 Cybercom Creations Internship Work 🎨
 
 
-Started working - 16.01.2024
+Started working: January 16, 2024
 
-## Table of Contents
+## 📚 Table of Contents
 - [HTML](#html)
 - [Javascript](#javascript)
 - [Mini Apps](#mini-apps)
+- [Evaluation](#evaluation)
 
-
+---
 
 ## Here you can find a comprehensive overview of my internship work:
 
@@ -28,7 +29,7 @@ Started working - 16.01.2024
 | 10      | Practice9.2      | Flight Booking Form validation w/o jQuery Validate | 22.01.2024   | Completed    | 22.01.2024   | [View](https://github.com/ravi-patel57144/Cybercom/tree/main/HTML/Practice_9/without_validate)                | [Visit](https://ravi-patel57144.github.io/Cybercom/HTML/Practice_9/without_validate)  |
 | 11      | Practice10      | Patient Medical History Form | 23.01.2024   | Completed    | 23.01.2024   | [View](https://github.com/ravi-patel57144/Cybercom/tree/main/HTML/Practice_10)                | [Visit](https://ravi-patel57144.github.io/Cybercom/HTML/Practice_10)  |
 
-
+---
 
 ### Javascript
 
@@ -44,12 +45,22 @@ Started working - 16.01.2024
 | 8      | Practice1.2 3      | Objects - Loop array Object                   | 24.01.2024   | Completed      | 25.01.2024       | [View](https://github.com/ravi-patel57144/Cybercom/tree/main/Javascript/Practice_1.2/3_loop_array_info.js)          |       |
 | 9      | Practice1.2 4      | Objects - Extract object Property            | 24.01.2024   | Completed      | 25.01.2024       | [View](https://github.com/ravi-patel57144/Cybercom/tree/main/Javascript/Practice_1.2/4_extract_obj_property.js)          |       |
 | 10      | Practice1.2 5      | Objects - Combine object                     | 24.01.2024   | Completed      | 25.01.2024       | [View](https://github.com/ravi-patel57144/Cybercom/tree/main/Javascript/Practice_1.2/5_combined_obj.js)          |       |
+| 11      | LocalStorage    | CRUD Operation on LocalStorage                  | 02.02.2024   | Completed      | 02.01.2024       | [View](https://github.com/ravi-patel57144/Cybercom/tree/main/Javascript/Practice_storage)          | [Visit](https://ravi-patel57144.github.io/Cybercom/Javascript/Practice_storage)       |
 
+---
 
 ### Mini Apps
 
 | Sr No. | Title          | Description                                 | Assigned On | Current Status | Completion Date | Repo Link                                              | Project Link                                                |
 | ------ | -------------- | ------------------------------------------- | ------------ | --------------- | ---------------- | ------------------------------------------------------ | ----------------------------------------------------------- |
-| 1      | BMI Calculator | BMI Calculator by using HTML, CSS, JS | 25.01.2024   | Completed      | 25.01.2024       | [View](https://github.com/ravi-patel57144/Cybercom/tree/main/BMI_Calculator)          | [Visit](https://ravi-patel57144.github.io/Cybercom/BMI_Calculator)       |
-| 2      | TODO App | To DO App by using HTML, CSS, JS, LocalStorage | 07.02.2024   | Completed      | 07.02.2024       | [View](https://github.com/ravi-patel57144/Cybercom/tree/main/Javascript/TODO_App)          | [Visit](https://ravi-patel57144.github.io/Cybercom/Javascript/TODO_App)       |
-| 3      | Online Appointment App | Online Appointment App by using HTML, CSS, JS, LocalStorage | 13.02.2024   | In-Progress      | -       | [View](https://github.com/ravi-patel57144/Cybercom/tree/main/Javascript/Online_Doctor_App)          | [Visit](https://ravi-patel57144.github.io/Cybercom/Javascript/Online_Doctor_App)       |
+| 1      | BMI Calculator | BMI Calculator by using HTML, CSS, JS | 25.01.2024   | Completed      | 25.01.2024       | [View](https://github.com/ravi-patel57144/Cybercom/tree/main/Mini_Apps/1_BMI_Calculator)          | [Visit](https://ravi-patel57144.github.io/Cybercom/Mini_Apps/1_BMI_Calculator)       |
+| 2      | TODO App | To DO App by using HTML, CSS, JS, LocalStorage | 07.02.2024   | Completed      | 07.02.2024       | [View](https://github.com/ravi-patel57144/Cybercom/tree/main/Mini_Apps/2_TODO_App)          | [Visit](https://ravi-patel57144.github.io/Cybercom/Mini_Apps/2_TODO_App)       |
+| 3      | Online Appointment App | Online Appointment App by using HTML, CSS, JS, LocalStorage | 13.02.2024   | Completed      | 14.02.2024     | [View](https://github.com/ravi-patel57144/Cybercom/tree/main/Mini_Apps/3_Online_Doctor_App)          | [Visit](https://ravi-patel57144.github.io/Cybercom/Mini_Apps/3_Online_Doctor_App)       |
+
+---
+
+### Evaluation
+
+| Sr No. | Title          | Description                                 | Assigned On | Current Status | Completion Date | Repo Link                                              | Project Link                                                |
+| ------ | -------------- | ------------------------------------------- | ------------ | --------------- | ---------------- | ------------------------------------------------------ | ----------------------------------------------------------- |
+| 1      | 01.02.2024 | Evaluation Task | 01.02.2024   | Completed      | 01.02.2024       | [View](https://github.com/ravi-patel57144/Cybercom/tree/main/Evaluation/01.02.2024)          | [Visit](https://ravi-patel57144.github.io/Cybercom/Evaluation/01.02.2024)       |

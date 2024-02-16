@@ -2,7 +2,7 @@
 
 ## Task: Create a HTML page which contains below form
 
-Instrucions: 
+Instructions: 
 - By clicking on the “Send Now” button, an alert should be displayed with text "Your request has been submitted !"
 
 ![AIM](image.png)

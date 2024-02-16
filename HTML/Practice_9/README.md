@@ -2,7 +2,7 @@
 
 ## Task: Create a Flight Booking Form and validate using jQuery
 
-Instrucions: 
+Instructions: 
 - 
 
 

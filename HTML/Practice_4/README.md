@@ -2,7 +2,7 @@
 
 ## Task: Create a HTML page as per given picture using HTML table tags
 
-Instrucions: 
+Instructions: 
 - 
 
 ![AIM](image.png)

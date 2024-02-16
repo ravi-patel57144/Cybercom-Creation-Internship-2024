@@ -2,7 +2,7 @@
 
 ## Task: Create a HTML page as per below image
 
-Instrucions: 
+Instructions: 
 - You can use properties of CSS as per need.
 - you must have to use external style sheets for this HTML page design.
 

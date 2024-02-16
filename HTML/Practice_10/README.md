@@ -2,7 +2,7 @@
 
 ## Task: Create a Patient Medical History Form and validate using jQuery
 
-Instrucions: 
+Instructions: 
 - Clone this Form https://form.jotform.com/240220778597464
 - Must have to validate the fields
 
