@@ -46,9 +46,9 @@ $(document).ready(function () {
       if (userData) {
         sessionStorage.setItem("loggedInUser", JSON.stringify(userData));
         if (userData.userType === "Doctor") {
-          window.location.href = "/Dashboard-doctor.html";
+          window.location.href = "../dashboard-doctor.html";
         } else {
-          window.location.href = "/Dashboard-patient.html";
+          window.location.href = "../dashboard-patient.html";
         }
       } else {
         alert("User not found or invalid email/password");
