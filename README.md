@@ -46,6 +46,8 @@ Started working: January 16, 2024
 | 9      | Practice1.2 4      | Objects - Extract object Property            | 24.01.2024   | Completed      | 25.01.2024       | [View](https://github.com/ravi-patel57144/Cybercom-Creation-Internship-2024/tree/main/Javascript/Practice_1.2/4_extract_obj_property.js)          |       |
 | 10      | Practice1.2 5      | Objects - Combine object                     | 24.01.2024   | Completed      | 25.01.2024       | [View](https://github.com/ravi-patel57144/Cybercom-Creation-Internship-2024/tree/main/Javascript/Practice_1.2/5_combined_obj.js)          |       |
 | 11      | LocalStorage    | CRUD Operation on LocalStorage                  | 02.02.2024   | Completed      | 02.01.2024       | [View](https://github.com/ravi-patel57144/Cybercom-Creation-Internship-2024/tree/main/Javascript/Practice_storage)          | [Visit](https://ravi-patel57144.github.io/Cybercom-Creation-Internship-2024/Javascript/Practice_storage)       |
+| 12      | API    | Render Data from API                  | 15.02.2024   | Completed      | 15.01.2024       | [View](https://github.com/ravi-patel57144/Cybercom-Creation-Internship-2024/tree/main/Javascript/api_js/Api_practice)          | [Visit](https://ravi-patel57144.github.io/Cybercom-Creation-Internship-2024/Javascript/api_js/Api_practice)       |
+| 13      | API    | 10 Random Images of Cats                  | 16.02.2024   | Completed      | 16.01.2024       | [View](https://github.com/ravi-patel57144/Cybercom-Creation-Internship-2024/tree/main/Javascript/api_js/random_cats)          | [Visit](https://ravi-patel57144.github.io/Cybercom-Creation-Internship-2024/Javascript/api_js/random_cats)       |
 
 ---
 
