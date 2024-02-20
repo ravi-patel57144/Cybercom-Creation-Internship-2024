@@ -93,6 +93,12 @@ document.getElementById('viewSavedImages').addEventListener('click', function ()
         var h2 = document.createElement('h2');
         h2.textContent = 'No images saved!';
         catImagesDiv.appendChild(h2);
+
+        document.getElementById('deleteSelectedImages').classList.remove('d-none');
+        document.getElementById('getCatImages').classList.add('d-none');
+        document.getElementById('saveImages').classList.add('d-none');
+        document.getElementById('viewSavedImages').classList.add('d-none');
+        document.getElementById('backToImages').classList.remove('d-none');
     }
 });
 
@@ -113,8 +119,9 @@ document.getElementById('backToImages').addEventListener('click', function () {
 
 document.getElementById('deleteSelectedImages').addEventListener('click', function () {
     var checkboxes = document.querySelectorAll('.image-checkbox:checked');
+    var savedImages = JSON.parse(localStorage.getItem('catImages')) || [];
+
     if (checkboxes.length > 0) {
-        var savedImages = JSON.parse(localStorage.getItem('catImages')) || [];
         checkboxes.forEach(function (checkbox) {
             var imageSrc = checkbox.nextElementSibling.src;
             var index = savedImages.indexOf(imageSrc);
@@ -125,6 +132,8 @@ document.getElementById('deleteSelectedImages').addEventListener('click', functi
         localStorage.setItem('catImages', JSON.stringify(savedImages));
         alert('Selected images deleted successfully!');
         document.getElementById('viewSavedImages').click();
+    } else if (savedImages.length === 0) {
+        alert('No images saved! Please save some images first.');
     } else {
         alert('Please select at least one image to delete.');
     }
