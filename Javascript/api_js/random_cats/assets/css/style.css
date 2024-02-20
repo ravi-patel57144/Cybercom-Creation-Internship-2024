@@ -31,7 +31,7 @@ h1 {
     border-radius: 15px 15px 0 0;
 }
 
-.image-checkbox {
+.saved-images-container .image-checkbox {
     position: absolute;
     top: 10px;
     left: 30px;
@@ -47,12 +47,12 @@ h1 {
     cursor: pointer;
 }
 
-.image-checkbox:checked {
+.saved-images-container .image-checkbox:checked {
     background-color: #007bff;
     border-color: #007bff;
 }
 
-.image-checkbox:checked::before {
+.saved-images-container .image-checkbox:checked::before {
     content: '\2713';
     font-size: 20px;
     color: white;
