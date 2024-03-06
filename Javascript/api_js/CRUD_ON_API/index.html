@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product List</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+    <h2>Product List</h2>
+    <input type="text" placeholder="Search..." id="search" />
+    <select name="price-filter" id="price-filter">
+        <option value="" disabled selected>Select Price Filter</option>
+        <option value="low-high">Low to High</option>
+        <option value="hight-low">High to Low</option>
+    </select>
+    <select name="rating-filter" id="rating-filter">
+        <option value="" disabled selected>Select Rating Filter</option>
+        <option value="low-high">Low to High</option>
+        <option value="high-low">High to Low</option>
+    </select>
+    <input type="submit" value="Add Product" id="addProduct" />
+
+    <div class="lds-ring" id="loader" style="display: none">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div id="product-container" class="grid-container"></div>
+    <div id="no-records" style="display: none">No Record Found!</div>
+
+    <div id="pagination"></div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <div id="myAddProductModal" class="product-modal">
+        <div class="product-modal-content">
+            <div class="product-modal-header">
+                <h3 id="product-modal-title">Add Product</h3>
+                <div class="close">&times;</div>
+            </div>
+            <div class="product-modal-body" id="product-modal-body">
+                <form id="product-form">
+                    <input type="text" placeholder="title" name="title" id="title" />
+                    <textarea rows="3" cols="20" type="text" placeholder="description" name="description"
+                        id="description"></textarea>
+                    <input type="text" placeholder="price" name="price" id="price" />
+                    <input type="text" placeholder="rating 0-5" name="rating" id="rating" />
+                    <input type="number" placeholder="stock" name="stock" id="stock" />
+                    <input type="text" placeholder="brand" name="brand" id="brand" />
+                    <input type="text" placeholder="category" name="category" id="category" />
+                    <input type="text" placeholder="add online image link" name="thumbnail" id="thumbnail" />
+                    <input type="submit" value="Add Product" id="add-product" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

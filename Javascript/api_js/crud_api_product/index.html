@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product List</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="./index.html" class="active">Product List</a></li>
+      <li><a href="./add/index.html">Add Product</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <div class="options">
+      <input type="text" id="search" placeholder="Search..." />
+
+      <select name="filterCategory" id="filterCategory">
+        <option value="" selected>Select Category</option>
+        <option value="">Loading...</option>
+      </select>
+      <select name="sort" id="sort">
+        <option value="" selected disabled>Apply Order</option>
+        <option value="a-z">A-Z</option>
+        <option value="z-a">Z-A</option>
+      </select>
+      <select name="sortPrice" id="sortPrice">
+        <option value="" selected>Apply Price Sort</option>
+        <option value="low-to-high">Low to High</option>
+        <option value="high-to-low">High to Low</option>
+      </select>
+      <button class="reset" id="reset">Reset</button>
+    </div>
+
+    <div class="lds-ring" id="loading" style="display: none">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div id="product-container" class="grid-container"></div>
+    <div id="pagination-container"></div>
+    <div id="no-records" style="display: none">No Record Found!</div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-body" id="modal-body"></div>
+      </div>
+    </div>
+  </section>
+  <script src="./main.js"></script>
+</body>
+
+</html>
