@@ -1,6 +1,6 @@
-CREATE DATABASE Cybercom_sql2_2;
+CREATE DATABASE Cybercom_sql2_2_C1;
 
-USE Cybercom_sql2_2;
+USE Cybercom_sql2_2_C1;
 
 -- Table for Activity
 CREATE TABLE Activity (
