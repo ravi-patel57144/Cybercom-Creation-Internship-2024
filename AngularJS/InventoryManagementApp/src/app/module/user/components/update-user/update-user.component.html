@@ -1,0 +1,26 @@
+<div class="container mt-4">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="container">
+        <fieldset>
+            <legend>Update User</legend>
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" formControlName="name" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="text" class="form-control" formControlName="email" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="text" class="form-control" formControlName="password" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Avatar</label>
+                <input type="text" class="form-control" formControlName="avatar" />
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">
+                Submit
+            </button>
+        </fieldset>
+    </form>
+</div>

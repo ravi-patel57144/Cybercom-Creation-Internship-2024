@@ -1,0 +1,35 @@
+<div class="container mt-4">
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="container">
+    <fieldset>
+      <legend>Add Product</legend>
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" formControlName="name" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input type="number" class="form-control" formControlName="price" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Description</label>
+        <textarea class="form-control" style="height: 100px" formControlName="description"></textarea>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Select Category</label>
+        <select class="form-select" formControlName="category">
+          <option value="" selected disabled>Select Category</option>
+          <option *ngFor="let category of categories" [value]="category.id">
+            {{ category.name }}
+          </option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Image</label>
+        <input type="text" class="form-control" formControlName="image" />
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="productForm.invalid">
+        Submit
+      </button>
+    </fieldset>
+  </form>
+</div>

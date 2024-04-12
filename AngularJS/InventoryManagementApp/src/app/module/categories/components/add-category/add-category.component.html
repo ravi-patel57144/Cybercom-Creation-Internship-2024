@@ -1,0 +1,19 @@
+<div class="container mt-4">
+
+  <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()" class="container">
+    <fieldset>
+      <legend>Add Category</legend>
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" formControlName="name" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Image</label>
+        <input type="text" class="form-control" formControlName="image" />
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="categoryForm.invalid">
+        Submit
+      </button>
+    </fieldset>
+  </form>
+</div>

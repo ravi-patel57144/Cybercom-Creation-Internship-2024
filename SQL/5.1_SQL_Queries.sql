@@ -193,7 +193,11 @@ HAVING SUM(od.amount) > 100000;
 -- 3.	Write a SQL query to retrieve the names of all customers who have made orders in the "orders" table, along with the total amount they have spent on all orders and the total amount they have spent on orders made in the last 30 days.
 SELECT c.name,
        SUM(o.total_amount) AS total_amount_all_orders,
-       SUM(CASE WHEN o.order_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY) THEN o.total_amount ELSE 0 END) AS total_amount_last_30_days
+       SUM(CASE 
+			WHEN o.order_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY) 
+            THEN o.total_amount 
+            ELSE 0 
+			END) AS total_amount_last_30_days
 FROM customers c
 JOIN orders o ON c.customer_id = o.customer_id
 GROUP BY c.customer_id;
