@@ -1,0 +1,26 @@
+.custom-toolbar {
+  background-color: #1976d2;
+}
+
+.toolbar-button {
+  color: white;
+  margin-right: 10px;
+}
+
+.toolbar-button:hover,
+.toolbar-link:hover {
+  background-color: #bbc4cf;
+}
+
+.logout-button {
+  color: white;
+  background-color: #c62828;
+}
+
+.logout-button:hover {
+  background-color: #b71c1c;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}

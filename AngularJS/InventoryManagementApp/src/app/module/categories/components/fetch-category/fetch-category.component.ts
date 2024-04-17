@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategoryService } from '../../../../core/services/category.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-fetch-category',
@@ -12,8 +13,9 @@ export class FetchCategoryComponent implements OnInit {
 
   constructor(
     private categoryService: CategoryService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private toastr: ToastrService
+  ) { }
 
   ngOnInit(): void {
     this.fetchCategories();
@@ -40,10 +42,12 @@ export class FetchCategoryComponent implements OnInit {
       this.categoryService.deleteCategories(id).subscribe({
         next: (res) => {
           console.log(res);
+          this.toastr.error('Category deleted successfully!')
           this.fetchCategories();
         },
         error: (err) => {
           console.log(err);
+          this.toastr.warning('Something went wrong!')
         },
       });
     }

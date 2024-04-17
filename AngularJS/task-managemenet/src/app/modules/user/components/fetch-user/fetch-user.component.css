@@ -1,0 +1,63 @@
+.user-container {
+  padding: 20px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.add-user-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-top: 20px;
+}
+
+.add-user-section mat-form-field {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.add-user-section button {
+  margin-top: 10px;
+}
+
+.mat-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mat-row,
+.mat-header-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+.mat-cell,
+.mat-header-cell {
+  padding: 12px;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mat-header-cell {
+  font-weight: bold;
+}
+
+.mat-elevation-z8 {
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.button-container {
+  margin-bottom: 35px;
+}

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CategoryService } from '../../../../core/services/category.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-category',
@@ -13,7 +14,8 @@ export class AddCategoryComponent {
   constructor(
     private fb: FormBuilder,
     private categoryService: CategoryService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {
     this.categoryForm = this.fb.group({
       name: ['', Validators.required],
@@ -30,18 +32,20 @@ export class AddCategoryComponent {
 
       this.categoryService.addCategories(newCategory).subscribe({
         next: (res) => {
-          console.log(res);
-          alert('Category added successfully')
-          this.router.navigate(['/categories'])
+          // console.log(res);
+          this.toastr.success('Category added successfully!');
+          this.router.navigate(['/categories']);
         },
         error: (err) => {
-          console.log(err);
+          // console.log(err);
+          this.toastr.warning('Something went wrong!');
         },
       });
 
-      console.log(newCategory);
+      // console.log(newCategory);
     } else {
-      console.log('Form is invalid!');
+      // console.log('Form is invalid!');
+      this.toastr.error('Form is invalid!');
     }
   }
 }

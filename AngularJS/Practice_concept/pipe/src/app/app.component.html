@@ -1,0 +1,39 @@
+<div>
+  <h2>Date Pipe:</h2>
+  <p>Current Date: {{currentDate}} >>>> {{ currentDate | date }}</p>
+
+  <h2>Upper Case Pipe:</h2>
+  <p>hello >>>> {{ 'hello' | uppercase }}</p>
+
+  <h2>Lower Case Pipe:</h2>
+  <p>HELLO >>>> {{ 'HELLO' | lowercase }}</p>
+
+  <h2>Currency Pipe:</h2>
+  <p>Price: {{ price }} >>>> {{ price | currency:'INR':'symbol' }}</p>
+
+  <h2>Decimal Pipe:</h2>
+  <p>Number: {{numberValue}} >>>> {{ numberValue | number:'2.1-2' }}</p>
+
+  <h2>Percent Pipe:</h2>
+  <p>Percentage: {{ percentValue }} >>>> {{ percentValue | percent:'2.2-2' }}</p>
+
+  <h2>JSON Pipe:</h2>
+  <p>Name: {{ objectValue.name }}</p>
+  <p>Age: {{ objectValue.age }}</p>
+  <p>Address:</p>
+  <ul>
+    <li>City: {{ objectValue.address.city }}</li>
+    <li>Country: {{ objectValue.address.country }}</li>
+  </ul>
+  <p>Object to JSON: {{ objectValue | json }}</p>
+
+  <h2>Slice Pipe:</h2>
+  <p>Array Slice:{{ arrayValue }} >>>> {{ arrayValue | slice:0:3 }}</p>
+</div>
+
+
+<div>
+  <h2>Custome Pipe to Calculate Age:</h2>
+  <p>Date of Birth: {{ objectValue.birthDate }}</p>
+  <p>Age: {{ calculateAge(objectValue.birthDate) }}</p>
+</div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class UpdateUserComponent {
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {
     this.userForm = this.fb.group({
       name: ['', Validators.required],
@@ -65,11 +67,12 @@ export class UpdateUserComponent {
       this.authService.updateUser(this.userId, updatedUser).subscribe({
         next: (res: any) => {
           console.log('record updated');
-          alert('User updated successfully!');
+          this.toastr.success('User updated successfully!');
           this.router.navigate(['/user']);
         },
         error: (err) => {
           console.log(err);
+          this.toastr.warning('Something went wrong!');
         },
       });
     }

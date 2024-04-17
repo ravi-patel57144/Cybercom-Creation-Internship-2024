@@ -1,0 +1,12 @@
+<p>
+  <mat-toolbar color="primary" class="custom-toolbar">
+    <button mat-raised-button class="toolbar-button">
+      <a routerLink="/users" class="toolbar-link">Manage Users</a>
+    </button>
+    <button mat-raised-button class="toolbar-button">
+      <a routerLink="/task" class="toolbar-link">Manage Tasks</a>
+    </button>
+    <span class="example-spacer"></span>
+    <button mat-raised-button (click)="logout()" class="logout-button">Logout</button>
+  </mat-toolbar>
+</p>

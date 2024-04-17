@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../../../core/services/product.service';
 import { CategoryService } from '../../../../core/services/category.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-update-product',
@@ -18,7 +19,8 @@ export class UpdateProductComponent implements OnInit {
     private productService: ProductService,
     private categoryService: CategoryService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {
     this.productForm = this.fb.group({
       name: ['', Validators.required],
@@ -82,12 +84,13 @@ export class UpdateProductComponent implements OnInit {
         .subscribe({
           next: (res) => {
             console.log(res);
-            alert('Product updated successfully!')
+            this.toastr.success('Product updated successfully!');
             this.router.navigate(['/']);
 
           },
           error: (err) => {
             console.log(err);
+            this.toastr.warning('Something went wrong!');
           },
         });
 

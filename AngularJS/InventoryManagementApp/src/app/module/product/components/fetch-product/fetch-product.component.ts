@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductService } from '../../../../core/services/product.service';
 import { CategoryService } from '../../../../core/services/category.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-fetch-product',
@@ -24,7 +25,8 @@ export class FetchProductComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private categoryService: CategoryService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -66,10 +68,12 @@ export class FetchProductComponent implements OnInit {
       this.productService.deleteProduct(id).subscribe({
         next: (res) => {
           console.log(res);
+          this.toastr.error('Product deleted successfully!')
           this.fetchProducts();
         },
         error: (err) => {
           console.log(err);
+          this.toastr.warning('Something went wrong!')
         },
       });
     }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
@@ -10,7 +11,11 @@ import { AuthService } from 'src/app/core/services/auth.service';
 export class AddUserComponent {
   userForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private userService: AuthService, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private userService: AuthService,
+    private router: Router,
+    private toastr: ToastrService) {
     this.userForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', Validators.required],
@@ -35,11 +40,12 @@ export class AddUserComponent {
       this.userService.createUser(newUser).subscribe({
         next: (req) => {
           console.log(req);
-          alert('User created successfully!');
+          this.toastr.success('User created successfully!')
           this.router.navigate(['/user/']);
         },
         error: (err) => {
           console.log(err);
+          this.toastr.warning('Something went wrong!')
         },
       });
     }

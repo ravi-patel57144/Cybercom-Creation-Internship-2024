@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../../core/services/auth.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-fetch-user',
@@ -11,7 +12,10 @@ export class FetchUserComponent implements OnInit {
   id: any;
   isLoading: boolean = false;
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.id = JSON.parse(localStorage.getItem('id')!);
@@ -43,10 +47,12 @@ export class FetchUserComponent implements OnInit {
       this.authService.deleteUser(id).subscribe({
         next: (res) => {
           console.log(res);
+          this.toastr.error('User deleted successfully!');
           this.fetchUsers();
         },
         error: (err) => {
           console.log(err);
+          this.toastr.warning('Something went wrong!');
         },
       });
     }
