@@ -10,6 +10,8 @@ export class WishlistComponent {
   userID: number = 0;
   wishlistProduct: any[] = [];
 
+  isLoadingWishlist: boolean = false;
+
   ngOnInit() {
     this.userID = JSON.parse(sessionStorage.getItem('user_id')!);
     this.getWishlistProduct();
@@ -19,13 +21,16 @@ export class WishlistComponent {
     private toast: NgToastService
   ) {}
   getWishlistProduct() {
+    this.isLoadingWishlist = true; // Set loading to true before making the request
     this.wishlistService.getWishlist(this.userID).subscribe({
       next: (res: any) => {
         console.log(res.data);
         this.wishlistProduct = res.data;
+        this.isLoadingWishlist = false; // Set loading to false after receiving the response
       },
       error: (error: any) => {
         console.log(error);
+        this.isLoadingWishlist = false; // Set loading to false in case of error
       },
     });
   }

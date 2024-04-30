@@ -21,6 +21,9 @@ export class CartComponent {
     tax: 0,
     total: 0,
   };
+
+  isLoadingCart: boolean = false;
+
   constructor(
     private cartService: CartService,
     private toast: NgToastService
@@ -31,6 +34,7 @@ export class CartComponent {
   }
 
   getCardProducts() {
+    this.isLoadingCart = true;
     this.cartService.getCart(this.userID).subscribe({
       next: (res: any) => {
         console.log(res);
@@ -41,6 +45,9 @@ export class CartComponent {
       error: (error: any) => {
         console.log(error);
       },
+      complete: () => {
+        this.isLoadingCart = false;
+      }
     });
   }
 
@@ -52,7 +59,7 @@ export class CartComponent {
           this.toast.info({
             detail: 'INFO',
             summary: 'Item Removed From Cart',
-            
+
           });
           this.getCardProducts();
           this.calculateTotal();
@@ -79,7 +86,7 @@ export class CartComponent {
       this.toast.info({
         detail: 'INFO',
         summary: 'Please Wait...',
-    
+
       });
       const newQuantity = productQuantity - 1;
       this.updateCartItem(cartId, productId, newQuantity);

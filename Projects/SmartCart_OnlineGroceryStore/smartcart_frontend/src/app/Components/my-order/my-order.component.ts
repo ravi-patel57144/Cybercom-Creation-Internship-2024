@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { OrderService } from 'src/app/Services/order.service';
+
 @Component({
   selector: 'app-my-order',
   templateUrl: './my-order.component.html',
@@ -8,6 +9,10 @@ import { OrderService } from 'src/app/Services/order.service';
 export class MyOrderComponent {
   orderDetails: any[] = [];
   userID: any = '';
+  isLoadingOrders: boolean = false; // Add loading flag
+
+  constructor(private orderService: OrderService) { }
+
   ngOnInit() {
     this.userID = JSON.parse(sessionStorage.getItem('user_id')!);
     if (this.userID) {
@@ -16,8 +21,9 @@ export class MyOrderComponent {
       console.error('User ID not found.');
     }
   }
-  constructor(private orderService: OrderService) {}
+
   getOrderDetails() {
+    this.isLoadingOrders = true; // Set loading flag to true before fetching
     this.orderService.getOrder().subscribe({
       next: (res: any) => {
         this.orderDetails = this.filterOrder(res.data);
@@ -27,6 +33,9 @@ export class MyOrderComponent {
         console.log(error);
         console.log(error.error.error.message);
       },
+      complete: () => {
+        this.isLoadingOrders = false; // Set loading flag to false after fetching
+      }
     });
   }
 
@@ -36,6 +45,7 @@ export class MyOrderComponent {
       (order: any) => order.attributes.user_details.data.id === this.userID
     );
   }
+
   formatDate(dateStr: string): string {
     const date = new Date(dateStr);
     return `${date.getDate()} ${this.getMonthName(

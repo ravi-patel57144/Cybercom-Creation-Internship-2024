@@ -45,12 +45,13 @@ export class LoginUserComponent {
           );
           if (findRecord) {
             localStorage.setItem('id', JSON.stringify(findRecord.id));
+            localStorage.setItem('role', JSON.stringify(findRecord.role));
             this._snackBar.open('Login Successfully', 'Close', {
               horizontalPosition: this.horizontalPosition,
               verticalPosition: this.verticalPosition,
               duration: this.durationInSeconds * 1000,
             });
-            this.router.navigate(['/users']);
+            this.router.navigate(['/task']);
           } else {
             this._snackBar.open('Invalid username or password', 'Close', {
               horizontalPosition: this.horizontalPosition,

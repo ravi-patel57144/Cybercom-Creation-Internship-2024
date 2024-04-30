@@ -1,0 +1,38 @@
+.task-container {
+  padding: 20px;
+}
+
+.mat-table {
+  width: 100%;
+}
+
+.mat-row,
+.mat-header-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mat-cell,
+.mat-header-cell {
+  flex: 1;
+  padding: 12px;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+}
+
+.button {
+  margin-left: auto;
+  background-color: cadetblue;
+}

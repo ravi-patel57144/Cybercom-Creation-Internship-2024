@@ -1,7 +1,16 @@
+.container-fluid {
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.border {
+  border: 1px solid #000;
+}
+
+.labels {
+  color: #000;
+}
+
 textarea {
   resize: none;
-}
-.editbtn {
-  border-radius: 10px;
-  color: white;
 }

@@ -1,33 +1,25 @@
 <div class="container py-5 h-100">
-  <h1
-    class="mb-5 text-center"
-    style="color: #60ad56"
-    *ngIf="orderDetails.length > 0"
-  >
-    My Orders
-  </h1>
+  <h1 class="mb-5 text-center" style="color: #60ad56" *ngIf="orderDetails.length > 0">My Orders</h1>
+
+  <div class="text-center" *ngIf="isLoadingOrders && orderDetails.length === 0">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <p>Loading...</p>
+  </div>
+
   <div class="row d-flex justify-content-center">
     <!-- display when user has not made any order -->
-    <div class="container-fluid mt-100" *ngIf="orderDetails.length === 0">
+    <div class="container-fluid mt-5" *ngIf="!isLoadingOrders && orderDetails.length === 0">
       <div class="row">
         <div class="col-md-12">
           <div class="card border-0">
             <div class="card-body cart">
               <div class="col-sm-12 empty-cart-cls text-center">
-                <img
-                  src="../../../assets/images/OrderEmpty.jpg"
-                  width="130"
-                  height="130"
-                  class="img-fluid mb-4 mr-3"
-                />
+                <img src="../../../assets/images/OrderEmpty.jpg" width="130" height="130" class="img-fluid mb-4 mr-3" />
                 <h3><strong>NO ORDER FOUND</strong></h3>
                 <h4>Looks like you haven't made your order yet</h4>
-                <a
-                  routerLink="/home"
-                  class="btn btn-primary cart-btn-transform m-3"
-                  data-abc="true"
-                  >Shop Now</a
-                >
+                <a routerLink="/home" class="btn btn-primary cart-btn-transform m-3" data-abc="true">Shop Now</a>
               </div>
             </div>
           </div>
@@ -36,24 +28,19 @@
     </div>
 
     <!-- order details  -->
-    <div
-      class="card card-stepper mb-5 w-75"
-      style="border-radius: 10px"
-      *ngFor="let order of orderDetails"
-    >
+    <div class="card card-stepper mb-5 col-md-8" style="border-radius: 10px;"
+      *ngFor="let order of orderDetails; let i = index">
       <div class="card-body p-4">
         <div class="d-flex justify-content-between align-items-center">
           <p class="text-muted mb-2">
             Order ID :
-            <span class="fw-bold text-body"
-              >#{{ order.attributes.order_id }}</span
-            >
+            <span class="fw-bold text-body">#{{ order.attributes.order_id }}</span>
           </p>
           <p class="text-muted mb-0">
             Placed On :
             <span class="fw-bold text-body">{{
               formatDate(order.attributes.order_date)
-            }}</span>
+              }}</span>
           </p>
         </div>
         <hr class="my-4" />
@@ -70,7 +57,7 @@
               <td width="34%">
                 <span class="font-weight-bold">{{
                   product.attributes.product.data.attributes.product_name
-                }}</span>
+                  }}</span>
               </td>
               <td width="33%">
                 <div class="product-qty">
@@ -81,8 +68,7 @@
                 <div class="text-right">
                   <span class="font-weight-bold">
                     {{ product.attributes.product.data.attributes.price }}
-                    &#8377;</span
-                  >
+                    &#8377;</span>
                 </div>
               </td>
             </tr>
@@ -100,9 +86,7 @@
         <hr class="my-4" />
 
         <!-- order tracking -->
-        <div
-          class="d-flex flex-row justify-content-between align-items-center align-content-center"
-        >
+        <div class="d-flex flex-row justify-content-between align-items-center align-content-center">
           <span class="dot"></span>
           <hr class="flex-fill track-line" />
           <span class="dot"></span>
@@ -121,44 +105,29 @@
         </div>
 
         <div class="d-flex flex-row justify-content-between align-items-center">
-          <div
-            class="d-flex flex-column align-items-start activeStatus"
-            [ngClass]="{
+          <div class="d-flex flex-column align-items-start activeStatus" [ngClass]="{
               activeStatus: order.attributes.order_status === 'Placed,'
-            }"
-          >
+            }">
             <span>Placed</span>
           </div>
-          <div
-            class="d-flex flex-column justify-content-center"
-            [ngClass]="{
+          <div class="d-flex flex-column justify-content-center" [ngClass]="{
               activeStatus: order.attributes.order_status === 'Shipped,'
-            }"
-          >
+            }">
             <span>Shipped</span>
           </div>
-          <div
-            class="d-flex flex-column justify-content-center align-items-center"
-            [ngClass]="{
+          <div class="d-flex flex-column justify-content-center align-items-center" [ngClass]="{
               activeStatus: order.attributes.order_status === 'Dispatched,'
-            }"
-          >
+            }">
             <span>Dispatched</span>
           </div>
-          <div
-            class="d-flex flex-column align-items-center"
-            [ngClass]="{
+          <div class="d-flex flex-column align-items-center" [ngClass]="{
               activeStatus: order.attributes.order_status === 'Out Of Delivery,'
-            }"
-          >
+            }">
             <span>Out for delivery</span>
           </div>
-          <div
-            class="d-flex flex-column align-items-end"
-            [ngClass]="{
+          <div class="d-flex flex-column align-items-end" [ngClass]="{
               activeStatus: order.attributes.order_status === 'Delivered'
-            }"
-          >
+            }">
             <span>Delivered</span>
           </div>
         </div>

@@ -13,19 +13,19 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatOptionModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
+import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
-  declarations: [
-    LoginUserComponent,
-    LoginUserComponent,
-    FetchUserComponent,
-    DialogComponent,
-  ],
+  declarations: [LoginUserComponent, FetchUserComponent, DialogComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
-    ReactiveFormsModule,
     FormsModule,
+    ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
@@ -33,6 +33,10 @@ import { DialogComponent } from './components/dialog/dialog.component';
     MatSnackBarModule,
     MatOptionModule,
     MatDialogModule,
+    MatIconModule,
+    MatCardModule,
+    MatSelectModule,
+    MatProgressSpinnerModule,
   ],
 })
-export class UserModule {}
+export class UserModule { }

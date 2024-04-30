@@ -7,7 +7,7 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrl: './dialog.component.css',
 })
 export class DialogComponent {
-  constructor(public dialogRef: MatDialogRef<DialogComponent>) {}
+  constructor(public dialogRef: MatDialogRef<DialogComponent>) { }
 
   onYesClick(): void {
     this.dialogRef.close('yes');

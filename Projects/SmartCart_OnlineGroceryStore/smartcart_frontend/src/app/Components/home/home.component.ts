@@ -20,6 +20,8 @@ export class HomeComponent {
   paginationData: any = {};
   categories: any[] = [];
   userID: number = 0;
+
+  isLoadingProducts: boolean = false;
   constructor(
     private el: ElementRef,
     private router: Router,
@@ -27,7 +29,7 @@ export class HomeComponent {
     private cartService: CartService,
     private wishlistService: WishlistService,
     private toast: NgToastService
-  ) {}
+  ) { }
 
   ngOnInit() {
     //loading first page of product
@@ -37,6 +39,7 @@ export class HomeComponent {
   }
 
   getProducts(pageNumber: any) {
+    this.isLoadingProducts = true;
     this.showPagination = true;
     // getAllProduct take two arguments pageNnmber and pageSize
     this.productService.getAllProduct(pageNumber, this.pageSize).subscribe({
@@ -52,6 +55,7 @@ export class HomeComponent {
           summary: error.error.error.message,
           sticky: true,
         });
+        this.isLoadingProducts = false;
       },
     });
   }

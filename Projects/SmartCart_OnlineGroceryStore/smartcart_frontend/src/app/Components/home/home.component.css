@@ -1,49 +1,35 @@
-
 .container {
   min-height: 100vh;
 }
+
 .product-container {
-  border: 1px solid white;
-  height: 80%;
   width: 100%;
 }
-a {
-  text-decoration: none;
-}
-img {
-  height: 80%;
-  object-fit: contain;
-}
-img:hover {
-  cursor: pointer;
-}
-.bi {
-  font-size: 1rem;
-  color: white;
-}
-.card {
-  height: 60vh;
-}
+
 .bannerContainer {
-  background-color: #6dbb63;
-  height: 70vh;
+  background-color: #63bb80;
 }
-.bannerContainer img {
-  height: 100%;
+
+@media (min-width: 992px) {
+  .bannerDesc {
+    margin-left: 50px;
+  }
 }
+
 .shopNow {
-  background-color: #4f9346 !important;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
 }
+
 .notFoundImg {
   height: 45vh;
   width: auto;
 }
-a:hover {
-  cursor: pointer;
-}
+
 /* pagination css */
 .page-link {
   border-radius: 100% !important;
-  margin: 10px;
+  margin: 5px;
   color: #60ad56;
 }

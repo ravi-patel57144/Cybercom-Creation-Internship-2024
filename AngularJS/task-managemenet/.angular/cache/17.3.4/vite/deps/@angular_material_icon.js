@@ -1,15 +1,15 @@
 import {
   DomSanitizer
-} from "./chunk-B3DOCZE2.js";
+} from "./chunk-IU2OIUPV.js";
 import {
   HttpClient
-} from "./chunk-SPIMA7TO.js";
+} from "./chunk-Q5EXBSVF.js";
 import {
   MatCommonModule
-} from "./chunk-DSG7U3UZ.js";
+} from "./chunk-TRLSAW3A.js";
 import {
   DOCUMENT
-} from "./chunk-352K6PWA.js";
+} from "./chunk-AUYSY6E4.js";
 import {
   Attribute,
   ChangeDetectionStrategy,
@@ -53,9 +53,10 @@ import {
   ɵɵinjectAttribute,
   ɵɵprojection,
   ɵɵprojectionDef
-} from "./chunk-UJ23WMSQ.js";
+} from "./chunk-Q5I6AMIR.js";
+import "./chunk-J4B6MK7R.js";
 
-// node_modules/@angular/material/fesm2022/icon.mjs
+// ../../../../../node_modules/@angular/material/fesm2022/icon.mjs
 var _c0 = ["*"];
 var policy;
 function getPolicy() {

@@ -1,3 +1,26 @@
-*{
-    margin: 0;
+.footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}
+
+.bannerContainer h1 {
+    font-weight: bold;
+}
+
+.bannerContainer p {
+    font-size: 1.1rem;
+}
+
+.copyright {
+    font-size: 1rem;
+}
+
+.credits {
+    font-size: 0.9rem;
+}
+
+@media (min-width: 992px) {
+    .bannerDesc {
+        margin-top: 70px;
+    }
 }

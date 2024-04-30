@@ -13,4 +13,15 @@ export class ToolbarComponent {
     localStorage.removeItem('id');
     this.router.navigate(['/']);
   }
+
+  role_type() {
+    const id = JSON.parse(localStorage.getItem('id') || "");
+    const role = JSON.parse(localStorage.getItem('role') || "");
+
+    if (id && role === "admin") {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

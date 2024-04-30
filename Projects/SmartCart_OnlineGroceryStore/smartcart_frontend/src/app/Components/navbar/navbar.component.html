@@ -1,65 +1,43 @@
-<nav
-  class="navbar navbar-expand-lg bg-body-tertiary d-flex justify-content-center"
->
-  <div class="container-fluid test">
-    <a class="navbar-brand fw-bold" routerLink="/home" style="color: #60ad56"
-      >SmartCart</a
-    >
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" routerLink="/home">SmartCart</a>
 
-    <div id="navbarSupportedContent" class="w-25">
-      <ul
-        class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center justify-content-evenly w-100"
-      >
-        <li class="nav-item" (click)="handleLogout()">
-          <a class="nav-link active" aria-current="page">Logout</a>
-        </li>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav">
         <li class="nav-item">
-          <a
-            class="nav-link active"
-            aria-current="page"
-            routerLink="/my-order"
-            title="My Orders"
-            [ngClass]="{ 'active-nav-item': activeNavItem === 'my-order' }"
-            ><img src="../../../assets/images/myOrder.svg" alt=""
-          /></a>
+          <a class="nav-link" routerLink="/my-order" title="My Orders"
+            [ngClass]="{ 'active-nav-item': activeNavItem === 'my-order' }">
+            <img src="../../../assets/images/myOrder.svg" alt="My Orders">
+          </a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link active"
-            aria-current="page"
-            routerLink="/profile"
-            title="Profile"
-            [ngClass]="{ 'active-nav-item': activeNavItem === 'profile' }"
-            ><i class="bi bi-person"></i
-          ></a>
+          <a class="nav-link" routerLink="/profile" title="Profile"
+            [ngClass]="{ 'active-nav-item': activeNavItem === 'profile' }">
+            <i class="bi bi-person"></i>
+          </a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link active"
-            aria-current="page"
-            routerLink="/wishlist"
-            title="Wishlist"
-            [ngClass]="{ 'active-nav-item': activeNavItem === 'wishlist' }"
-            ><i class="bi bi-heart mx-1"></i
-          ></a>
+          <a class="nav-link" routerLink="/wishlist" title="Wishlist"
+            [ngClass]="{ 'active-nav-item': activeNavItem === 'wishlist' }">
+            <i class="bi bi-heart"></i>
+          </a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link active"
-            aria-current="page"
-            routerLink="/cart"
-            title="Cart"
-            [ngClass]="{ 'active-nav-item': activeNavItem === 'cart' }"
-          >
-            <i class="bi bi-cart3">
-              <span
-                class="position-absolute top-4 translate-middle badge rounded-pill bg-danger"
-                *ngIf="getTotalItemsInCart()"
-              >
-                {{ getTotalItemsInCart() }}
-              </span>
-            </i>
+          <a class="nav-link position-relative" routerLink="/cart" title="Cart"
+            [ngClass]="{ 'active-nav-item': activeNavItem === 'cart' }">
+            <i class="bi bi-cart3"></i>
+            <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">1</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link logout-button" (click)="handleLogout()">
+            LOGOUT
+            <!-- <i class="bi bi-box-arrow-right ms-1"></i> -->
           </a>
         </li>
       </ul>

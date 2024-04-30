@@ -8,46 +8,23 @@
       </div>
       <form class="row mt-3">
         <div class="col-md-12">
-          <label class="labels">Username</label
-          ><input
-            type="text"
-            class="form-control"
-            placeholder=""
-            value="{{ userData.username }}"
-            disabled
-          />
+          <label class="labels">Username</label><input type="text" class="form-control" placeholder=""
+            value="{{ userData.username }}" disabled />
         </div>
         <div class="col-md-12 mt-3">
-          <label class="labels">Mobile Number</label
-          ><input
-            type="text"
-            class="form-control"
-            placeholder=""
-            value="{{ userData.mobile_number }}"
-            disabled
-          />
+          <label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder=""
+            value="{{ userData.mobile_number }}" disabled />
         </div>
         <div class="col-md-12 mt-3">
-          <label class="labels">Email ID</label
-          ><input
-            type="text"
-            class="form-control"
-            placeholder=""
-            value="{{ userData.email }}"
-            disabled
-          />
+          <label class="labels">Email ID</label><input type="text" class="form-control" placeholder=""
+            value="{{ userData.email }}" disabled />
         </div>
         <div class="col-md-12 mt-3">
           <label class="labels">Shipping Address</label>
 
-          <textarea
-            cols="30"
-            rows="3"
-            class="form-control"
-            *ngIf="
+          <textarea cols="30" rows="3" class="form-control" *ngIf="
               userData.user_addresses && userData.user_addresses.length > 0
-            "
-            value="{{
+            " value="{{
               userData?.user_addresses[0]?.address_line_1 +
                 ' ' +
                 userData?.user_addresses[0]?.landmark +
@@ -55,16 +32,11 @@
                 userData?.user_addresses[0]?.city?.name +
                 ' ' +
                 userData?.user_addresses[0]?.city?.pincode
-            }}"
-            disabled
-          ></textarea>
+            }}" disabled></textarea>
         </div>
       </form>
-      <a
-        class="btn btn-primary btn-block mt-5"
-        routerLink="/profile"
-        *ngIf="!userData.user_addresses || userData.user_addresses.length === 0"
-      >
+      <a class="btn btn-primary btn-block mt-5" routerLink="/profile"
+        *ngIf="!userData.user_addresses || userData.user_addresses.length === 0">
         Add Details
       </a>
     </div>
@@ -82,8 +54,8 @@
                   <tr *ngFor="let item of cartsData">
                     <td class="my-0">
                       {{
-                        item?.attributes?.product?.data?.attributes
-                          ?.product_name
+                      item?.attributes?.product?.data?.attributes
+                      ?.product_name
                       }}
                     </td>
 
@@ -122,19 +94,14 @@
                     <td></td>
                     <td class="text-end">
                       <span class="fw-bold">
-                        &#8377; {{ amountSummary.total }}</span
-                      >
+                        &#8377; {{ amountSummary.total }}</span>
                     </td>
                   </tr>
                 </tbody>
               </table>
               <a class="btn btn-primary btn-block mt-2" (click)="placeOrder()">
                 Place Order
-                <span
-                  class="spinner-border"
-                  role="status"
-                  *ngIf="isloading"
-                ></span>
+                <span class="spinner-border" role="status" *ngIf="isloading"></span>
               </a>
             </div>
             <!-- end table-responsive -->
