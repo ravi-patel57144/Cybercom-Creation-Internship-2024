@@ -60,7 +60,7 @@
             Add to cart<span class="spinner-border spinner-border-sm" role="status" *ngIf="isloading[i]"></span>
           </button>
           <button class="btn" (click)="addToWishlist(product.id, i)">
-            <i class="bi bi-heart mx-1" *ngIf="!iswishlistloading[i]"></i>
+            <i class="bi bi-heart mx-1" [style.color]="'red'" *ngIf="!iswishlistloading[i]"></i>
             <span class="spinner-border spinner-border-sm" style="color: white;" role="status"
               *ngIf="iswishlistloading[i]"></span>
           </button>

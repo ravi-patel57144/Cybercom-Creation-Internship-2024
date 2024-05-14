@@ -19,7 +19,7 @@ export class WishlistComponent {
   constructor(
     private wishlistService: WishlistService,
     private toast: NgToastService
-  ) {}
+  ) { }
   getWishlistProduct() {
     this.isLoadingWishlist = true; // Set loading to true before making the request
     this.wishlistService.getWishlist(this.userID).subscribe({
