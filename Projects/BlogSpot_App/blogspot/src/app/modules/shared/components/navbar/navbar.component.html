@@ -1,0 +1,18 @@
+<div class="navbar">
+  <div class="navbar-left">
+    <img (click)="homeNavigate()" class="logo"
+      src="https://miro.medium.com/v2/resize:fit:1400/1*psYl0y9DUzZWtHzFJLIvTw.png" />
+    <div class="search-box">
+      <input [(ngModel)]="searchKey" placeholder="Search" (keydown)="onKeyDown($event)" />
+      <mat-icon [style.visibility]="searchKey ? 'visible' : 'hidden'" (click)="clearSearchKey()">close</mat-icon>
+    </div>
+  </div>
+
+  <div class="navbar-right">
+    <p [style.borderBottom]="showBorder === '1' ? '2px solid black' : ''" (click)="openBookMarks()">BookMarks</p>
+    <p [style.borderBottom]="showBorder === '2' ? '2px solid black' : ''" (click)="openWrite()">Write</p>
+    <img (click)="openProfile()" class="profile-pic" src="https://avatars.githubusercontent.com/u/111125824?v=4" />
+    <mat-icon (click)="logOut()">logout</mat-icon>
+  </div>
+</div>
+<router-outlet></router-outlet>

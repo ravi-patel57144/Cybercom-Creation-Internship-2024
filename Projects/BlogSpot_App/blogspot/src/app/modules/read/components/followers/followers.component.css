@@ -1,0 +1,75 @@
+/* Updated styles for the followers section */
+.followwers {
+    width: 20vw;
+    border-left: 2px solid gray;
+    height: 80vh;
+    margin-top: auto;
+    /* Push followers section to the bottom */
+    position: fixed;
+    right: 7vw;
+    z-index: 300;
+    bottom: 10vh;
+    /* Position at the bottom of the container */
+}
+
+/* Styles for the topics section */
+.head {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    border-top: 2px solid gray;
+    padding-top: 10px;
+}
+
+.head p {
+    font-size: 20px;
+    padding-bottom: 2px;
+    cursor: pointer;
+}
+
+.topics {
+    margin-top: 0;
+    display: flex;
+    width: 20vw;
+    flex-wrap: wrap;
+    max-height: 25vh;
+    overflow: auto;
+}
+
+.topics p {
+    width: fit-content;
+    border-radius: 12px;
+    background-color: rgb(214, 210, 210);
+    padding: 10px;
+    font-size: 15px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* Styles for the followers list */
+.infos {
+    display: flex;
+    padding: 10px;
+    border-bottom: 2px solid gray;
+    margin-bottom: 10px;
+}
+
+.infos img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.lists {
+    max-height: 50vh;
+    overflow: auto;
+}
+
+.topicsSearch {
+    padding-left: 15px;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: 500;
+}

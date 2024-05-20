@@ -142,6 +142,16 @@ VALUES
     ('Olivia Taylor', 'olivia.taylor@example.com', 'passwordpqr', '357 Cherry St', '357-913-5791', 'regular'),
     ('James Martinez', 'james.martinez@example.com', 'passwordstu', '468 Pineapple St', '468-024-6802', 'regular');
 
+
+SELECT customer_name, role_type FROM customers GROUP BY customer_name, role_type;
+
+student -> mlt teacher
+
+teacher -> mlt student
+
+Error Code: 1055. Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'smartcart_db.customers.customer_name' 
+which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+
 -- Inserting data into 'category' table
 INSERT INTO category (category_name)
 VALUES
@@ -169,6 +179,8 @@ VALUES
     ('Potato Chips', 'Crunchy potato chips', 'chips.jpg', 8),
     ('Frozen Pizza', 'Frozen pizza', 'pizza.jpg', 9),
     ('Ketchup', 'Tomato ketchup', 'ketchup.jpg', 10);
+    
+    
 
 -- Inserting data into 'address' table
 INSERT INTO address (address_name, locality, phonenumber, pincode, state, city, customer_id, is_default)

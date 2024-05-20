@@ -1,0 +1,116 @@
+/* Updated styles for the body */
+.body {
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    /* column-gap: 10px; */
+    /* margin-left: 15%; */
+    margin-top: auto;
+    /* Push body section to the bottom */
+}
+
+/* Common styles for p elements in the body */
+.body p {
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 10px;
+}
+
+/* Styles for the right side of the body */
+.right {
+    color: gray;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+
+.right:hover {
+    transform: scale(1.03);
+    background-color: rgb(213, 209, 209);
+}
+
+/* Styles for the edit icon */
+.edit {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    color: black;
+}
+
+/* Styles for the left side of the body */
+.left {
+    transition: all 0.5s ease-in-out;
+}
+
+.left:hover {
+    transform: scale(1.03);
+    background-color: rgb(213, 209, 209);
+}
+
+/* Styles for the popup */
+.popup {
+    position: fixed;
+    bottom: 10vh;
+    /* Position at the bottom of the container */
+    z-index: 200;
+    background-color: whitesmoke;
+    width: 30vw;
+    left: 35vw;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+/* Styles for the black overlay */
+#black {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.3;
+    z-index: 150;
+}
+
+/* Styles for the entry section of the popup */
+.entry {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.entry p {
+    padding: 10px;
+}
+
+.entry input {
+    border: 0;
+    outline: 0;
+    border-bottom: 2px solid rgb(198, 193, 193);
+    padding: 10px;
+    padding-bottom: 2px;
+    font-size: 20px;
+    background-color: whitesmoke;
+}
+
+/* Styles for the options section of the popup */
+.options {
+    display: flex;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+#save {
+    color: green;
+    font-weight: 500;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#cancel {
+    color: red;
+    font-weight: 500;
+    cursor: pointer;
+}

@@ -1,0 +1,31 @@
+{
+    "kind": "collectionType",
+    "collectionName": "likes",
+    "info": {
+        "name": "Like",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "attributes": {
+        "created_at": {
+            "type": "timestamp",
+            "required": true
+        },
+        "is_deleted": {
+            "type": "boolean",
+            "default": false
+        },
+        "post": {
+            "model": "post",
+            "via": "likes",
+            "required": true
+        },
+        "user": {
+            "model": "user",
+            "via": "likes",
+            "required": true
+        }
+    }
+}

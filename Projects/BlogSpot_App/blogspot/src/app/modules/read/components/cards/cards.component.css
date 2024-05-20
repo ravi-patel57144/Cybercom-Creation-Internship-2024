@@ -1,0 +1,94 @@
+/* Styles for the card component */
+.card {
+    padding: 10px;
+    width: 50vw;
+    border-bottom: 2px solid gray;
+    /* Add border bottom */
+    transition: all 0.5s ease-in-out;
+    border-radius: 12px;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    background-color: rgb(238, 234, 234);
+    /* Change background color on hover */
+}
+
+.cardhead {
+    display: flex;
+    width: 100%;
+    position: relative;
+    align-items: center;
+}
+
+.cardhead h2 {
+    margin-top: 10px;
+}
+
+.cardhead p {
+    margin-top: 10px;
+}
+
+.edit {
+    position: absolute;
+    right: 20%;
+    top: 10px;
+    cursor: pointer;
+}
+
+.delete {
+    position: absolute;
+    right: 15%;
+    top: 10px;
+    cursor: pointer;
+}
+
+.cardbody {
+    width: 100%;
+    text-wrap: wrap;
+    height: 100px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.cardbody p {
+    width: 70%;
+    word-spacing: 5px;
+    font-size: 17px;
+}
+
+.cardbody img {
+    height: 100%;
+    width: 30%;
+}
+
+.heading {
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cardhead img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.topics {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.topictag {
+    width: fit-content;
+    padding: 10px;
+    border-radius: 12px;
+    font-weight: 600;
+    background-color: rgb(224, 220, 220);
+}

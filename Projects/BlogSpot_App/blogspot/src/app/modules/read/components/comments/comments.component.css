@@ -1,0 +1,110 @@
+/* Styles for the black overlay */
+#black {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.4;
+    z-index: 150;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+/* Styles for the comment section */
+.comment {
+    position: fixed;
+    width: 25vw;
+    right: 0;
+    bottom: 0;
+    height: 80vh;
+    /* Adjust the height as needed */
+    background-color: white;
+    z-index: 200;
+    overflow: auto;
+    /* Enable scrolling if content exceeds height */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* Styles for the comment box */
+.box textarea {
+    margin: 0;
+    margin-top: 40px;
+    width: 90%;
+    margin-left: 5%;
+    height: 150px;
+    resize: none;
+    outline: 0;
+    border: 0;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 12px;
+}
+
+/* Styles for the respond button */
+.respond button {
+    margin-top: 0;
+    margin-left: 20px;
+    border: 0;
+    outline: 0;
+    background-color: rgb(106, 228, 106);
+    padding: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Styles for the comment list */
+.commentList {
+    margin-top: 30px;
+}
+
+/* Styles for the individual comment */
+.commentBox {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 50px;
+}
+
+.commentBox img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.commentBox div {
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.individual {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.message {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5px;
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+.options {
+    margin-top: 0;
+}
+
+.options span {
+    margin-top: 10px;
+}
+
+.options mat-icon {
+    cursor: pointer;
+}
+
+.delete {
+    margin-left: 10px;
+}

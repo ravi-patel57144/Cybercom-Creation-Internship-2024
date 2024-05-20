@@ -1,0 +1,39 @@
+{
+    "kind": "collectionType",
+    "collectionName": "comments",
+    "info": {
+        "name": "Comment",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "attributes": {
+        "comment": {
+            "type": "text",
+            "required": true
+        },
+        "created_at": {
+            "type": "timestamp",
+            "required": true
+        },
+        "updated_at": {
+            "type": "timestamp",
+            "required": true
+        },
+        "is_deleted": {
+            "type": "boolean",
+            "default": false
+        },
+        "post": {
+            "model": "post",
+            "via": "comments",
+            "required": true
+        },
+        "user": {
+            "model": "user",
+            "via": "comments",
+            "required": true
+        }
+    }
+}

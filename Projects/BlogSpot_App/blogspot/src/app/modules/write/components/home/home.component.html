@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+<div class="body">
+    <form [formGroup]="entryForm" (ngSubmit)="formSubmitted()">
+        <input placeholder="Enter your title" formControlName="title" />
+        <div class="categories">
+            <select formControlName="category">
+                <option value=''>Select category</option>
+                <option *ngFor="let catg of allCategories" [ngValue]="catg">{{catg}}</option>
+            </select>
+        </div>
+        <input class="imageURL" placeholder="Blog Image URL" formControlName="primaryImageURL" />
+        <div class="editor-wrapper">
+            <ngx-editor-menu [editor]="editor"></ngx-editor-menu>
+            <ngx-editor [editor]="editor" formControlName="description" placeholder="Type here..."></ngx-editor>
+        </div>
+        <div class="publish">
+            <button type="submit" *ngIf="!articleToEdit">Publish</button>
+            <button type="submit" *ngIf="articleToEdit">Save</button>
+        </div>
+    </form>
+</div>
