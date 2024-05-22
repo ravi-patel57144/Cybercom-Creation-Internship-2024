@@ -84,15 +84,16 @@ Started working: January 16, 2024
 
 ### Projects
 
-| Sr No. | Title     | Description          | Assigned On | Current Status | Completion Date | Repo Link                                                               | Project Link                                  |
-| ------ | --------- | -------------------- | ----------- | -------------- | --------------- | ----------------------------------------------------------------------- | --------------------------------------------- |
-| 1      | SmartCart | Online Grocery Store | 26.03.2024  | Completed      | 02.04.2024      | [View](https://github.com/ravi-patel57144/SmartCart_OnlineGroceryStore) |                                               |
-| 2      | BlogSpot  | Online Blog Website  | 06.05.2024  | Completed      | 15.05.2024      | [View](https://github.com/ravi-patel57144/blogspot)                     | [Visit](https://blogspot.ravisinghpatel.dev/) |
+| Sr No. | Title     | Description                          | Assigned On | Current Status | Completion Date | Repo Link                                                               | Project Link                                  |
+| ------ | --------- | ------------------------------------ | ----------- | -------------- | --------------- | ----------------------------------------------------------------------- | --------------------------------------------- |
+| 1      | SmartCart | Online Grocery Store Using AngularJS | 26.03.2024  | Completed      | 02.04.2024      | [View](https://github.com/ravi-patel57144/SmartCart_OnlineGroceryStore) |                                               |
+| 2      | BlogSpot  | Online Blog Website Using AngularJS  | 06.05.2024  | Completed      | 15.05.2024      | [View](https://github.com/ravi-patel57144/blogspot)                     | [Visit](https://blogspot.ravisinghpatel.dev/) |
 
 
 
 ### Angularjs
 
-| Sr No. | Title                | Description                   | Assigned On | Current Status | Completion Date | Repo Link                                                                                                               | Project Link |
-| ------ | -------------------- | ----------------------------- | ----------- | -------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------ |
-| 1      | Inventory Management | CRUD using Angular on FakeAPI | 08.04.2024  | Completed      | 12.04.2024      | [View](https://github.com/ravi-patel57144/Cybercom-Creation-Internship-2024/tree/main/AngularJS/InventoryManagementApp) |              |
+| Sr No. | Title                | Description                              | Assigned On | Current Status | Completion Date | Repo Link                                                                                                               | Project Link |
+| ------ | -------------------- | ---------------------------------------- | ----------- | -------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------ |
+| 1      | Inventory Management | CRUD using Angular on FakeAPI            | 08.04.2024  | Completed      | 12.04.2024      | [View](https://github.com/ravi-patel57144/Cybercom-Creation-Internship-2024/tree/main/AngularJS/InventoryManagementApp) |              |
+| 2      | Task Management      | CRUD using Angular & Material on FakeAPI | 15.04.2024  | Completed      | 22.04.2024      | [View](https://github.com/ravi-patel57144/Cybercom-Creation-Internship-2024/tree/main/AngularJS/InventoryManagementApp) |              |
