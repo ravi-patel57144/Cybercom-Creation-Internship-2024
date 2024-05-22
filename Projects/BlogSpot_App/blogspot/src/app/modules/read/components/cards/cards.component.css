@@ -61,6 +61,14 @@
     color: #0056b3;
 }
 
+.card-actions mat-icon.delete {
+    color: red;
+}
+
+.card-actions mat-icon.delete:hover {
+    color: rgb(158, 32, 32);
+}
+
 .heading {
     font-size: 24px;
     font-weight: bold;

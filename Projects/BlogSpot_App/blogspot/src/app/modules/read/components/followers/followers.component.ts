@@ -59,7 +59,7 @@ export class FollowersComponent implements OnInit {
     this.router.navigateByUrl("/home/profile?id=" + userID);
   }
 
-  serachByTag(ele: string) {
+  searchByTag(ele: string) {
     this.topicName = ele;
     let loggedInUserID: any = localStorage.getItem("loggedInUserID");
     let followings: any[] = this.followerService.getFollowings(loggedInUserID);
@@ -97,6 +97,7 @@ export class FollowersComponent implements OnInit {
     this.followerService.followBack(loggedInUserID, userID);
     this.setFollowCount();
     this.followers();
+    this.loadRecommendedTopics()
   }
 
   unfollow(userID: any) {
@@ -104,6 +105,7 @@ export class FollowersComponent implements OnInit {
     this.followerService.unfollow(loggedInUserID, userID);
     this.setFollowCount();
     this.followers();
+    this.loadRecommendedTopics()
   }
 
   isFollowing(userID: any): boolean {

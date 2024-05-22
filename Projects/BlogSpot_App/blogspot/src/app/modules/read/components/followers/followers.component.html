@@ -1,8 +1,8 @@
 <div class="followers">
   <p class="topicsSearch">Recommended topics</p>
   <div class="topics">
-    <p (click)="serachByTag('All')" [style.border]="topicName === 'All' ? '2px solid black' : ''">All</p>
-    <p *ngFor="let ele of topicsArray" (click)="serachByTag(ele)"
+    <p (click)="searchByTag('All')" [style.border]="topicName === 'All' ? '2px solid black' : ''">All</p>
+    <p *ngFor="let ele of topicsArray" (click)="searchByTag(ele)"
       [style.border]="topicName === ele ? '2px solid black' : ''">{{ ele }}</p>
   </div>
   <div class="head">
@@ -13,8 +13,8 @@
     <div class="infos" *ngFor="let ele of followArray">
       <img (click)="openProfile(ele.userID)" src="https://picsum.photos/200">
       <p>{{ ele.userName }}</p>
-      <p class="follow" *ngIf="!isFollowing(ele.userID)" (click)="followBack(ele.userID)">Follow</p>
-      <p class="unfollow" *ngIf="isFollowing(ele.userID)" (click)="unfollow(ele.userID)">Following</p>
+      <p class="follow" *ngIf="!isFollowing(ele.userID)" (click)="followBack(ele.userID)">Follow Back</p>
+      <p class="unfollow" *ngIf="isFollowing(ele.userID)" (click)="unfollow(ele.userID)">UnFollow</p>
     </div>
   </div>
 </div>

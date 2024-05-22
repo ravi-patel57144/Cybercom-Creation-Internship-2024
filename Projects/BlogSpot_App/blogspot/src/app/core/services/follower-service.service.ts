@@ -62,7 +62,6 @@ export class FollowerServiceService {
     }
   }
 
-  // Method to get blogs of followed users
   getBlogsOfFollowedUsers(userID: any) {
     let followings = this.getFollowings(userID);
     let followedUserIDs = followings.map((following: any) => following.followedTO);

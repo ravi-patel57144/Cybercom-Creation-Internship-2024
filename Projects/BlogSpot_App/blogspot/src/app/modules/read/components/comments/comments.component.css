@@ -1,4 +1,3 @@
-/* Styles for the black overlay */
 #black {
     position: fixed;
     width: 100vw;
@@ -11,22 +10,18 @@
     overflow: hidden;
 }
 
-/* Styles for the comment section */
 .comment {
     position: fixed;
     width: 25vw;
     right: 0;
     bottom: 0;
     height: 80vh;
-    /* Adjust the height as needed */
     background-color: white;
     z-index: 200;
     overflow: auto;
-    /* Enable scrolling if content exceeds height */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-/* Styles for the comment box */
 .box textarea {
     margin: 0;
     margin-top: 40px;
@@ -41,7 +36,6 @@
     border-radius: 12px;
 }
 
-/* Styles for the respond button */
 .respond button {
     margin-top: 0;
     margin-left: 20px;
@@ -54,12 +48,10 @@
     color: white;
 }
 
-/* Styles for the comment list */
 .commentList {
     margin-top: 30px;
 }
 
-/* Styles for the individual comment */
 .commentBox {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin-bottom: 50px;
