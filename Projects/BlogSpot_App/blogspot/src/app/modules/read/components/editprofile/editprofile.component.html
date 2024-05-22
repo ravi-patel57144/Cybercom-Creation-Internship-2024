@@ -1,21 +1,17 @@
-
-<div class="body" *ngFor="let ele of profileObjKeys ">
-
+<div class="body" *ngFor="let ele of profileObjKeys">
     <p class="left">{{ele.charAt(0).toUpperCase() + ele.slice(1)}}</p>
-<p class="right" [style.color]="canEdit ? 'black' : 'gray'">{{profileObj[ele]}}
-    <mat-icon class="edit" (click)="popupVisible(ele)" *ngIf="canEdit">edit</mat-icon>
-</p>
-
+    <p class="right" [style.color]="canEdit ? 'black' : 'gray'">{{profileObj[ele]}}
+        <mat-icon class="edit" (click)="popupVisible(ele)" *ngIf="canEdit">edit</mat-icon>
+    </p>
 </div>
 <div *ngIf="showPopup" id="black" (click)="removePopup()"></div>
 <div class="popup" *ngIf="showPopup">
-   <div class="entry">
-    <p>{{popupName}}</p>
-    <input [(ngModel)]="popupTitle"/>
-   </div>
+    <div class="entry">
+        <p>{{popupName}}</p>
+        <input [(ngModel)]="popupTitle" />
+    </div>
     <div class="options">
         <p id="save" (click)="saveDetails()">Save</p>
         <p id="cancel" (click)="removePopup()">Cancel</p>
     </div>
-
 </div>

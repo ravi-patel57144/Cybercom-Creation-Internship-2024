@@ -3,15 +3,19 @@
     position: sticky;
     top: 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 10px 20px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     z-index: 100;
+    background-color: white;
 }
 
 .navbar-left {
     display: flex;
     align-items: center;
+    flex-grow: 1;
+    margin-right: 10px;
 }
 
 .logo {
@@ -28,13 +32,13 @@
 
 .search-box {
     background-color: #f1f1f1;
-    margin-left: 1vw;
     height: 40px;
     display: flex;
     align-items: center;
     padding: 5px 10px;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px;
+    margin-left: 1vw;
 }
 
 .search-box input {
@@ -98,4 +102,15 @@
 
 .navbar-right mat-icon:hover {
     transform: scale(1.2);
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .navbar-left,
+    .navbar-right {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
 }

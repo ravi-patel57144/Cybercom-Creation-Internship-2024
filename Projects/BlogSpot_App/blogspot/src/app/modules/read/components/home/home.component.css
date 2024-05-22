@@ -6,13 +6,13 @@
     align-items: flex-start;
     min-height: 90vh;
     flex-direction: column;
-    margin-left: 30px;
+    padding: 0 20px;
+    position: relative;
 }
 
 .cards {
-    width: 60vw;
-    flex-grow: 1;
-    margin-left: 20px;
+    width: 70%;
+    margin-top: 20px;
 }
 
 .card {
@@ -64,16 +64,20 @@
 }
 
 .pagination {
-    width: 70%;
-    margin-top: 15px;
-    text-align: center;
+    width: 100%;
     height: 40px;
+    position: absolute;
+    top: 100%;
+    right: 50px;
+    left: 25%;
 }
-
 
 .feedSelector {
     margin-top: 10px;
     display: flex;
+    overflow-x: auto;
+    z-index: 1;
+    /* Added */
 }
 
 .feedSelector p {
@@ -85,4 +89,29 @@
 
 .feedSelector p.active {
     border-bottom: 2px solid black;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cards {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .pagination {
+        width: 90%;
+        position: absolute;
+        top: 65px;
+        left: 20px;
+        z-index: 3;
+        background-color: aliceblue;
+    }
+
+    app-followers {
+        display: none !important;
+    }
 }

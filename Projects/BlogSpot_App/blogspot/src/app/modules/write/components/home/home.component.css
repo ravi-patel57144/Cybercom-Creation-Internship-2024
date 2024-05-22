@@ -55,6 +55,7 @@ textarea:focus,
     margin-top: 20px;
     display: flex;
     justify-content: flex-end;
+    flex-wrap: wrap;
 }
 
 .publish button {
@@ -66,7 +67,7 @@ textarea:focus,
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-right: 10px;
+    margin: 5px 10px 5px 0;
 }
 
 .publish button:last-child {
@@ -98,4 +99,61 @@ textarea:focus,
     border-bottom: 2px solid #007bff;
     padding-bottom: 10px;
     display: inline-block;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    form {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    form {
+        width: 95%;
+    }
+
+    .editor-wrapper {
+        min-height: 400px;
+    }
+
+    .publish button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .heading-title {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .editor-wrapper {
+        min-height: 300px;
+    }
+
+    .publish button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .heading-title {
+        font-size: 20px;
+    }
+
+    label {
+        font-size: 16px;
+    }
+
+    input,
+    select,
+    .editor-wrapper {
+        font-size: 16px;
+        padding: 12px;
+    }
 }

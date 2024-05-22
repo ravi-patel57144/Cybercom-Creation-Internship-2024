@@ -13,24 +13,17 @@
             <div>
                 <img src="https://source.unsplash.com/random" (click)="openProfile( ele.userID )" />
                 <p class="individual">{{getNameFromID(ele.userID)}}</p>
-
             </div>
             <p class="message">{{ele.message}}</p>
             <div class="options">
                 <mat-icon *ngIf="!isCommentLiked(ele.commentID)"
-                    (click)="likeTheComment(ele.commentID)">thumb_up_off_alt </mat-icon>
-                <mat-icon *ngIf="isCommentLiked(ele.commentID)" (click)="dislikeTheComment(ele.commentID)">thumb_up
-                </mat-icon>
-
+                    (click)="likeTheComment(ele.commentID)">thumb_up_off_alt</mat-icon>
+                <mat-icon *ngIf="isCommentLiked(ele.commentID)"
+                    (click)="dislikeTheComment(ele.commentID)">thumb_up</mat-icon>
                 <span>{{getCommentLikeCount(ele.commentID)}}</span>
-
                 <mat-icon class="delete" *ngIf="canDeleteComment(ele.userID)"
                     (click)="deleteTheComment(ele.commentID, ele.userID)">delete_outline</mat-icon>
             </div>
-
-
         </div>
-
-
     </div>
 </div>

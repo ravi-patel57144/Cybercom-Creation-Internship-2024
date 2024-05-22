@@ -100,3 +100,37 @@
     font-weight: 500;
     cursor: pointer;
 }
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .body {
+        grid-template-columns: 1fr;
+    }
+
+    .popup {
+        width: 80vw;
+        left: 10vw;
+        bottom: 5vh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .body p {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .right {
+        font-size: 16px;
+    }
+
+    .popup {
+        width: 90vw;
+        left: 5vw;
+        bottom: 5vh;
+    }
+
+    .entry input {
+        font-size: 16px;
+    }
+}

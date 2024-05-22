@@ -2,16 +2,19 @@
 <div class="container">
   <div class="profile-info">
     <img src="https://picsum.photos/200" alt="Profile Picture" />
-    <p>{{ username }}</p>
-    <button (click)="exportBlogs()">Export Blogs</button>
-    <button (click)="importBlogs()" *ngIf="myProfile">Import Blogs</button>
-    <input type="file" #inputFile [style.visibility]="'hidden'" (change)="inputFileSubmitted()" />
+    <div class="profile-details">
+      <p>{{ username }}</p>
+      <div class="buttons">
+        <button (click)="exportBlogs()">Export Blogs</button>
+        <button (click)="importBlogs()" *ngIf="myProfile">Import Blogs</button>
+        <input type="file" #inputFile [style.visibility]="'hidden'" (change)="inputFileSubmitted()" />
+      </div>
+    </div>
   </div>
   <div class="category">
     <p [class.active]="active" (click)="setActive()">{{ myProfile ? 'My' : '' }} Articles</p>
     <p [class.active]="!active" (click)="setNotActive()">{{ myProfile ? 'My' : '' }} Profile</p>
   </div>
-
   <div class="content">
     <div class="blogs" *ngIf="active">
       <p class="addBlogs" *ngIf="myBlogs.length === 0">No Blogs posted yet!</p>

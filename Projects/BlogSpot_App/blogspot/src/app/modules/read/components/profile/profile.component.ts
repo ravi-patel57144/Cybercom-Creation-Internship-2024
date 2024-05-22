@@ -32,6 +32,7 @@ export class ProfileComponent implements OnInit {
         this.myBlogs = this.blogService.getMyBlogs(userID);
         this.contentLoaded = true;
       });
+      this.myBlogs.sort((a: any, b: any) => new Date(b.blogCreationTime).getTime() - new Date(a.blogCreationTime).getTime());
 
       let loggedInUserID = localStorage.getItem("loggedInUserID");
       this.myProfile = Number(loggedInUserID) === Number(userID);

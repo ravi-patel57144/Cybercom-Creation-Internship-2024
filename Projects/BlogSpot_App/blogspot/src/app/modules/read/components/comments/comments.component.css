@@ -12,8 +12,7 @@
 
 .comment {
     position: fixed;
-    width: 25vw;
-    right: 0;
+    width: 100%;
     bottom: 0;
     height: 80vh;
     background-color: white;
@@ -99,4 +98,17 @@
 
 .delete {
     margin-left: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    .comment {
+        width: 25vw;
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .comment {
+        height: 30vh;
+    }
 }

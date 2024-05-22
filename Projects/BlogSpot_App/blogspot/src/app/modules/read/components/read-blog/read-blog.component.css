@@ -9,6 +9,7 @@
     display: flex;
     width: 100%;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .card-head img {
@@ -17,6 +18,11 @@
     border-radius: 50%;
     margin-right: 10px;
     cursor: pointer;
+}
+
+.card-head h2 {
+    flex-grow: 1;
+    margin-right: 10px;
 }
 
 .card-head p {
@@ -32,6 +38,9 @@
 
 .features {
     margin-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .like,
@@ -62,8 +71,9 @@
 }
 
 .main-image img {
-    height: 400px;
+    height: auto;
     width: 50%;
+    object-fit: cover;
 }
 
 .description {
@@ -71,4 +81,75 @@
     font-size: 20px;
     height: fit-content;
     border: 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .blog-container {
+        width: 85%;
+        margin-left: 7.5%;
+    }
+
+    .main-image img {
+        width: 70%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .blog-container {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .main-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .features {
+        justify-content: space-around;
+    }
+
+    .heading {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .blog-container {
+        width: 95%;
+        margin-left: 2.5%;
+    }
+
+    .main-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .card-head h2 {
+        font-size: 20px;
+    }
+
+    .card-head p,
+    .card-head mat-icon {
+        margin: 5px 0;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .features span {
+        margin-left: 10px;
+    }
+
+    .heading {
+        font-size: 20px;
+    }
+
+    .description {
+        font-size: 18px;
+    }
 }
