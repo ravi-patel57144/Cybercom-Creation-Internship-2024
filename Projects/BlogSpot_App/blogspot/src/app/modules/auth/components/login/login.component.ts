@@ -12,27 +12,25 @@ export class LoginComponent {
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required])
-  })
+  });
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router) { }
 
-  }
   submitted() {
     if (this.loginForm.invalid) {
       return;
     }
 
-    let email = this.loginForm.value.email, password = this.loginForm.value.password;
-    email = email?.trim();
+    const email = this.loginForm.value.email?.trim();
+    const password = this.loginForm.value.password;
+    const userId = this.authService.userExist(email, password);
 
-    let ans = this.authService.userExist(email, password);
-
-    if (!ans) {
+    if (!userId) {
       alert("User does not exist!");
       return;
     }
-    localStorage.setItem("loggedInUserID", ans);
-    this.router.navigateByUrl("/home");
 
+    localStorage.setItem("loggedInUserID", userId);
+    this.router.navigate(['/home']);
   }
 }

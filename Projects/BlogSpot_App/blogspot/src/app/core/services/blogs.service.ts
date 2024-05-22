@@ -16,6 +16,46 @@ export class BlogsService {
     this.newCommentAdded = new BehaviorSubject<boolean>(false);
     this.deleteBlogIDSubject = new BehaviorSubject<any>(-1);
     this.blogSearchKeySubject = new BehaviorSubject<any>("");
+    this.initializeBlogs();
+  }
+
+  private initializeBlogs() {
+    let allBlogs = localStorage.getItem("allBlogs");
+    if (!allBlogs) {
+      const defaultBlogs = [
+        { id: 1, title: 'UX/UI Design Trends 2024', category: 'Design', description: 'A comprehensive overview of the latest trends in UX/UI design for 2024.', userID: 2, primaryImageURL: 'https://cdn.quokkalabs.com/blog/object/20231110123631_77e78c05dff34ccdabf7e05ec324e9e0.webp', blogCreationTime: new Date().toISOString() },
+        { id: 2, title: 'Data Science in Action', category: 'Technology', description: 'Real-world applications of data science and its impact on various industries.', userID: 3, primaryImageURL: 'https://www.codingal.com/resources/wp-content/uploads/2023/04/image_6_1-1536x864.png', blogCreationTime: new Date().toISOString() },
+        { id: 3, title: 'The Art of Coding', category: 'Technology', description: 'Exploring the nuances of coding and software development.', userID: 1, primaryImageURL: 'https://i.pinimg.com/originals/9f/18/99/9f1899aaa853a700759bb9a4ea4a9b2f.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 4, title: 'Digital Marketing Strategies', category: 'Marketing', description: 'Effective strategies and techniques for digital marketing success.', userID: 4, primaryImageURL: 'https://th.bing.com/th/id/OIP.JtKt45zCNdN2xQpkHSGO8AAAAA?rs=1&pid=ImgDetMain', blogCreationTime: new Date().toISOString() },
+        { id: 5, title: 'The Future of AI', category: 'Technology', description: 'Insights into the future trajectory of artificial intelligence and its implications.', userID: 5, primaryImageURL: 'https://example.com/blog5.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 6, title: 'Mastering Frontend Development', category: 'Technology', description: 'Tips and tricks for becoming proficient in frontend development.', userID: 6, primaryImageURL: 'https://example.com/blog6.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 7, title: 'Content Creation Guide', category: 'Marketing', description: 'A comprehensive guide to creating engaging content across various platforms.', userID: 7, primaryImageURL: 'https://example.com/blog7.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 8, title: 'Understanding Data Analytics', category: 'Technology', description: 'An introduction to data analytics and its importance in decision-making.', userID: 8, primaryImageURL: 'https://example.com/blog8.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 9, title: 'E-commerce Trends 2024', category: 'Business', description: 'Key trends shaping the future of e-commerce in 2024.', userID: 9, primaryImageURL: 'https://example.com/blog9.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 10, title: 'Graphic Design Essentials', category: 'Design', description: 'Essential principles and tools for graphic design professionals.', userID: 10, primaryImageURL: 'https://example.com/blog10.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 11, title: 'Web Development Best Practices', category: 'Technology', description: 'Best practices and techniques for modern web development projects.', userID: 11, primaryImageURL: 'https://example.com/blog11.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 12, title: 'Social Media Marketing Strategies', category: 'Marketing', description: 'Strategies for leveraging social media platforms to enhance marketing efforts.', userID: 12, primaryImageURL: 'https://example.com/blog12.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 13, title: 'Cybersecurity in the Digital Age', category: 'Technology', description: 'The importance of cybersecurity measures in safeguarding digital assets.', userID: 13, primaryImageURL: 'https://example.com/blog13.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 14, title: 'Content Management Systems Overview', category: 'Technology', description: 'An overview of popular content management systems and their features.', userID: 14, primaryImageURL: 'https://example.com/blog14.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 15, title: 'Email Marketing Tips', category: 'Marketing', description: 'Effective tips for running successful email marketing campaigns.', userID: 15, primaryImageURL: 'https://example.com/blog15.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 16, title: 'The Future of Work', category: 'Business', description: 'Exploring emerging trends and challenges in the future of work landscape.', userID: 16, primaryImageURL: 'https://example.com/blog16.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 17, title: 'Mobile App Development Trends', category: 'Technology', description: 'Key trends and innovations shaping the mobile app development industry.', userID: 17, primaryImageURL: 'https://example.com/blog17.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 18, title: 'Content Localization Strategies', category: 'Marketing', description: 'Strategies for effectively localizing content for global audiences.', userID: 18, primaryImageURL: 'https://example.com/blog18.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 19, title: 'Blockchain Technology Explained', category: 'Technology', description: 'An in-depth explanation of blockchain technology and its applications beyond cryptocurrency.', userID: 19, primaryImageURL: 'https://example.com/blog19.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 20, title: 'Brand Identity Design', category: 'Design', description: 'Key principles and practices for creating a strong brand identity through design.', userID: 20, primaryImageURL: 'https://example.com/blog20.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 21, title: 'SEO Strategies for 2024', category: 'Marketing', description: 'Advanced SEO strategies to boost website visibility and organic traffic.', userID: 1, primaryImageURL: 'https://example.com/blog21.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 22, title: 'Machine Learning Applications', category: 'Technology', description: 'Real-world applications of machine learning algorithms in various industries.', userID: 2, primaryImageURL: 'https://example.com/blog22.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 23, title: 'Content Marketing Trends', category: 'Marketing', description: 'Emerging trends in content marketing and strategies to stay ahead.', userID: 3, primaryImageURL: 'https://example.com/blog23.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 24, title: 'Responsive Web Design Principles', category: 'Design', description: 'Key principles and best practices for creating responsive web designs.', userID: 4, primaryImageURL: 'https://example.com/blog24.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 25, title: 'Big Data Analytics Techniques', category: 'Technology', description: 'Advanced techniques for analyzing and deriving insights from big data sets.', userID: 5, primaryImageURL: 'https://example.com/blog25.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 26, title: 'Social Media Engagement Strategies', category: 'Marketing', description: 'Strategies to increase engagement and interaction on social media platforms.', userID: 6, primaryImageURL: 'https://example.com/blog26.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 27, title: 'User Interface Design Principles', category: 'Design', description: 'Fundamental principles for creating intuitive and user-friendly interfaces.', userID: 7, primaryImageURL: 'https://example.com/blog27.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 28, title: 'Cloud Computing Essentials', category: 'Technology', description: 'An overview of cloud computing concepts and its role in modern IT infrastructure.', userID: 8, primaryImageURL: 'https://example.com/blog28.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 29, title: 'Email Automation Strategies', category: 'Marketing', description: 'Effective strategies for implementing email automation to streamline marketing campaigns.', userID: 9, primaryImageURL: 'https://example.com/blog29.jpg', blogCreationTime: new Date().toISOString() },
+        { id: 30, title: 'Color Theory in Design', category: 'Design', description: 'Understanding the psychology of color and its application in design.', userID: 10, primaryImageURL: 'https://example.com/blog30.jpg', blogCreationTime: new Date().toISOString() }
+      ];
+      localStorage.setItem("allBlogs", JSON.stringify(defaultBlogs));
+    }
   }
 
   createNewBlog(title: any, category: any, description: any, primaryImageURL: any) {

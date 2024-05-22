@@ -15,7 +15,7 @@
   </div>
   <div class="lists">
     <div class="infos" *ngFor="let ele of followArray">
-      <img (click)="openProfile(ele.userID)" src="https://picsum.photos/200">
+      <img (click)="openProfile(ele.userID)" src="/assets/profilePic.jpg">
       <p>{{ ele.userName }}</p>
       <p class="follow" *ngIf="!isFollowing(ele.userID)" (click)="followBack(ele.userID)">Follow Back</p>
       <p class="unfollow" *ngIf="isFollowing(ele.userID)" (click)="unfollow(ele.userID)">UnFollow</p>

@@ -55,6 +55,7 @@ export class CardsComponent implements OnInit {
     const ans = confirm("Are you sure you want to delete the Blog?");
     if (!ans) return;
     this.blogsService.deleteBlogIDSubject.next(this.blogID);
+    this.router.navigateByUrl("/home");
   }
 
   getDate(): string {

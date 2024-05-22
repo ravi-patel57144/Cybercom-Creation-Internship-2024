@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <div class="blog-container">
     <div class="card-head">
-        <img src="https://picsum.photos/200" (click)="openProfile()" />
+        <img src="/assets/profilePic.jpg" (click)="openProfile()" />
         <h2>{{loggedINUserInfo.userName}}</h2>
         <p class="follow" (click)="followThePerson()" *ngIf="!followingThePerson && showFollowOption">Follow</p>
         <p class="unfollow" (click)="unfollowThePerson()" *ngIf="followingThePerson && showFollowOption">Following</p>

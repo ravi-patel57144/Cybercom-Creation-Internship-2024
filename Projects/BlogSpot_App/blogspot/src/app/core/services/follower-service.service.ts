@@ -8,7 +8,79 @@ export class FollowerServiceService {
 
   public topicSearchKeySubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  constructor() { }
+  constructor() {
+    this.initializefollowers();
+  }
+
+  private initializefollowers() {
+    let followers = localStorage.getItem("followArray");
+    if (!followers) {
+      const defaultfollowers = [
+        { followedBY: 1, followedTO: 2 },
+        { followedBY: 1, followedTO: 3 },
+        { followedBY: 1, followedTO: 4 },
+        { followedBY: 2, followedTO: 3 },
+        { followedBY: 2, followedTO: 5 },
+        { followedBY: 3, followedTO: 1 },
+        { followedBY: 3, followedTO: 6 },
+        { followedBY: 4, followedTO: 2 },
+        { followedBY: 4, followedTO: 7 },
+        { followedBY: 5, followedTO: 1 },
+        { followedBY: 5, followedTO: 8 },
+        { followedBY: 6, followedTO: 2 },
+        { followedBY: 6, followedTO: 9 },
+        { followedBY: 7, followedTO: 3 },
+        { followedBY: 7, followedTO: 10 },
+        { followedBY: 8, followedTO: 4 },
+        { followedBY: 8, followedTO: 11 },
+        { followedBY: 9, followedTO: 5 },
+        { followedBY: 9, followedTO: 12 },
+        { followedBY: 10, followedTO: 6 },
+        { followedBY: 10, followedTO: 13 },
+        { followedBY: 11, followedTO: 7 },
+        { followedBY: 11, followedTO: 14 },
+        { followedBY: 12, followedTO: 8 },
+        { followedBY: 12, followedTO: 15 },
+        { followedBY: 13, followedTO: 9 },
+        { followedBY: 13, followedTO: 1 },
+        { followedBY: 14, followedTO: 10 },
+        { followedBY: 14, followedTO: 2 },
+        { followedBY: 15, followedTO: 11 },
+        { followedBY: 15, followedTO: 3 },
+        { followedBY: 16, followedTO: 12 },
+        { followedBY: 16, followedTO: 4 },
+        { followedBY: 17, followedTO: 13 },
+        { followedBY: 17, followedTO: 5 },
+        { followedBY: 18, followedTO: 14 },
+        { followedBY: 18, followedTO: 1 },
+        { followedBY: 19, followedTO: 15 },
+        { followedBY: 19, followedTO: 2 },
+        { followedBY: 20, followedTO: 1 },
+        { followedBY: 20, followedTO: 3 },
+        { followedBY: 1, followedTO: 2 },
+        { followedBY: 1, followedTO: 3 },
+        { followedBY: 2, followedTO: 4 },
+        { followedBY: 2, followedTO: 5 },
+        { followedBY: 3, followedTO: 6 },
+        { followedBY: 3, followedTO: 7 },
+        { followedBY: 4, followedTO: 8 },
+        { followedBY: 4, followedTO: 9 },
+        { followedBY: 5, followedTO: 10 },
+        { followedBY: 5, followedTO: 11 },
+        { followedBY: 1, followedTO: 12 },
+        { followedBY: 1, followedTO: 13 },
+        { followedBY: 2, followedTO: 14 },
+        { followedBY: 2, followedTO: 15 },
+        { followedBY: 3, followedTO: 1 },
+        { followedBY: 3, followedTO: 2 },
+        { followedBY: 4, followedTO: 3 },
+        { followedBY: 4, followedTO: 4 },
+        { followedBY: 5, followedTO: 5 },
+        { followedBY: 5, followedTO: 6 }
+      ];
+      localStorage.setItem("followArray", JSON.stringify(defaultfollowers));
+    }
+  }
 
   getFollowers(userID: any) {
     let followArray: any = localStorage.getItem("followArray");
