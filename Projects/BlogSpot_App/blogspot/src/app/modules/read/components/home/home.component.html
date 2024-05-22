@@ -1,15 +1,28 @@
 <app-navbar></app-navbar>
 <div class="container">
+
+  <div class="feedSelector">
+    <p [class.active]="active" (click)="setActive()">Your Feed</p>
+    <p [class.active]="!active" (click)="setNotActive()">All Feed</p>
+  </div>
+
   <div class="cards">
+
     <app-cards *ngFor="let ele of allBlogs | paginate:{itemsPerPage: tableSize, currentPage: page, totalItems: count}"
       [title]="ele.title" [category]="ele.category" [description]="ele.description" [blogID]="ele.id"
-      [primaryImageURL]="ele.primaryImageURL" [blogCreationTime]="ele.blogCreationTime"></app-cards>
+      [primaryImageURL]="ele.primaryImageURL" [blogCreationTime]="ele.blogCreationTime">
+    </app-cards>
+
     <p class="noBlogs" *ngIf="allBlogs.length === 0">No Blogs posted yet!</p>
-    <div class="pagination" *ngIf="allBlogs.length !== 0">
-      <pagination-controls previousLabel="Prev" nextLabel="Next"
-        (pageChange)="onTableDataChange($event)"></pagination-controls>
-    </div>
+
+  </div>
+
+  <div class="pagination" *ngIf="allBlogs.length !== 0">
+    <pagination-controls previousLabel="Prev" nextLabel="Next"
+      (pageChange)="onTableDataChange($event)"></pagination-controls>
   </div>
   <app-followers></app-followers>
+
   <app-loader *ngIf="!contentLoaded"></app-loader>
+
 </div>

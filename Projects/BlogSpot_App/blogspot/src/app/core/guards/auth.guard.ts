@@ -6,7 +6,7 @@ export const authGuard: CanActivateFn = (route, state) => {
   // return true;
   let loggedInUserID: any = localStorage.getItem("loggedInUserID");
   if (!loggedInUserID) {
-    alert("Login Required!");;
+    alert("Please Login first!");;
     inject(Router).navigate(['']);
     return false;
   }

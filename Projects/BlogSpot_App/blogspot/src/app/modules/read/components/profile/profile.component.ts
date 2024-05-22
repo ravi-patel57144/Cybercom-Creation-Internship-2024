@@ -1,4 +1,4 @@
-import { Component,  OnInit , ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { BlogsService } from 'src/app/core/services/blogs.service';
 import { ActivatedRoute } from '@angular/router';
 import exportFromJSON from 'export-from-json'
@@ -8,194 +8,146 @@ import exportFromJSON from 'export-from-json'
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit{
+export class ProfileComponent implements OnInit {
 
-  username : any = "" ; 
-  myBlogs : any = "" ; 
- active : any = true  ; 
- editArticle : any = true ; 
+  username: any = "";
+  myBlogs: any = [];
+  active: boolean = true;
+  editArticle: boolean = true;
+  myProfile: boolean = true;
+  contentLoaded: boolean = false;
 
- myProfile : any = true ; 
- contentLoaded : any = false ; 
+  @ViewChild('inputFile') inputFile: any;
 
- @ViewChild('inputFile') inputFile : any = '' ; 
-
- 
- 
-  constructor( private blogService : BlogsService , private route : ActivatedRoute ){
-   
-    
-   
-  }
+  constructor(private blogService: BlogsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(  (params:any )  => {
-      console.log(params  ) ;
-       let userID : any = params.id ; 
-       let userProfile : any = this.blogService.getUserProfile( userID )
-       this.username = userProfile.userName ; 
-       this.myBlogs = this.blogService.getMyBlogs( userID) ;
-       this.blogService.deleteBlogIDSubject.subscribe(( ele : any )=>{
-        // alert( ele ) ; 
-        this.blogService.deleteMyBlog( ele) ; 
-        this.myBlogs = this.blogService.getMyBlogs( userID) ;
-        this.contentLoaded = true ; 
-       })
-      
-       
-      
-         let loggedInUserID = localStorage.getItem("loggedInUserID") ; 
-         console.log( loggedInUserID , userID ); 
-         this.myProfile = Number(loggedInUserID) === Number(userID) 
-            
-         
-      
+    this.route.queryParams.subscribe((params: any) => {
+      let userID: any = params.id;
+      let userProfile: any = this.blogService.getUserProfile(userID);
+      this.username = userProfile.userName;
+      this.myBlogs = this.blogService.getMyBlogs(userID);
+      this.blogService.deleteBlogIDSubject.subscribe((ele: any) => {
+        this.blogService.deleteMyBlog(ele);
+        this.myBlogs = this.blogService.getMyBlogs(userID);
+        this.contentLoaded = true;
+      });
 
-       
-      //  this.profileUserID = Number(userID ) ;
-
-    }) ; 
-
-   
-
+      let loggedInUserID = localStorage.getItem("loggedInUserID");
+      this.myProfile = Number(loggedInUserID) === Number(userID);
+    });
   }
 
-  setActive(){
-    this.active = true ; ;
+  setActive() {
+    this.active = true;
   }
-  setNotActive(){
-    this.active = false  ;
-  }
-   exportBlogs(){
-    // alert("Blogs exported ") ; 
-    try{
-      let data = this.myBlogs ; 
-      console.log( data ) ;
-      data = data.map((   ele : any )=>{
-        let obj = {...ele} ; 
-          delete(obj.id) ; 
-          delete(obj.userID) ; 
-          delete(obj.blogCreationTime) ; 
-          obj.description = this.getParaContent( obj.description );
-        return obj ;
-      } ) ; 
-      if( !data ) data = [] ; 
-  const fileName = `${this.username}_blogs_${Date.now()}` ; 
-  const exportType =  exportFromJSON.types.json ; 
-  
-  console.log( data , "1111") ; 
-   exportFromJSON({ data, fileName, exportType })  ; 
-  //  alert("Blog successfully downloaded ") ; 
 
-  
-    }catch( err : any ){
-          alert( " Error ocured! please try again later ")
+  setNotActive() {
+    this.active = false;
+  }
+
+  exportBlogs() {
+    if (this.myBlogs.length === 0) {
+      alert("No blogs to export!");
+      return;
     }
-    
 
+    let data = this.myBlogs.map((ele: any) => {
+      let obj = { ...ele };
+      delete obj.id;
+      delete obj.userID;
+      delete obj.blogCreationTime;
+      obj.description = this.getParaContent(obj.description);
+      return obj;
+    });
+
+    const fileName = `${this.username}_blogs_${Date.now()}`;
+    const exportType = exportFromJSON.types.json;
+
+    exportFromJSON({ data, fileName, exportType });
   }
-  getParaContent(htmlString : any ){
+
+  getParaContent(htmlString: any) {
     const tempElement = document.createElement('div');
-tempElement.innerHTML = htmlString;
-
-// Remove images
-tempElement.querySelectorAll('img').forEach(img => img.remove());
-
-// Remove anchor tags
-tempElement.querySelectorAll('a').forEach(a => a.remove());
-
-// Extract text content
-let textContent = tempElement.textContent || tempElement.innerText;
-textContent = textContent.trim() ; 
-return textContent ; 
-
-// console.log(textContent.trim())
+    tempElement.innerHTML = htmlString;
+    tempElement.querySelectorAll('img').forEach(img => img.remove());
+    tempElement.querySelectorAll('a').forEach(a => a.remove());
+    let textContent = tempElement.textContent || tempElement.innerText;
+    textContent = textContent.trim();
+    return textContent;
   }
-  importBlogs(){
-    // alert("Blogs imported") ; 
-    this.inputFile.nativeElement.click() ; 
-    console.log( this.inputFile) ; 
+
+  importBlogs() {
+    this.inputFile.nativeElement.click();
   }
-  inputFileSubmitted(){
-    // alert("submitted")
-    let jsonInputFile = this.inputFile.nativeElement.files ; 
-    if( jsonInputFile.length > 1 ) {
-      alert("Upload only one file ") ; 
+
+  inputFileSubmitted() {
+    let jsonInputFile = this.inputFile.nativeElement.files;
+    if (jsonInputFile.length !== 1) {
+      alert("Please upload only one file.");
+      return;
     }
-    jsonInputFile = jsonInputFile[0] ; 
-    if( jsonInputFile.type !== 'application/json'){
-      alert("Please upload only JSON File ") ; 
-      return ; 
+    jsonInputFile = jsonInputFile[0];
+    if (jsonInputFile.type !== 'application/json') {
+      alert("Please upload only JSON files.");
+      return;
     }
-    this.getTheJsonDataFomFile( jsonInputFile ) ; 
-    // console.log( jsonInputFile)
-    // console.log( this.inputFile.nativeElement.files  )
+    this.getTheJsonDataFromFile(jsonInputFile);
   }
-  getTheJsonDataFomFile( jsonInputFile : any ) {
-    // let useBlogArray : any = [] ; 
-    console.log( jsonInputFile , jsonInputFile.file ) ; 
+
+  getTheJsonDataFromFile(jsonInputFile: any) {
     const reader = new FileReader();
 
     reader.onload = () => {
       let blogJSONData = JSON.parse(reader.result as string);
-      this.updateUserBlogs( blogJSONData ) ; 
-      // useBlogArray.push(blogJSONData ) ; 
-      // console.log( blogJSONData)
+      this.updateUserBlogs(blogJSONData);
     };
-  
+
     reader.onerror = (error) => {
-      alert("Error ocurred "); 
+      alert("Error occurred while reading the file.");
       console.error('Error occurred while reading the file:', error);
     };
 
-
-    reader.readAsText(jsonInputFile );
-
-  } 
-
-  updateUserBlogs( blogJSONData : any ) {
-
-      let blogArray :any  =   this.isProperJSONData( blogJSONData ) ;
-      if( !blogArray ){
-        alert("Format Is Not Correct !")  ; 
-        return ; 
-      }
-      this.saveTheArray(blogArray) ; 
-      console.log( blogArray ) ;
-  } 
-  isProperJSONData( blogJSONData: any  ){
-    let correctJSONData : any = true ; 
-    let blogArray  : any = []    ; 
-    let loggedInUserID : any = localStorage.getItem("loggedInUserID") ; 
-    loggedInUserID = Number( loggedInUserID ) ; 
-    for( let ele of blogJSONData ){
-      // console.log( ele ) ; 
-      if( !ele.title || !ele.category || !ele.description || !ele.primaryImageURL ){
-        correctJSONData = false; 
-        break ; 
-      }
-      let eleObj :any = { ...ele} ;
-      eleObj.userID = loggedInUserID ; 
-      eleObj.id = Date.now() + blogArray.length ;
-      eleObj.blogCreationTime = Date.now() 
-      blogArray.push( eleObj ) ; 
-    }
-    if( !correctJSONData){
-      return false ; 
-    }
-    return blogArray ; 
-  }
-  saveTheArray( blogArray : any ){
-      let allBlogs : any  = localStorage.getItem("allBlogs") ; 
-      allBlogs = JSON.parse( allBlogs ) ; 
-      allBlogs = [ ...allBlogs , ...blogArray ] ; 
-      localStorage.setItem("allBlogs"  , JSON.stringify(allBlogs) ) ;
-
-      let loggedInUserID  :any = localStorage.getItem("loggedInUserID") ; 
-      loggedInUserID = Number(loggedInUserID)  ;
-      this.myBlogs = this.blogService.getMyBlogs( loggedInUserID) ; 
-      alert("Blogs Imported Succesfully !" ) ; 
-
+    reader.readAsText(jsonInputFile);
   }
 
+  updateUserBlogs(blogJSONData: any) {
+    let blogArray: any = this.isProperJSONData(blogJSONData);
+    if (!blogArray) {
+      alert("Invalid JSON format!");
+      return;
+    }
+    this.saveTheArray(blogArray);
+  }
+
+  isProperJSONData(blogJSONData: any) {
+    let correctJSONData: any = true;
+    let blogArray: any = [];
+    let loggedInUserID: any = localStorage.getItem("loggedInUserID");
+    loggedInUserID = Number(loggedInUserID);
+    for (let ele of blogJSONData) {
+      if (!ele.title || !ele.category || !ele.description || !ele.primaryImageURL) {
+        correctJSONData = false;
+        break;
+      }
+      let eleObj: any = { ...ele };
+      eleObj.userID = loggedInUserID;
+      eleObj.id = Date.now() + blogArray.length;
+      eleObj.blogCreationTime = Date.now()
+      blogArray.push(eleObj);
+    }
+    if (!correctJSONData) {
+      return false;
+    }
+    return blogArray;
+  }
+
+  saveTheArray(blogArray: any) {
+    let allBlogs: any = localStorage.getItem("allBlogs");
+    allBlogs = JSON.parse(allBlogs);
+    allBlogs = [...allBlogs, ...blogArray];
+    localStorage.setItem("allBlogs", JSON.stringify(allBlogs));
+    this.myBlogs = [...this.myBlogs, ...blogArray]; // Update displayed blogs
+    alert("Blogs imported successfully!");
+  }
 }

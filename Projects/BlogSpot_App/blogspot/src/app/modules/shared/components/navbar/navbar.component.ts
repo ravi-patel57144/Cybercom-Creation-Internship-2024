@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import { BlogsService } from 'src/app/core/services/blogs.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     const currentUrl = this.router.url;
-    if (currentUrl === '/home?bookMarks=true') {
+    if (currentUrl.includes('/home?bookMarks=true')) {
       this.showBorder = '1';
     } else if (currentUrl === '/write') {
       this.showBorder = '2';
@@ -25,7 +25,9 @@ export class NavbarComponent implements OnInit {
 
   homeNavigate() {
     this.showBorder = '0';
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/home']);
+    });
   }
 
   openProfile() {
@@ -36,7 +38,7 @@ export class NavbarComponent implements OnInit {
 
   openBookMarks() {
     this.showBorder = '1';
-    this.router.navigateByUrl('/home?bookMarks=true');
+    this.router.navigate(['/home'], { queryParams: { bookMarks: 'true' } });
   }
 
   openWrite() {

@@ -1,15 +1,18 @@
 .container {
+    margin-top: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     min-height: 90vh;
     flex-direction: column;
+    margin-left: 30px;
 }
 
 .cards {
     width: 60vw;
     flex-grow: 1;
+    margin-left: 20px;
 }
 
 .card {
@@ -61,11 +64,25 @@
 }
 
 .pagination {
-    width: 100%;
-    margin-top: auto;
+    width: 70%;
+    margin-top: 15px;
     text-align: center;
     height: 40px;
-    position: absolute;
-    top: 90%;
-    right: 15%;
+}
+
+
+.feedSelector {
+    margin-top: 10px;
+    display: flex;
+}
+
+.feedSelector p {
+    margin: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.feedSelector p.active {
+    border-bottom: 2px solid black;
 }

@@ -1,21 +1,33 @@
 <app-navbar></app-navbar>
-<div class="body">
+<div class="writeContainer">
     <form [formGroup]="entryForm" (ngSubmit)="formSubmitted()">
-        <input placeholder="Enter your title" formControlName="title" />
-        <div class="categories">
-            <select formControlName="category">
-                <option value=''>Select category</option>
-                <option *ngFor="let catg of allCategories" [ngValue]="catg">{{catg}}</option>
-            </select>
+        <div class="heading">
+            <h2 class="heading-title">{{ articleToEdit ? 'Edit Blog' : 'New Blog' }}</h2>
         </div>
-        <input class="imageURL" placeholder="Blog Image URL" formControlName="primaryImageURL" />
-        <div class="editor-wrapper">
+
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input id="title" type="text" placeholder="Title" formControlName="title" />
+        </div>
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <input id="category" type="text" placeholder="Blog Category" formControlName="category" />
+            <small>Enter multiple categories separated by commas</small>
+        </div>
+        <div class="form-group">
+            <label for="imageURL">Image URL:</label>
+            <input id="imageURL" class="imageURL" type="text" placeholder="Blog Image URL"
+                formControlName="primaryImageURL" />
+        </div>
+        <div class="editor-wrapper form-group">
+            <label for="description">Description:</label>
             <ngx-editor-menu [editor]="editor"></ngx-editor-menu>
-            <ngx-editor [editor]="editor" formControlName="description" placeholder="Type here..."></ngx-editor>
+            <ngx-editor [editor]="editor" formControlName="description" placeholder="Tell your story..."></ngx-editor>
         </div>
         <div class="publish">
             <button type="submit" *ngIf="!articleToEdit">Publish</button>
             <button type="submit" *ngIf="articleToEdit">Save</button>
+            <button type="button" class="cancel" (click)="cancel()">Cancel</button>
         </div>
     </form>
 </div>

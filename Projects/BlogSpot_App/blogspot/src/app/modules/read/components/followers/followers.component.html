@@ -1,28 +1,20 @@
-<div class="followwers">
-
-  <p class="topicsSearch">Topics</p>
-    <div class="topics">
-        <p  (click)="serachByTag('All')"[style.border]="topicName === 'All'? '2px solid black' : ''" >All</p>
-        <p *ngFor="let ele of topicsArray" (click)="serachByTag(ele)" [style.border]="topicName === ele? '2px solid black' : ''">{{ele}}</p>
-      
-    </div>
-    <div class="head">
-      <p [style.borderBottom]="showBorder ? '2px solid black' :'' "  (click)="followers()">{{followerCount}} Followers</p>
-      <p [style.borderBottom]="!showBorder ? '2px solid black' :'' "  (click)="following()">{{followingCount}} Following</p>
-    </div>
-   
-    <div class="lists">
-       <div class="infos" *ngFor=" let ele of followArray">
-        <img (click)='openProfile( ele.userID )' src="https://picsum.photos/200" >
-        <p>{{ele.userName}}</p>
-       </div>
-       
-      
-        
-      
-        
-
-        
-
+<div class="followers">
+  <p class="topicsSearch">Recommended topics</p>
+  <div class="topics">
+    <p (click)="serachByTag('All')" [style.border]="topicName === 'All' ? '2px solid black' : ''">All</p>
+    <p *ngFor="let ele of topicsArray" (click)="serachByTag(ele)"
+      [style.border]="topicName === ele ? '2px solid black' : ''">{{ ele }}</p>
+  </div>
+  <div class="head">
+    <p [class.active]="showBorder" (click)="followers()">Followers ({{ followerCount }})</p>
+    <p [class.active]="!showBorder" (click)="following()">Following ({{ followingCount }})</p>
+  </div>
+  <div class="lists">
+    <div class="infos" *ngFor="let ele of followArray">
+      <img (click)="openProfile(ele.userID)" src="https://picsum.photos/200">
+      <p>{{ ele.userName }}</p>
+      <p class="follow" *ngIf="!isFollowing(ele.userID)" (click)="followBack(ele.userID)">Follow</p>
+      <p class="unfollow" *ngIf="isFollowing(ele.userID)" (click)="unfollow(ele.userID)">Following</p>
     </div>
   </div>
+</div>

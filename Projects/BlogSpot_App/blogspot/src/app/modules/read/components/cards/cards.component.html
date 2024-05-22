@@ -1,24 +1,24 @@
 <div class="body">
-
     <div class="card">
-        <div class="cardhead" >
-            <img  src="https://picsum.photos/200" (click)="moveToUserProfile()"/>
-            <h2>{{blogOwnerName}}</h2>
-           <mat-icon class="edit" *ngIf="editArticle" (click)="changeArticle()" >edit</mat-icon>
-           <mat-icon class="delete" *ngIf="editArticle" (click)="deleteArticle()" >delete</mat-icon>
-           <p class="created">{{getDate()}}</p>
+        <div class="cardhead">
+            <img src="https://picsum.photos/200" (click)="moveToUserProfile()" />
+            <div class="card-title">
+                <h2>{{ blogOwnerName }}</h2>
+                <p class="created">{{ getDate() }}</p>
+            </div>
+            <div class="card-actions" *ngIf="editArticle">
+                <mat-icon class="edit" (click)="changeArticle()">edit</mat-icon>
+                <mat-icon class="delete" (click)="deleteArticle()">delete</mat-icon>
+            </div>
         </div>
-        <p class="heading" (click)="readBlog()" >{{title}} </p>
+        <p class="heading" (click)="readBlog()">{{ title }}</p>
         <div class="cardbody" (click)="readBlog()">
-            <p>{{description}}</p>
-
-            <img  [src]="primaryImageURL" (error)="handleImageError()"/>
+            <p>{{ description }}</p>
+            <img [src]="primaryImageURL" (error)="handleImageError()" />
         </div>
         <div class="topics">
-            <p class="topictag">{{category}} </p>
-
-            <p class="reading">{{readingTime}} min Read</p>
+            <p class="topictag">{{ category }}</p>
+            <p class="reading">{{ readingTime }} min Read</p>
         </div>
-
     </div>
 </div>
