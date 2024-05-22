@@ -1,9 +1,13 @@
 <div class="followers">
   <p class="topicsSearch">Recommended topics</p>
-  <div class="topics">
+  <div class="topics" [ngClass]="{ 'expand': isExpanded }">
     <p (click)="searchByTag('All')" [style.border]="topicName === 'All' ? '2px solid black' : ''">All</p>
-    <p *ngFor="let ele of topicsArray" (click)="searchByTag(ele)"
-      [style.border]="topicName === ele ? '2px solid black' : ''">{{ ele }}</p>
+    <p *ngFor="let ele of topicsArray; let i = index" (click)="searchByTag(ele)"
+      [style.border]="topicName === ele ? '2px solid black' : ''" [class.hidden]="i >= 5 && !isExpanded">{{ ele }}</p>
+    <p class="expand-collapse" *ngIf="topicsArray.length > 5" (click)="toggleExpand()">
+      <span>{{ isExpanded ? 'Collapse' : 'Expand' }}</span>
+      <i class="fa" [class.fa-minus]="isExpanded" [class.fa-plus]="!isExpanded"></i>
+    </p>
   </div>
   <div class="head">
     <p [class.active]="showBorder" (click)="followers()">Followers ({{ followerCount }})</p>

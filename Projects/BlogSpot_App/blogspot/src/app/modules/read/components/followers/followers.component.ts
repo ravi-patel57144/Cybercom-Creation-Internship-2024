@@ -18,6 +18,8 @@ export class FollowersComponent implements OnInit {
   followerCount: number = 0;
   followingCount: number = 0;
 
+  isExpanded: boolean = false;
+
   constructor(
     private followerService: FollowerServiceService,
     private blogService: BlogsService,
@@ -25,6 +27,10 @@ export class FollowersComponent implements OnInit {
   ) {
     this.followers();
     this.setFollowCount();
+  }
+
+  toggleExpand() {
+    this.isExpanded = !this.isExpanded;
   }
 
   ngOnInit(): void {

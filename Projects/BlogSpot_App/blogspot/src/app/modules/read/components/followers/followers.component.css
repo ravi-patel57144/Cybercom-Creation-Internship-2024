@@ -82,3 +82,34 @@
     font-size: 20px;
     font-weight: 500;
 }
+
+.hidden {
+    display: none;
+}
+
+.expand-collapse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 10px;
+    color: rgb(37, 122, 10);
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.expand-collapse span {
+    margin-right: 5px;
+}
+
+.fa {
+    font-size: 14px;
+}
+
+.fa-minus:before {
+    content: "\2212";
+}
+
+.fa-plus:before {
+    content: "\002B";
+}
