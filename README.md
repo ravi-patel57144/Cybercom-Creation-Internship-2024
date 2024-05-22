@@ -84,9 +84,10 @@ Started working: January 16, 2024
 
 ### Projects
 
-| Sr No. | Title     | Description          | Assigned On | Current Status | Completion Date | Repo Link                                                                                                                    | Project Link |
-| ------ | --------- | -------------------- | ----------- | -------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| 1      | SmartCart | Online Grocery Store | 26.03.2024  | Completed      | 02.04.2024      | [View](https://github.com/ravi-patel57144/Cybercom-Creation-Internship-2024/tree/main/Projects/SmartCart_OnlineGroceryStore) |              |
+| Sr No. | Title     | Description          | Assigned On | Current Status | Completion Date | Repo Link                                                               | Project Link                                  |
+| ------ | --------- | -------------------- | ----------- | -------------- | --------------- | ----------------------------------------------------------------------- | --------------------------------------------- |
+| 1      | SmartCart | Online Grocery Store | 26.03.2024  | Completed      | 02.04.2024      | [View](https://github.com/ravi-patel57144/SmartCart_OnlineGroceryStore) |                                               |
+| 2      | BlogSpot  | Online Blog Website  | 06.05.2024  | Completed      | 15.05.2024      | [View](https://github.com/ravi-patel57144/blogspot)                     | [Visit](https://blogspot.ravisinghpatel.dev/) |
 
 
 
