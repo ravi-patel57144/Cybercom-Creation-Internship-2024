@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NbActionsModule, NbLayoutModule, NbThemeModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [AppComponent, ToolbarComponent],
@@ -23,8 +24,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatToolbarModule,
     HttpClientModule,
+    NbThemeModule.forRoot(),
+    NbLayoutModule,
+    NbActionsModule
   ],
   providers: [provideClientHydration(), provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

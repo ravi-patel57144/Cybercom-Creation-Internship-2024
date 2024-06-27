@@ -1,0 +1,70 @@
+.header-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff;
+    padding-left: 1em;
+}
+
+nb-layout-header {
+    background-color: #565761;
+    color: white;
+}
+
+nb-sidebar {
+    background-color: whitesmoke;
+    color: white;
+}
+
+.sidebar-header {
+    padding: 1em;
+    text-align: center;
+}
+
+nb-sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+nb-sidebar a:hover {
+    background-color: #2b3648;
+}
+
+nb-menu ul {
+    padding: 0;
+    list-style: none;
+}
+
+nb-menu ul li {
+    padding: 0.5em 1em;
+    display: flex;
+    align-items: center;
+}
+
+nb-menu ul li nb-icon {
+    margin-right: 0.5em;
+}
+
+nb-card {
+    margin: 2em;
+}
+
+nb-card-header {
+    background-color: #565761;
+    color: white;
+}
+
+nb-layout-column {
+    margin-left: 20%;
+    padding: 1em;
+    width: 75%;
+}
+
+.calendar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+nb-calendar {
+    margin-right: 20px;
+}

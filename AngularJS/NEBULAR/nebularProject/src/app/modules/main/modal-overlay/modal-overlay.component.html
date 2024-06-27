@@ -1,0 +1,62 @@
+<nb-card>
+    <nb-card-body>
+        <nb-card-header>Popover with placement</nb-card-header>
+
+        <button nbButton nbPopover="Bottom Popover!" nbPopoverPlacement="bottom">
+            Bottom
+        </button>
+
+        <button nbButton nbPopover="Right Popover! nbPopoverTrigger(hint)" nbPopoverPlacement="right"
+            nbPopoverTrigger="hint">
+            Right
+        </button>
+
+        <button nbButton nbPopover="Left Popover! nbPopoverTrigger(hover)" nbPopoverPlacement="left"
+            nbPopoverTrigger="hover">
+            Left
+        </button>
+
+        <button nbButton nbPopover="End Popover!" nbPopoverPlacement="end">
+            End
+        </button>
+
+        <button nbButton nbPopover="Start Popover!" nbPopoverPlacement="start">
+            Start
+        </button>
+
+        <button nbButton nbPopover="Top Popover!" nbPopoverPlacement="top">
+            Top
+        </button>
+
+    </nb-card-body>
+</nb-card>
+
+
+<nb-card>
+    <nb-card-body class="example-items-rows">
+        <nb-card-header>NbToastrService</nb-card-header>
+        <button nbButton status="basic" (click)="showToast('basic')">Basic</button>
+        <button nbButton status="primary" (click)="showToast('primary')">Primary</button>
+        <button nbButton status="success" (click)="showToast('success')">Success</button>
+        <button nbButton status="info" (click)="showToast('info')">Info</button>
+        <button nbButton status="warning" (click)="showToast('warning')">Warning</button>
+        <button nbButton status="danger" (click)="showToast('danger')">Danger</button>
+        <button nbButton status="control" (click)="showToast('control')">Control</button>
+    </nb-card-body>
+</nb-card>
+
+
+<nb-card>
+    <nb-card-body class="example-items-rows">
+        <nb-card-header>NbTooltipDirective</nb-card-header>
+        <button nbTooltip="This is a tooltip" nbTooltipIcon="home-outline" nbButton>Show Tooltip</button>
+
+        <button nbTooltip nbTooltipIcon="alert-triangle-outline" nbTooltipStatus="danger" nbButton>Show Tooltip</button>
+
+        <button nbTooltip [nbTooltipIcon]="{icon: 'alert-triangle-outline', pack: 'eva'}" nbTooltipStatus="danger"
+            nbButton>
+            Show Tooltip
+        </button>
+
+    </nb-card-body>
+</nb-card>

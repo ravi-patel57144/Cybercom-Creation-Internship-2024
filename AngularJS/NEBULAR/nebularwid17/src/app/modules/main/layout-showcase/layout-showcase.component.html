@@ -1,0 +1,62 @@
+<p>layout-showcase works!</p>
+<nb-layout windowMode>
+    <nb-layout-header fixed>
+
+        <nb-search type="rotate-layout"></nb-search>
+
+
+        <!-- <button outline nbButton [nbContextMenu]="items">
+            Show Menu
+        </button> -->
+
+        <nb-user name="Ravi Patel" title="Full Stack Developer" [nbContextMenu]="items"
+            nbContextMenuTag="my-context-menu">
+        </nb-user>
+        <nb-actions>
+            <nb-action size="tiny" icon="home-outline" title="Home 'tiny'"></nb-action>
+            <nb-action icon="person-outline" title="Profile" badgeDot badgeStatus="danger"
+                badgePosition="top right"></nb-action>
+            <nb-action icon="settings-outline" title="Settings"></nb-action>
+        </nb-actions>
+        <div class="header-title">Nebular with Angular 17</div>
+    </nb-layout-header>
+
+    <nb-sidebar tag="menu-sidebar" state="expanded" fixed>
+        <div class="sidebar-header">
+            <nb-user name="Ravi Patel" title="Nb User" size="large"></nb-user>
+        </div>
+        <nb-menu [items]="menuItems"></nb-menu>
+    </nb-sidebar>
+
+    <nb-layout-column>
+        <!-- <nb-card>
+            <nb-card-body class="example-last-child-no-b-margin">
+                <nb-alert status="success" closable>You have been successfully authenticated!</nb-alert>
+            </nb-card-body>
+        </nb-card> -->
+
+        <nb-card accent="info">
+            <nb-card-header>You searched for:</nb-card-header>
+            <nb-card-body>
+                <h3>{{ value || '-' }}</h3>
+            </nb-card-body>
+        </nb-card>
+
+        <nb-card>
+            <nb-card-header>
+                NbCalendarComponent
+            </nb-card-header>
+            <nb-card-body class="calendar">
+                <nb-calendar>
+                </nb-calendar>
+                <nb-calendar-range></nb-calendar-range>
+            </nb-card-body>
+        </nb-card>
+
+
+        <app-modal-overlay></app-modal-overlay>
+        <app-tabset></app-tabset>
+        <app-nbinput></app-nbinput>
+    </nb-layout-column>
+    <nb-layout-footer fixed>&copy; Ravi</nb-layout-footer>
+</nb-layout>

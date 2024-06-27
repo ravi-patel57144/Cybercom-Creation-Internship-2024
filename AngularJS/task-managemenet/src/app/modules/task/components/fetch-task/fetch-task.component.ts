@@ -15,6 +15,11 @@ interface Task {
   id?: string;
   isNew: boolean;
   taskForm: FormGroup;
+  title?: string;
+  description?: string;
+  dueDate?: string;
+  priority?: string;
+  assignedTo?: string;
 }
 
 @Component({
@@ -95,13 +100,6 @@ export class FetchTaskComponent implements OnInit {
     XLSX.writeFile(wb, 'Tasks.xlsx');
   }
 
-
-
-
-  // importFromExcel() {
-
-  // }
-
   ReadExcel(event: any) {
     let file = event.target.files[0];
 
@@ -109,7 +107,6 @@ export class FetchTaskComponent implements OnInit {
     fileReader.readAsBinaryString(file);
 
     fileReader.onload = (e) => {
-
       var workBook = XLSX.read(fileReader.result, { type: 'binary' });
       var sheetNames = workBook.SheetNames;
 
@@ -119,13 +116,17 @@ export class FetchTaskComponent implements OnInit {
     }
   }
 
-
   loadTasksFromLocalStorage() {
     this.isLoading = true;
     const tasks = JSON.parse(localStorage.getItem('task') || '[]') as Task[];
     this.fetchTasks.data = tasks.map((task: any) => ({
       id: task.id,
       isNew: false,
+      title: task.title,
+      description: task.description,
+      dueDate: task.dueDate,
+      priority: task.priority,
+      assignedTo: task.assignedTo,
       taskForm: this.fb.group({
         title: [task.title, Validators.required],
         description: [task.description, Validators.required],

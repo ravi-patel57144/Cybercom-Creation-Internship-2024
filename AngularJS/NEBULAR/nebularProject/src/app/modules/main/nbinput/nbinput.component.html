@@ -1,0 +1,112 @@
+<nb-card>
+    <nb-card-body class="example-items-rows">
+        <nb-card-header>Nb Input & Buttons</nb-card-header>
+        <input type="text" nbInput placeholder="Text field">
+        <input type="text" nbInput placeholder="Disabled Text field" disabled>
+
+        <input type="text" nbInput fullWidth status="basic" placeholder="default tiny" fieldSize="tiny">
+        <input type="text" nbInput fullWidth status="primary" placeholder="Primary small" fieldSize="small">
+        <input type="text" nbInput fullWidth status="info" placeholder="Info medium" fieldSize="medium">
+        <input type="text" nbInput fullWidth status="success" placeholder="Success large" fieldSize="large">
+        <input type="text" nbInput fullWidth status="warning" placeholder="Warning giant" fieldSize="giant">
+        <input type="text" nbInput fullWidth status="danger" placeholder="Danger">
+    </nb-card-body>
+
+
+    <nb-card-body class="example-items-rows" fullwidth>
+        <button nbButton>Active Button</button>
+        <button nbButton disabled>Disabled Button</button>
+        <button nbButton status="danger">Danger</button>
+        <button nbButton size="giant">giant</button>
+        <button nbButton outline status="warning">Warning</button>
+        <button nbButton hero status="primary">Primary</button>
+        <button nbButton shape="round" size="small" status="success">Round Small</button>
+        <button nbButton>Button</button>
+        <input nbButton type="submit" value="Input Submit" />
+        <input nbButton type="button" value="Input Button" />
+        <a href="#" nbButton>Link</a>
+        <button nbButton status="primary"><nb-icon icon="star"></nb-icon>Primary</button>
+    </nb-card-body>
+</nb-card>
+
+<nb-card>
+    <nb-card-body>
+        <nb-card-header>Nb Button Group</nb-card-header>
+        <nb-button-group multiple>
+            <button nbButtonToggle [(pressed)]="isBold">Bold</button>
+            <button nbButtonToggle [(pressed)]="isItalic" class="text-italic">Italic</button>
+            <button nbButtonToggle [(pressed)]="isUnderline" class="text-underline">Underline</button>
+        </nb-button-group>
+
+        <p [class.subtitle]="isBold" [class.text-italic]="isItalic" [class.text-underline]="isUnderline" class="text">
+            A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
+        </p>
+    </nb-card-body>
+</nb-card>
+
+
+<nb-card>
+    <nb-card-body>
+        <nb-card-header>Nb Checkbox</nb-card-header>
+        <nb-checkbox (checkedChange)="toggle($event)">Toggle me</nb-checkbox>
+    </nb-card-body>
+    <nb-card-body>
+        <label>Checked:</label> {{ checked }}
+    </nb-card-body>
+</nb-card>
+
+<nb-card>
+    <nb-card-body class="example-items-col">
+        <nb-toggle labelPosition="start">Label Start</nb-toggle>
+        <nb-toggle labelPosition="end">Label End</nb-toggle>
+        <nb-toggle labelPosition="right">Label Right</nb-toggle>
+        <nb-toggle labelPosition="left">Label Left</nb-toggle>
+        <nb-toggle disabled>Label Default Disabled</nb-toggle>
+    </nb-card-body>
+</nb-card>
+
+
+<nb-card>
+    <nb-card-header>Radio Selected Option: {{ option }}</nb-card-header>
+    <nb-card-body>
+        <nb-radio-group [(ngModel)]="option">
+            <nb-radio *ngFor="let option of options" [value]="option.value">
+                {{ option.label }}
+            </nb-radio>
+        </nb-radio-group>
+    </nb-card-body>
+</nb-card>
+
+<nb-card>
+    <nb-card-body>
+        <nb-card-header>Nb Select</nb-card-header>
+        <nb-select multiple placeholder="Multiple Select">
+            <nb-option value="1">Option 1</nb-option>
+            <nb-option value="2">Option 2</nb-option>
+            <nb-option value="3">Option 3</nb-option>
+            <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+    </nb-card-body>
+</nb-card>
+
+
+<nb-card>
+    <nb-card-body>
+        <nb-card-header>Nb Autocomplete</nb-card-header>
+        <input nbInput placeholder="Autocomplete" [nbAutocomplete]="auto">
+        <nb-autocomplete #auto>
+            <nb-option *ngFor="let option of filteredOptions" [value]="option">{{ option }}</nb-option>
+        </nb-autocomplete>
+
+
+        <nb-card-header>Nb Datepicker</nb-card-header>
+        <input nbInput placeholder="Pick Date" [nbDatepicker]="datepicker">
+        <nb-datepicker #datepicker></nb-datepicker>
+
+
+        <nb-card-header>Nb Timepicker</nb-card-header>
+        <input nbInput placeholder="Pick Time" [nbTimepicker]="timepicker">
+        <nb-timepicker #timepicker></nb-timepicker>
+
+    </nb-card-body>
+</nb-card>
